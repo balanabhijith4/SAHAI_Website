@@ -12,12 +12,13 @@ import {
 } from "framer-motion";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Stagger, StaggerItem, RevealChars, RevealWords } from "../components/Reveal";
+import { Globe, Building2, Linkedin } from "lucide-react";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
       { title: "Founder — SPARKS Lab" },
-      { name: "description", content: "Dr. A. Abdullah, founder of SPARKS Lab — research vision, journey and contributions to AI at NIT Tiruchirappalli." },
+      { name: "description", content: "Dr. C Oswald, founder of SPARKS Lab — research vision, journey and contributions to AI at NIT Tiruchirappalli." },
       { property: "og:title", content: "Meet the Founder · SPARKS Lab" },
       { property: "og:description", content: "Vision, journey and research philosophy behind SPARKS Lab." },
     ],
@@ -26,12 +27,16 @@ export const Route = createFileRoute("/founder")({
 });
 
 const journey = [
-  { year: "2024", title: "Founded SPARKS Lab", institution: "NIT Tiruchirappalli", body: "Established the laboratory to advance research in AI and knowledge systems with national-scale ambition." },
-  { year: "2022", title: "Distinguished Research Fellow", institution: "International Recognition", body: "Recognized internationally for foundational contributions to explainable AI and neuro-symbolic reasoning." },
-  { year: "2020", title: "Associate Professor", institution: "Department of CSE, NIT Trichy", body: "Joined the faculty with a focus on intelligent systems and knowledge representation." },
-  { year: "2018", title: "Postdoctoral Research", institution: "Leading International AI Lab", body: "Postdoctoral fellowship focused on multi-modal representation learning." },
-  { year: "2017", title: "Ph.D. in Computer Science", institution: "Doctoral Research", body: "Dissertation on neuro-symbolic reasoning and large-scale knowledge representation." },
-  { year: "2012", title: "M.Tech in CSE", institution: "Graduate School", body: "Master's degree with research focus on probabilistic graphical models." },
+  { year: "2022", title: "Assistant Professor", institution: "NIT Tiruchirappalli", body: "Department of Computer Science and Engineering (Sep 2022 – present)." },
+  { year: "2022", title: "Assistant Professor", institution: "IIIT Kottayam", body: "Department of Computer Science and Engineering (July – Sep 2022)." },
+  { year: "2021", title: "Institute Postdoctoral Fellow", institution: "IIT Kanpur", body: "Department of Computer Science and Engineering. Mentor: Prof. Arnab Bhattacharya (Feb 2021 – July 2022)." },
+  { year: "2019", title: "Assistant Professor-Senior", institution: "VIT Chennai", body: "Department of Computer Science and Engineering (June 2019 – Feb 2021)." },
+  { year: "2018", title: "Assistant Professor", institution: "SRM IST, Chennai", body: "Department of Computer Science and Engineering (June 2018 – May 2019)." },
+  { year: "2018", title: "Ph.D. in Computer Science and Engineering", institution: "IIITDM Kancheepuram", body: "Thesis: Efficient Algorithms for Text and Image Compression based on Knowledge Engineering. Advisor: B. Sivaselvan (July 2013 - Nov 2018)." },
+  { year: "2013", title: "M.Tech. in Software Engineering", institution: "Karunya University", body: "University I Rank [8.7/10]. Thesis: Hybrid Heuristic Algorithms for University Course Timetabling Problem (July 2011 - May 2013)." },
+  { year: "2012", title: "Intern", institution: "IBM India Systems & Software Lab, Bangalore", body: "IBM AIX – Functional Verification Testing (FVT) (Dec 2012 – July 2013)." },
+  { year: "2009", title: "Programmer Analyst", institution: "Cognizant Technology Solutions, Chennai", body: "Professional experience (Dec 2009 – May 2011)." },
+  { year: "2009", title: "B.E. in Computer Science and Engineering", institution: "Sona College of Technology, Anna University", body: "Best Co-curricular Student [8.4/10] (June 2005 – May 2009)." },
 ];
 
 const founderStats = [
@@ -62,16 +67,23 @@ function FounderPage() {
       <section className="container-page grid lg:grid-cols-[1fr_1.4fr] gap-16 pb-24">
         <div className="lg:sticky lg:top-24 self-start">
           <FounderPortrait />
-          <Stagger className="mt-6 grid grid-cols-3 gap-3" stagger={0.08}>
-            {[["38", "h-index"], ["152+", "publications"], ["12", "patents"]].map(([v, k]) => (
-              <StaggerItem key={k}>
-                <motion.div
-                  whileHover={{ y: -4, boxShadow: "0 12px 30px -12px oklch(0.68 0.165 55 / 0.35)" }}
-                  className="rounded-xl bg-surface ring-1 ring-border p-4 cursor-default"
+          <Stagger className="mt-6 flex flex-wrap gap-6" stagger={0.08}>
+            {[
+              { label: "Website", url: "https://oswaldc.netlify.app/teaching", icon: Globe },
+              { label: "NITT Profile", url: "https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/", icon: Building2 },
+              { label: "LinkedIn", url: "https://www.linkedin.com/in/oswald-c-bb5b37b7/", icon: Linkedin }
+            ].map(({ label, url, icon: Icon }) => (
+              <StaggerItem key={label}>
+                <motion.a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -2 }}
+                  className="flex items-center gap-2.5 text-ink-soft hover:text-accent transition-colors"
                 >
-                  <div className="font-display text-xl font-semibold">{v}</div>
-                  <div className="eyebrow text-[9px] mt-1">{k}</div>
-                </motion.div>
+                  <Icon className="w-5 h-5" />
+                  <span className="font-display text-base font-medium">{label}</span>
+                </motion.a>
               </StaggerItem>
             ))}
           </Stagger>
@@ -81,11 +93,11 @@ function FounderPage() {
           <Reveal>
             <p className="eyebrow text-accent mb-4">Biography</p>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink mb-6 leading-[1.05]">
-              <RevealChars text="Dr. A. Abdullah" charDelay={0.03} />
+              <RevealChars text="Dr. C Oswald" charDelay={0.03} />
             </h2>
             <p className="text-xl text-ink font-light leading-snug text-balance">
               <RevealWords
-                text="Associate Professor at the Department of Computer Science & Engineering, NIT Tiruchirappalli, and the founding Principal Investigator of SPARKS Lab. His research sits at the intersection of machine learning, knowledge representation, and the human disciplines that give intelligent systems their meaning."
+                text="Assistant Professor at the Department of Computer Science and Engineering, NIT Tiruchirappalli. He holds a Ph.D. from IIITDM Kancheepuram, with a rich academic trajectory across IIT Kanpur, VIT Chennai, IIIT Kottayam, and SRM IST. His research explores the intersections of Machine Learning, Data Mining, NLP, and Knowledge Graphs to solve complex real-world problems."
                 wordDelay={0.015}
               />
             </p>
@@ -94,14 +106,27 @@ function FounderPage() {
           <Reveal delay={0.1}>
             <p className="eyebrow text-accent mb-4">Research interests</p>
             <div className="flex flex-wrap gap-2">
-              {["Neuro-symbolic reasoning", "Knowledge graphs", "Explainable AI", "Multilingual NLP", "Multi-modal learning", "Healthcare AI", "Edge intelligence"].map((t, i) => (
+              {[
+                "Machine Learning",
+                "Deep Learning",
+                "Data Mining",
+                "Natural Language Processing",
+                "Human Computer Interaction",
+                "Text Mining",
+                "Social Media Analytics",
+                "Computational Science for Social Good",
+                "Ontology and Knowledge Graphs",
+                "Question-Answering (English and Indian Languages)",
+                "Text/Image Compression",
+                "Graph Compression"
+              ].map((t, i) => (
                 <motion.span
                   key={t}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.04, duration: 0.5 }}
-                  whileHover={{ y: -2, scale: 1.04, backgroundColor: "oklch(0.68 0.165 55 / 0.12)" }}
+                  whileHover={{ y: -2, scale: 1.04, backgroundColor: "oklch(0.68 0.165 55 / 0.12)", transition: { duration: 0.15 } }}
                   className="rounded-full bg-surface ring-1 ring-border px-3 py-1.5 text-xs font-medium cursor-default"
                 >
                   {t}
@@ -144,6 +169,7 @@ function FounderPage() {
 
       <FounderStatsSection />
       <JourneySection />
+      <ActivitiesSection />
     </>
   );
 }
@@ -190,8 +216,8 @@ function FounderPortrait() {
       <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-2 group-hover:ring-accent/40 transition-all duration-500" />
       <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-ink/90 to-transparent text-canvas">
         <div className="eyebrow text-accent text-[9px] mb-2">Founder</div>
-        <div className="font-display text-3xl font-semibold leading-tight">Dr. A. Abdullah</div>
-        <div className="mt-2 text-sm text-canvas/70">Associate Professor · Dept. of CSE, NIT Trichy</div>
+        <div className="font-display text-3xl font-semibold leading-tight">Dr. C Oswald</div>
+        <div className="mt-2 text-sm text-canvas/70">Assistant Professor · Dept. of CSE, NIT Trichy</div>
       </div>
     </motion.div>
   );
@@ -459,9 +485,9 @@ function TimelineItem({
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,oklch(0.68_0.165_55_/_0.12),transparent_60%)]"
             />
             <div className="relative">
-              <div className="eyebrow text-accent text-[9px] mb-2">{item.institution}</div>
+              <div className="eyebrow text-accent text-xs mb-2">{item.institution}</div>
               <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-              <p className="mt-3 text-sm text-ink-soft leading-relaxed">{item.body}</p>
+              <p className="mt-3 text-base text-ink-soft leading-relaxed">{item.body}</p>
             </div>
             <motion.div
               aria-hidden
@@ -471,5 +497,149 @@ function TimelineItem({
         </div>
       </motion.div>
     </div>
+  );
+}
+
+const awardsData = [
+  "Research Excellence Award, VIT Chennai – 2019",
+  "Elite Alumni Award, Sona College of Technology – 2017",
+  "Outstanding Overall Co-Curricular Performance in Undergrad – 2009",
+  "Best NSS Volunteer Award – 2009",
+  "NASSCOM Certified Student Trainer on “Associate Analytics”"
+];
+
+const teachingData = [
+  "Data Analytics: Jan’26",
+  "Data Structures: July’25, July’26",
+  "Machine Learning (CSPE65): Jan’25, Database Management Systems (CSMI14): July’24",
+  "Big Data Analytics (CSOE11): July’23, Jan’22, Artificial Intelligence (CSMI17): July’23, 22, Jan’18",
+  "Software Engineering (CSPE73): Jan’24, Jan’23, Comprehensive Viva (CSIR81): Jan’23",
+  "Data Structures and Algorithms: Jan’26, Jan’25, Jan’24, June’19, June’20",
+  "Problem Solving and Programming in Python: June’20, Jan’19, June’19",
+  "Software Quality and Reliability: Jan’20, Software Reliability: June’18, Jan’18"
+];
+
+const eventsOrganized = [
+  "AICTE sponsored ATAL online FDP on “Generative AI and Ethical AI: Techniques and Applications at NITT.",
+  "ACM sponsored “ROCS: Research Opportunities on Computer Science”, 05 April, 2024.",
+  "One Week Workshop on “Machine Learning: Techniques and Trends”, 26 – 30 June, 2023 at NIT Tiruchirappalli.",
+  "Industrial Guest Lectures on Data Structures and Algorithms in LinkedIn, Problem Solving techniques in Google, Big Data Analytics at Zoho (at NITT and VIT-C)"
+];
+
+const eventsParticipated = [
+  "Talk on From Words to Worlds: Generative AI for Social Good applications at the Winter School on Interdisciplinary Pathways in Computational Social Sciences: Economics, Sociology and Policy, IIT Jodhpur, February, 2025.",
+  "12th Advanced Summer School on NLP (IASNLP) at IIIT Hyderabad, July 2024.",
+  "Talk on A Tale of Two Cities: Machine Learning with Digital Humanities at IIT Jodhpur.",
+  "Talk on Why Machine Learning is a buzzword?, An Informal Introduction to Reinforcement Learning at MLDS’23, NITT.",
+  "Talk on Introduction to scikit-learn at ICSSP’23, NITT.",
+  "Talk on Types of Itemsets and their algorithms, Workshop DAMI' 2018 at IIITD&M Kancheepuram.",
+  "CODS’15, CODS'16, VLDB'16, CODS'17 and CODS’18 through travel grants from ACM SIGKDD."
+];
+
+function ActivitiesSection() {
+  return (
+    <section className="container-page py-24 border-b border-hairline relative">
+      <Reveal className="mb-16 text-center max-w-2xl mx-auto">
+        <p className="eyebrow text-accent mb-4">Academic & Professional Contributions</p>
+        <h2 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-ink">
+          Activities & Recognition
+        </h2>
+      </Reveal>
+
+      <div className="space-y-12">
+        {/* Top Row: Awards and Teaching */}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Awards Box */}
+          <div className="rounded-3xl ring-1 ring-border p-8 md:p-12 bg-surface shadow-sm overflow-hidden relative group hover:-translate-y-2 hover:shadow-xl hover:ring-accent/40 transition-all duration-500">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.68_0.165_55_/_0.04),transparent_50%)] pointer-events-none" />
+            <div className="relative z-10">
+              <Reveal>
+                <h3 className="font-display text-3xl font-semibold mb-8 flex items-center gap-3">
+                  <span className="text-accent text-2xl">✦</span> Awards & Honors
+                </h3>
+              </Reveal>
+              <ul className="space-y-5">
+                {awardsData.map((award, i) => (
+                  <Reveal key={i} delay={i * 0.05}>
+                    <li className="flex gap-4 items-start">
+                      <span className="text-accent/60 mt-1 text-xl">•</span>
+                      <span className="text-lg text-ink-soft leading-relaxed">{award}</span>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Teaching Box */}
+          <div className="rounded-3xl ring-1 ring-border p-8 md:p-12 bg-surface shadow-sm overflow-hidden relative group hover:-translate-y-2 hover:shadow-xl hover:ring-accent/40 transition-all duration-500">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.68_0.165_55_/_0.04),transparent_50%)] pointer-events-none" />
+            <div className="relative z-10">
+              <Reveal>
+                <h3 className="font-display text-3xl font-semibold mb-8 flex items-center gap-3">
+                  <span className="text-accent text-2xl">✦</span> Teaching
+                </h3>
+              </Reveal>
+              <ul className="space-y-5">
+                {teachingData.map((course, i) => (
+                  <Reveal key={i} delay={i * 0.05}>
+                    <li className="flex gap-4 items-start">
+                      <span className="text-accent/60 mt-1 text-xl">•</span>
+                      <span className="text-lg text-ink-soft leading-relaxed">{course}</span>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Events Box */}
+        <div className="rounded-3xl ring-1 ring-border p-8 md:p-12 bg-surface shadow-sm overflow-hidden relative group hover:-translate-y-2 hover:shadow-xl hover:ring-accent/40 transition-all duration-500">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.68_0.165_55_/_0.04),transparent_50%)] pointer-events-none" />
+          <div className="relative z-10">
+            <Reveal>
+              <h3 className="font-display text-3xl font-semibold mb-10 flex items-center gap-3">
+                <span className="text-accent text-2xl">❖</span> Events & Talks
+              </h3>
+            </Reveal>
+            
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+              <div>
+                <Reveal>
+                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">Organized Events</h4>
+                </Reveal>
+                <ul className="space-y-5">
+                  {eventsOrganized.map((event, i) => (
+                    <Reveal key={i} delay={i * 0.05}>
+                      <li className="flex gap-4 items-start">
+                        <span className="text-accent mt-1 text-xl">▹</span>
+                        <span className="text-lg text-ink-soft leading-relaxed">{event}</span>
+                      </li>
+                    </Reveal>
+                  ))}
+                </ul>
+              </div>
+              
+              <div>
+                <Reveal>
+                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">Talks & Participation</h4>
+                </Reveal>
+                <ul className="space-y-5">
+                  {eventsParticipated.map((event, i) => (
+                    <Reveal key={i} delay={i * 0.05}>
+                      <li className="flex gap-4 items-start">
+                        <span className="text-accent mt-1 text-xl">▹</span>
+                        <span className="text-lg text-ink-soft leading-relaxed">{event}</span>
+                      </li>
+                    </Reveal>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
