@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ResearchEcosystemSphere } from "../components/ResearchEcosystemSphere";
-import { RevealChars, RevealWords, Reveal } from "../components/Reveal";
+import { RevealChars, RevealWords } from "../components/Reveal";
 
 
 export const Route = createFileRoute("/")({
