@@ -98,7 +98,7 @@ const domains: Domain[] = [
     papers: 22,
     faculty: 5,
     hue: "from-[#C8A8C0] to-[#E6C8D8]",
-    image: "images/genAI.jpeg",
+    image: "images/gen.avif",
   },
 
   {

@@ -361,14 +361,14 @@ type Domain = {
 const DOMAINS: Domain[] = [
   { id: "ml", label: "Machine Learning", short: "ML", ring: 0, angle: 0, size: "lg" },
   { id: "dl", label: "Deep Learning", short: "DL", ring: 0, angle: 72, size: "md" },
-  { id: "cv", label: "Computer Vision", short: "CV", ring: 0, angle: 144, size: "lg" },
-  { id: "nlp", label: "Natural Language", short: "NLP", ring: 0, angle: 216, size: "md" },
+  { id: "cv", label: "Computational Science for Social Good", short: "CV", ring: 0, angle: 144, size: "lg" },
+  { id: "nlp", label: "Natural Language Processing", short: "NLP", ring: 0, angle: 216, size: "md" },
   { id: "gen", label: "Generative AI", short: "GenAI", ring: 0, angle: 288, size: "lg" },
-  { id: "hai", label: "Healthcare AI", short: "HAI", ring: 1, angle: 36, size: "sm" },
-  { id: "kg", label: "Knowledge Systems", short: "KG", ring: 1, angle: 108, size: "md" },
-  { id: "xai", label: "Explainable AI", short: "XAI", ring: 1, angle: 180, size: "sm" },
-  { id: "edge", label: "Edge AI", short: "Edge", ring: 1, angle: 252, size: "sm" },
-  { id: "rob", label: "Robotics", short: "Rob", ring: 1, angle: 324, size: "md" },
+  { id: "hai", label: "Data Mining", short: "HAI", ring: 1, angle: 36, size: "sm" },
+  { id: "kg", label: "Knowledge Graphs", short: "KG", ring: 1, angle: 108, size: "md" },
+  { id: "xai", label: "Data Compressing", short: "XAI", ring: 1, angle: 180, size: "sm" },
+  { id: "edge", label: "Computational Linguistics", short: "Edge", ring: 1, angle: 252, size: "sm" },
+  { id: "rob", label: "Human Computer Interaction", short: "HCI", ring: 1, angle: 324, size: "md" },
 ];
 
 const sizeConfig: Record<Domain["size"], { ball: string; glow: string; shine: string }> = {

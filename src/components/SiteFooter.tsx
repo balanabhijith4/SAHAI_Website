@@ -15,9 +15,12 @@ export function SiteFooter() {
                 <span className="eyebrow text-[9px] text-canvas/50">NIT Trichy · CSE</span>
               </div>
             </div>
-            <p className="text-sm text-canvas/60 leading-relaxed max-w-sm">
-              Smart Platform for AI Research and Knowledge Systems. Department of Computer
-              Science & Engineering, National Institute of Technology Tiruchirappalli.
+            <p className="text-sm text-canvas/60 leading-relaxed max-w-md">
+              Smart Platform for AI Research and Knowledge Systems.
+              <br />
+               CSE Department,
+               <br />
+                National Institute of Technology Tiruchirappalli.
             </p>
             <p className="mt-6 text-xs text-canvas/40 font-mono leading-relaxed">
               Tanjore Main Road, NH-67<br />
