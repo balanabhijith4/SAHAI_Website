@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-32 bg-ink text-canvas">
       <div className="container-page py-20">
-        <div className="grid gap-16 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-16 lg:grid-cols-[1.1fr_0.8fr_0.8fr_1.1fr_1.3fr]">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="grid h-10 w-10 place-items-center rounded-lg bg-accent text-ink font-display text-lg font-semibold">
