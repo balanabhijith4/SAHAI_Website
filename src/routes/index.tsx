@@ -680,7 +680,7 @@ function ImpactTimeline() {
               }`}
             >
               <div className={`pl-12 md:pl-0 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                <span className="font-display text-6xl font-semibold text-ink/10 leading-none">
+                <span className="font-display text-6xl font-semibold text-ink/40 leading-none">
                   {t.year}
                 </span>
                 <h3 className="mt-2 font-display text-xl font-semibold">{t.title}</h3>
