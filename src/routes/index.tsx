@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Flagship AI research laboratory at NIT Tiruchirappalli, advancing machine learning, computer vision, NLP, generative AI and knowledge systems.",
+          "Flagship AI research laboratory at NIT Tiruchirappalli, advancing machine learning, NLP, generative AI and knowledge systems.",
       },
       { property: "og:title", content: "SPARKS Lab — AI Research at NIT Trichy" },
       {
@@ -396,7 +396,7 @@ function AboutStory() {
 const domains = [
   { id: "ml",  title: "Machine Learning",            note: "Learning · Prediction · Adaptation",projects:1 },
   { id: "dl",  title: "Deep Learning",               note: "Networks · Representation · Intelligence",projects:1 },
-  { id: "cv",  title: "Computer Vision",             note: "Perception · Recognition · Understanding",projects:1 },
+  { id: "cv",  title: "Computational Science for Social Good",             note: "Impact · Equity · Innovation",projects:1 },
   { id: "nlp", title: "Natural Language Processing", note: "Language · Semantics · Generation",projects:1 },
   { id: "gen", title: "Generative AI",               note: "Creation · Reasoning · Innovation" ,projects:1},
   { id: "hai", title: "Data Compression",            note: "Efficiency · Encoding · Optimization",projects:1 },

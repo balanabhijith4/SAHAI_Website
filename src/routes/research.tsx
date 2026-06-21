@@ -57,18 +57,23 @@ const domains: Domain[] = [
     image: "images/DL.jpeg",
   },
 
-  // {
-  //   id: "cv",
-  //   title: "Computer Vision",
-  //   tagline: "Understanding the visual world",
-  //   body: "Our research advances intelligent visual systems capable of perceiving, interpreting, and reasoning about the world through images and videos. We investigate image understanding, scene analysis, visual recognition, and medical imaging to develop technologies that support healthcare, automation, accessibility, and decision-making. By combining advances in deep learning and computer vision, we aim to build systems that can transform visual data into actionable knowledge.",
-  //   focus: ["Image understanding", "Visual recognition", "Scene analysis", "Medical imaging"],
-  //   projects: 7,
-  //   papers: 31,
-  //   faculty: 6,
-  //   hue: "from-[#B8C8A8] to-[#D8E6C8]",
-  //   image: "",
-  // },
+{
+  id: "csg",
+  title: "Computational Science for Social Good",
+  tagline: "Data-driven intelligence for societal impact",
+  body: "Our research in Computational Science for Social Good focuses on harnessing data, algorithms, and artificial intelligence to address pressing societal challenges. We develop computational methods that support decision-making in areas such as public health, education, governance, sustainability, and social welfare. By combining machine learning, data analytics, social computing, and human-centered AI, we aim to create scalable and equitable solutions that improve quality of life and foster inclusive development. Through interdisciplinary collaboration, our work seeks to ensure that technological innovation translates into meaningful and measurable benefits for society.",
+  focus: [
+     "Computational social science",
+  "Digital humanities",
+  "Social media analytics",
+  "AI for social good"
+  ],
+  projects: 5,
+  papers: 16,
+  faculty: 4,
+  hue: "from-[#B8C6D8] to-[#D6E0EB]",
+  image: "images/social_good.jpeg",
+},
 
   {
     id: "nlp",

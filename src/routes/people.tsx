@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Stagger, StaggerItem, RevealWords } from "../components/Reveal";
+import { Linkedin, GraduationCap } from "lucide-react";
 
 export const Route = createFileRoute("/people")({
   head: () => ({
@@ -25,6 +26,7 @@ type Person = {
   email?: string;
   scholar?: string;
   linkedin?: string;
+  
 };
 
 type Variant = "large" | "medium" | "compact";
@@ -46,7 +48,7 @@ Question Answering (English and Indian Languages),
 Text/Image Compression,
 Graph Compression`,
     initials: "AA",
-    photo: "",
+    photo: "images/oswald_sir.jpg",
     email: "oswald@nit.edu",
     scholar:"https://scholar.google.com/citations?user=6kX5pyoAAAAJ&hl=en",
     linkedin:"https://www.linkedin.com/in/oswald-c-bb5b37b7/"
@@ -73,8 +75,42 @@ const students: Person[] = [
 ];
 
 const interns: Person[] = [
-  { name: "Intern One", role: "Research Intern", interests: "AI & Machine Learning", initials: "IO", photo: "" },
+  { name: "Anirban I Ghosh", role: "Research Intern", interests: "LinkedIn Bangalore", initials: "IO", photo: "" },
   { name: "Intern Two", role: "Research Intern", interests: "Computer Vision", initials: "IT", photo: "" },
+];
+
+const alumni: Person[] = [
+  { name: "Anirban I Ghosh", role: "Research Intern · Alumni", interests: "LinkedIn Bangalore.", initials: "FO", photo: "" },
+  { name: "Avinash Kadimisetty", role: "Research Intern · Alumni", interests: "Facebook Inc., USA", initials: "FT", photo: "" },
+  { name: "Hari Krishna Majety", role: "Research Intern · Alumni", interests: "Data Scientist Intern at ABB, USA", initials: "FT", photo: "" },
+  { name: "K Arun Kumar", role: "Research Intern · Alumni", interests: " Big Data Engineer, Zoho Corp, Chennai", initials: "FT", photo: "" },
+  { name: "I Ajith Kumar", role: "Research Intern · Alumni", interests: "ZoomRx", initials: "FT", photo: "" },
+  { name: "Mohak Kataria", role: "Research Intern · Alumni", interests: "Cloudfare, Inc, London, The UK", initials: "FT", photo: "" },
+  { name: "M Karthik", role: "Research Intern · Alumni", interests: "Freshworks, Chennai", initials: "FT", photo: "" },
+  { name: "Subham Biswas", role: "Research Intern · Alumni", interests: "Verizon, Chennai", initials: "FT", photo: "" },
+  { name: "Akshay", role: "Research Intern · Alumni", interests: " Boeing, Bangalore", initials: "FT", photo: "" },
+  { name: "V Akshay Vyas", role: "Research Intern · Alumni", interests: "Zoho Corp, Chennai", initials: "FT", photo: "" },
+  { name: "J Avinash", role: "Research Intern · Alumni", interests: "Commvault", initials: "FT", photo: "" },
+  { name: "Krishna Chaurasia", role: "Research Intern · Alumni", interests: "SAP, Pune", initials: "FT", photo: "" },
+  { name: "S Neeraj", role: "Research Intern · Alumni", interests: "MS, University of Amsterdam, Denmark", initials: "FT", photo: "" },
+  { name: "Kuldeep Gunta", role: "Research Intern · Alumni", interests: "GE Healthcare, Bangalore", initials: "FT", photo: "" },
+  { name: "Nikhil Chennu", role: "Research Intern · Alumni", interests: "F5 Networks", initials: "FT", photo: "" },
+  { name: "Harsha Valveti", role: "Research Intern · Alumni", interests: " AMDOCS, Pune", initials: "FT", photo: "" },
+  { name: "Shanaz Sheriff,", role: "Research Intern · Alumni", interests: "Full Stack Developer, Canada.", initials: "FT", photo: "" },
+  { name: "Leo Rex", role: "Research Intern · Alumni", interests: "Zephony", initials: "FT", photo: "" },
+  { name: "Sona Elza Simon", role: "Research Intern · Alumni", interests: "Phd Scholar, CSE at IIT Bombay", initials: "FT", photo: "" },
+  { name: "Navansh Goel", role: "Research Intern · Alumni", interests: "University of California, San Diego", initials: "FT", photo: "" },
+  { name: "Tejaswi Kumar", role: "Research Intern · Alumni", interests: "JP Morgan", initials: "FT", photo: "" },
+  { name: "Gadi Jaya Satwika", role: "Research Intern · Alumni", interests: "Capgemini", initials: "FT", photo: "" },
+  { name: "Shivam Baranwal", role: "Research Intern · Alumni", interests: "Amazon", initials: "FT", photo: "" },
+  { name: "Satya Sree Narayanan", role: "Research Intern · Alumni", interests: "WellsFargo", initials: "FT", photo: "" },
+  { name: "Sandeep Avula", role: "Research Intern · Alumni", interests: "", initials: "FT", photo: "" },
+  { name: "Kuladeep Tummala", role: "Research Intern · Alumni", interests: "", initials: "FT", photo: "" },
+  { name: "Anand Kushwaha", role: "Research Intern · Alumni", interests: "MCA, VIT Chennai", initials: "FT", photo: "" },
+  { name: "Sayantan Banik", role: "Research Intern · Alumni", interests: "TCS Kolkata", initials: "FT", photo: "" },
+  { name: "Ayush Diwan", role: "Research Intern · Alumni", interests: "MBA, FMS, Delhi.", initials: "FT", photo: "" },
+
+
 ];
 
 function PeoplePage() {
@@ -90,7 +126,7 @@ function PeoplePage() {
       <Section title="Doctoral Scholars" eyebrow="02 · Research" people={scholars} variant="medium" />
       <Section title="Students" eyebrow="03 · The Next Generation" people={students} variant="compact" itemsPerPage={6} />
       <Section title="Interns" eyebrow="04 · Research Interns" people={interns} variant="compact" itemsPerPage={6} />
-
+      <Section title="Alumni" eyebrow="05 · Former Interns" people={alumni} variant="compact" itemsPerPage={6} />
       <section className="container-page py-20">
         <Reveal>
           <motion.div
@@ -227,22 +263,24 @@ function PersonCard({ p, variant }: { p: Person; variant: Variant }) {
           {p.scholar && (
             <a
               href={p.scholar}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono tracking-wide text-ink-soft hover:text-accent transition-colors"
-            >
-              Scholar →
-            </a>
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Google Scholar profile"
+        className="inline-flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft hover:bg-accent hover:text-canvas transition-colors"
+      >
+        <GraduationCap className="size-4" />
+      </a>
           )}
           {p.linkedin && (
             <a
               href={p.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono tracking-wide text-ink-soft hover:text-accent transition-colors"
-            >
-              LinkedIn →
-            </a>
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
+        className="inline-flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft hover:bg-[#0A66C2] hover:text-white transition-colors"
+      >
+        <Linkedin className="size-4" />
+      </a>
           )}
         </div>
       )}

@@ -194,7 +194,7 @@ function FounderPortrait() {
         mx.set(0);
         my.set(0);
       }}
-      style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000 }}
+      // style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000 }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -203,6 +203,12 @@ function FounderPortrait() {
       className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-accent/25 via-muted to-sage/10 ring-1 ring-border overflow-hidden relative group will-change-transform"
     >
       <div className="absolute inset-0 bg-dotgrid opacity-30" />
+      <img
+  src="images\oswald_sir.jpg"
+  alt="Dr. C. Oswald"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+<div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-ink/90 to-transparent text-canvas"></div>
       <motion.div
         className="absolute -top-10 -right-10 size-48 rounded-full bg-accent/25 blur-3xl"
         animate={{ scale: [1, 1.25, 1], opacity: [0.45, 0.75, 0.45] }}
