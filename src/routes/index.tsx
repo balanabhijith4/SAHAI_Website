@@ -706,7 +706,6 @@ function HomePage() {
   return (
     <>
     <NewsTicker />
-    <NittLogoBadge />
     
       <Hero />
       
