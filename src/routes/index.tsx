@@ -268,63 +268,7 @@ function TrustBar() {
     </section>
   );
 }
-function AboutStory() {
-  return (
-    <section className="relative py-8 bg-[#F3E9DC] text-ink overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-[0.04]" />
-      <div className="container-page relative grid lg:grid-cols-[1fr_1.3fr] gap-16 items-start">
-        <Reveal className="lg:sticky lg:top-24">
-          <p className="eyebrow text-accent mb-6">02 · The Lab</p>
-          <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] text-balance">
-            We build the
-            <br />
-            <span className="italic font-light text-ink/50">infrastructure</span>
-            <br />
-            of intelligence.
-          </h2>
-        </Reveal>
 
-        <Reveal className="space-y-12 text-lg leading-relaxed text-ink/75">
-          <p className="text-2xl text-ink font-light leading-snug text-balance">
-            SPARKS Lab is a research ecosystem at the intersection of machine learning,
-            data compression, knowledge systems, and social media analytics.
-          </p>
-
-          <div className="grid sm:grid-cols-2 gap-8">
-            <div>
-              <p className="eyebrow text-accent mb-3">Mission</p>
-              <p className="text-sm text-ink/70 leading-relaxed">
-                To advance the science of artificial intelligence through rigorous research
-                and open knowledge systems that serve real human needs at scale.
-              </p>
-            </div>
-            <div>
-              <p className="eyebrow text-accent mb-3">Vision</p>
-              <p className="text-sm text-ink/70 leading-relaxed">
-                A future where intelligence is interpretable, equitable, and instrumental in
-                solving the most consequential problems of our time.
-              </p>
-            </div>
-          </div>
-
-          <ul className="space-y-3 border-t border-ink/10 pt-8">
-            {[
-              "Foundational research in data compression and pattern mining",
-              "Translational systems for text categorization and spam detection",
-              "Intelligent algorithms for healthcare and fake news detection",
-              "Mentoring the next generation of Indian AI researchers and engineers",
-            ].map((p) => (
-              <li key={p} className="flex gap-4 text-sm text-ink/70">
-                <span className="text-accent mt-1">→</span>
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
 
 /* ─────────────────────────────────────────────────────────── IMPACT STATS */
 
@@ -698,202 +642,17 @@ function ProjectVisual({ variant }: { variant: number }) {
 
 /* ────────────────────────────────────────────────────────── TIMELINE */
 
-const timeline = [
-  { year: "2013", title: "First Optimization Paper", body: "Published novel hybrid PSO algorithms research at ICoAC, winning the Best Paper Award." },
-  { year: "2018", title: "Data Compression Breakthroughs", body: "Published seminal works on closed frequent itemset mining and image security enhancement." },
-  { year: "2022", title: "Intention-driven NLP", body: "Publication of Spotspam, analyzing SMS spam detection using BERT embeddings in ACM TWEB." },
-  { year: "2024", title: "Funded Grants", body: "Secured major funding under the NM-ICPS scheme for MindScribe and smart pedagogy projects." },
-];
 
-function ImpactTimeline() {
-  return (
-    <section className="container-page py-12 overflow-hidden">
-      <Reveal className="max-w-2xl mb-20">
-        <p className="eyebrow text-accent mb-4">05 · Timeline</p>
-        <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] text-balance">
-          A trajectory of research.
-        </h2>
-      </Reveal>
 
-      <div className="relative">
-        <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-px bg-hairline -translate-x-1/2" />
-        <Stagger className="space-y-16">
-          {timeline.map((t, i) => (
-            <StaggerItem
-              key={t.year}
-              className={`relative grid md:grid-cols-2 gap-8 md:gap-16 ${i % 2 === 0 ? "" : "md:[&>*:first-child]:order-2"
-                }`}
-            >
-              <div className={`pl-12 md:pl-0 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"}`}>
-                <span className="font-display text-6xl font-semibold text-ink/40 leading-none">
-                  {t.year}
-                </span>
-                <h3 className="mt-2 font-display text-xl font-semibold">{t.title}</h3>
-                <p className="mt-3 text-sm text-ink-soft leading-relaxed">{t.body}</p>
-              </div>
-              <div className="hidden md:block" />
-              <div className="absolute left-3 md:left-1/2 top-6 size-3 rounded-full bg-accent ring-4 ring-canvas -translate-x-1/2" />
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </div>
-    </section>
-  );
-}
+
+  
 
 /* ─────────────────────────────────────────────────────── PUBLICATIONS */
 
-const pubs = [
-  {
-    venue: "ACM Trans. on KDD",
-    title: "CGS: Configurable Graph Summarization with Bounded Neighborhood Loss",
-    authors: "Mitra, S., Elza Simon, S., Oswald, C., Bhattacharya, A. and Pal, A.",
-    body: "An advanced configurable graph summarization technique ensuring bounded neighborhood loss while supporting efficient queries.",
-    citations: 0,
-  },
-  {
-    venue: "The Computer Journal",
-    title: "Smart Multimedia Compressor—Intelligent Algorithms for Text and Image",
-    authors: "Oswald, C. and Sivaselvan, B.",
-    body: "Developed an intelligent framework optimizing text and image compression through data mining perspectives and efficient clustering.",
-    citations: 0,
-  },
-];
 
-function PublicationsPreview() {
-  return (
-    <section className="bg-[#F3E9DC] text-ink py-32 border-y border-ink/5">
-      <div className="container-page">
-        <Reveal className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <div>
-            <p className="eyebrow text-accent mb-4">06 · Scholarship</p>
-            <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] max-w-2xl text-balance">
-              Latest breakthroughs.
-            </h2>
-          </div>
-          <Link
-            to="/publications"
-            className="text-sm font-medium text-ink hover:text-accent border-b border-ink hover:border-accent pb-0.5 transition-colors"
-          >
-            Full archive →
-          </Link>
-        </Reveal>
 
-        <Stagger className="space-y-8">
-          {pubs.map((p, i) => (
-            <StaggerItem key={p.title}>
-              <article
-                className={`grid lg:grid-cols-12 gap-0 rounded-3xl overflow-hidden ring-1 ring-ink/10 bg-white hover:bg-[#FAF7F3] transition-colors ${i % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
-                  }`}
-              >
-                <div className="lg:col-span-8 aspect-[21/10] lg:aspect-auto bg-[#FFFFFF] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-grid opacity-[0.08]" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ArchitectureDiagram variant={i} />
-                  </div>
-                  <div className="absolute top-6 left-6 eyebrow text-[9px] text-ink/50">
-                    Fig. {i + 1} · System Architecture
-                  </div>
-                </div>
-                <div className="lg:col-span-4 p-10 flex flex-col justify-between gap-8">
-                  <div>
-                    <span className="inline-block rounded-full bg-accent/15 text-accent px-3 py-1 eyebrow text-[9px]">
-                      {p.venue}
-                    </span>
-                    <h3 className="mt-5 font-display text-2xl font-semibold leading-tight">
-                      {p.title}
-                    </h3>
-                    <p className="mt-3 text-xs text-ink/60 font-mono">{p.authors}</p>
-                    <p className="mt-5 text-sm text-ink/75 leading-relaxed">{p.body}</p>
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between py-3 border-t border-ink/10">
-                      <span className="eyebrow text-[9px] text-ink/50">Citations</span>
-                      <span className="font-display text-lg font-semibold text-accent">
-                        {p.citations}
-                      </span>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {["PDF", "BibTeX", "DOI"].map((b) => (
-                        <button
-                          key={b}
-                          className="rounded-full bg-white hover:bg-[#EDE2D3] px-3 py-1.5 text-[11px] font-mono transition-colors"
-                        >
-                          {b}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </div>
-    </section>
-  );
-}
 
-function ArchitectureDiagram({ variant }: { variant: number }) {
-  if (variant === 0) {
-    return (
-      <svg viewBox="0 0 600 300" className="w-4/5 h-3/4" aria-hidden>
-        {/* 3 column architecture */}
-        {[80, 300, 520].map((x, i) => (
-          <g key={x}>
-            {[60, 130, 200].map((y, j) => (
-              <rect
-                key={j}
-                x={x - 30}
-                y={y - 18}
-                width="60"
-                height="36"
-                rx="6"
-                fill="oklch(0.18 0.012 60 / 0.08)"
-                stroke="oklch(0.68 0.165 55 / 0.4)"
-                strokeWidth="1"
-              />
-            ))}
-            <text
-              x={x}
-              y="260"
-              textAnchor="middle"
-              fontSize="9"
-              fontFamily="JetBrains Mono"
-              fill="oklch(0.18 0.012 60 / 0.7)"
-            >
-              {["INPUT", "REASONING", "OUTPUT"][i]}
-            </text>
-          </g>
-        ))}
-        {[60, 130, 200].map((y) => (
-          <g key={y}>
-            <line x1="110" y1={y} x2="270" y2={y} stroke="oklch(0.68 0.165 55 / 0.5)" strokeWidth="0.7" />
-            <line x1="330" y1={y} x2="490" y2={y} stroke="oklch(0.68 0.165 55 / 0.5)" strokeWidth="0.7" />
-          </g>
-        ))}
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 600 300" className="w-4/5 h-3/4" aria-hidden>
-      {/* edge mesh */}
-      {Array.from({ length: 7 }).map((_, i) => {
-        const x = 80 + i * 75;
-        return (
-          <g key={i}>
-            <line x1={x} y1="170" x2={x} y2="220" stroke="oklch(0.18 0.012 60 / 0.2)" strokeDasharray="2 3" />
-            <circle cx={x} cy="240" r="6" fill="oklch(0.6 0.18 35 / 0.7)" />
-          </g>
-        );
-      })}
-      <line x1="80" y1="80" x2="520" y2="80" stroke="oklch(0.68 0.165 55)" strokeWidth="1" strokeDasharray="4 4" />
-      <text x={"300"} y="60" textAnchor="middle" fontSize="9" fontFamily="JetBrains Mono" fill="oklch(0.18 0.012 60 / 0.4)">
-        CENTRAL COORDINATOR
-      </text>
-    </svg>
-  );
-}
+
 
 /* ───────────────────────────────────────────────────────── COLLABORATORS */
 
@@ -937,138 +696,9 @@ function Collaborators() {
 
 /* ───────────────────────────────────────────────────────── TESTIMONIALS */
 
-const testimonials = [
-  {
-    quote: "SPARKS Lab has fundamentally transformed how we approach AI-assisted pedagogy. Their frameworks are incredibly robust.",
-    author: "Dr. A. Sharma",
-    role: "Director, Educational Initiatives",
-    company: "Ministry of Education"
-  },
-  {
-    quote: "The configurable graph summarization technique developed here saved us hundreds of computing hours in our social network analysis.",
-    author: "James T.",
-    role: "Lead Data Scientist",
-    company: "TechGraph Inc."
-  },
-  {
-    quote: "Collaborating with Dr. C. Oswald and his team on the MindScribe initiative has been one of our most rewarding research partnerships.",
-    author: "Dr. Rajesh K.",
-    role: "Principal Investigator",
-    company: "DRISHTI CPS Foundation"
-  },
-  {
-    quote: "The students coming out of SPARKS Lab possess an incredibly rare mix of deep theoretical knowledge and practical engineering skill.",
-    author: "Meera V.",
-    role: "VP Engineering",
-    company: "Global AI Corp"
-  },
-  {
-    quote: "Their work on low-resource language models is exactly what the industry needs to build truly inclusive digital platforms.",
-    author: "Siddharth M.",
-    role: "Research Scientist",
-    company: "Linguistica"
-  }
-];
 
-function TestimonialsMarquee() {
-  return (
-    <section className="py-32 overflow-hidden bg-surface border-y border-hairline">
-      <div className="container-page mb-16 text-center">
-        <Reveal>
-          <p className="eyebrow text-accent mb-4">08 · Voices</p>
-          <h2 className="font-display text-4xl lg:text-5xl font-semibold tracking-tight text-ink">
-            What our partners say.
-          </h2>
-        </Reveal>
-      </div>
 
-      <div className="relative flex flex-col gap-6 w-full max-w-[100vw] overflow-hidden">
-        <div className="absolute inset-y-0 left-0 w-16 md:w-48 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-48 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          className="flex w-max gap-6 px-6 py-12"
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{ duration: 80, ease: "linear", repeat: Infinity }}
-        >
-          {[...testimonials, ...testimonials].map((t, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ 
-                y: -12, 
-                rotateX: 4, 
-                rotateY: -4, 
-                scale: 1.03,
-              }}
-              style={{ transformPerspective: 1200 }}
-              className="w-[350px] md:w-[450px] shrink-0 p-8 md:p-10 rounded-3xl bg-canvas ring-1 ring-ember/40 shadow-xl shadow-ember/5 flex flex-col justify-between hover:shadow-[0_30px_60px_-15px_rgba(220,100,50,0.25)] hover:ring-ember/70 transition-all duration-300 group cursor-default"
-            >
-               <div>
-                 <div className="text-ember/50 text-6xl font-display leading-[0] mb-6 group-hover:text-ember transition-colors duration-500">"</div>
-                 <p className="text-ink text-lg leading-relaxed mb-8">
-                   {t.quote}
-                 </p>
-               </div>
-               <div className="flex items-center gap-4 mt-auto">
-                 <div className="size-12 rounded-full bg-ember/10 flex items-center justify-center font-display font-semibold text-ember">
-                   {t.author.charAt(0)}
-                 </div>
-                 <div>
-                   <div className="font-semibold text-sm text-ink">{t.author}</div>
-                   <div className="text-xs text-ink-soft">{t.role}, {t.company}</div>
-                 </div>
-               </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ───────────────────────────────────────────────────────── FINAL CTA */
-
-function FinalCTA() {
-  return (
-    <section className="relative py-10 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-accent/8 blur-[140px] -z-10" />
-
-      <div className="container-page text-center">
-        <p className="eyebrow text-accent mb-8">Join SPARKS</p>
-        <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95] text-balance max-w-4xl mx-auto">
-          Build the future of
-          <br />
-          <span className="italic font-light text-ink/40">artificial intelligence.</span>
-        </h2>
-        <p className="mt-10 max-w-xl mx-auto text-lg text-ink-soft leading-relaxed">
-          Join a community of researchers, innovators and engineers creating real-world
-          impact through AI — at one of India's premier institutes of national importance.
-        </p>
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-ink text-canvas px-7 py-4 text-sm font-medium hover:bg-ink-dark transition-all hover:scale-[1.03]"
-          >
-            Join Research →
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-surface ring-1 ring-border px-7 py-4 text-sm font-medium hover:bg-muted transition-colors"
-          >
-            Collaborate with us
-          </Link>
-          <Link
-            to="/research"
-            className="inline-flex items-center gap-2 px-4 py-4 text-sm font-medium text-ink-soft hover:text-ink"
-          >
-            Explore opportunities →
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ───────────────────────────────────────────────────────── PAGE */
 
@@ -1079,15 +709,14 @@ function HomePage() {
     <NittLogoBadge />
     
       <Hero />
-      <AboutStory />
+      
       <ImpactStats />
       <ResearchEcosystem />
       <FeaturedProjects />
-      <ImpactTimeline />
-      <PublicationsPreview />
+      
       <Collaborators />
       {/* <TestimonialsMarquee /> */}
-      <FinalCTA />
+      
     </>
   );
 }

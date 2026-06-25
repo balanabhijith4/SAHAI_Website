@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 const links = [
   { to: "/", label: "Home" },
-  { to: "/founder", label: "Founder" },
+  // { to: "/founder", label: "Founder" },
   { to: "/people", label: "People" },
-  { to: "/research", label: "Research" },
+  // { to: "/research", label: "Research" },
   { to: "/projects", label: "Projects" },
   { to: "/publications", label: "Publications" },
-  { to: "/news", label: "News" },
+  // { to: "/news", label: "News" },
   { to: "/patents", label: "Patents" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
