@@ -274,10 +274,10 @@ function PublicationsPage() {
             <motion.div
               layoutId={`card-${pub.title}-${id}`}
               key={`card-${pub.title}-${id}`}
-              className="bg-surface p-6 flex flex-col md:flex-row justify-between items-center transition-colors group"
+              className="relative bg-surface p-6 lg:p-8 flex flex-col md:flex-row justify-between items-center transition-all duration-300 hover:bg-canvas hover:-translate-y-1 hover:shadow-xl hover:z-10 group"
             >
-              <div className="flex gap-6 flex-col md:flex-row flex-1 min-w-0 md:items-center">
-                <motion.div layoutId={`image-${pub.title}-${id}`} className={`relative h-40 w-full md:h-16 md:w-16 rounded-xl overflow-hidden bg-gradient-to-br ${pub.gradient} shrink-0`}>
+              <div className="flex gap-6 lg:gap-8 flex-col md:flex-row flex-1 min-w-0 md:items-center">
+                <motion.div layoutId={`image-${pub.title}-${id}`} className={`relative h-40 w-full md:h-16 md:w-16 rounded-xl overflow-hidden bg-gradient-to-br ${pub.gradient} shrink-0 shadow-inner group-hover:scale-105 transition-transform duration-500`}>
                    <div className="absolute inset-0 bg-dotgrid opacity-30" />
                    <div className="absolute inset-0 grid place-items-center opacity-80 scale-75">
                      <PubGlyph variant={index % 4} />
@@ -286,13 +286,13 @@ function PublicationsPage() {
                 <div className="flex-1 min-w-0">
                   <motion.h3
                     layoutId={`title-${pub.title}-${id}`}
-                    className="font-display font-bold text-xl text-ink text-center md:text-left leading-snug"
+                    className="font-display font-semibold text-xl lg:text-2xl text-ink text-center md:text-left leading-snug group-hover:text-accent transition-colors"
                   >
                     {pub.title}
                   </motion.h3>
                   <motion.p
                     layoutId={`description-${pub.title}-${id}`}
-                    className="text-base text-ink-soft text-center md:text-left mt-2"
+                    className="text-[15px] lg:text-base text-ink-soft text-center md:text-left mt-2.5"
                   >
                     {pub.authors}
                   </motion.p>

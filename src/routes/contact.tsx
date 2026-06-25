@@ -47,17 +47,17 @@ const faqs = [
 
 const contactDetails: [string, React.ReactNode][] = [
   [
-    "Join the lab", 
+    "Join the lab",
     <div className="flex flex-col gap-1.5 mt-1">
       <span className="font-display font-bold text-lg text-ink">Internship Opportunities</span>
       <span className="text-ink-soft leading-relaxed mt-0.5">
         Interested interns can email to:
         <div className="flex items-center flex-wrap gap-2 mt-3 mb-2">
-          <span className="text-xs">C Oswald:</span>
+          <span className="text-xs">Dr C Oswald:</span>
           <a href="mailto:oswald@nitt.edu" className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20">oswald@nitt.edu</a>
         </div>
         <div className="flex items-center flex-wrap gap-2 mt-1">
-          <span className="text-xs">Abhijeet Balan:</span>
+          <span className="text-xs">Abhijith Balan:</span>
           <a href="mailto:406123001@gmail.com" className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20">406123001@gmail.com</a>
         </div>
       </span>
@@ -81,8 +81,8 @@ function ContactPage() {
 
   const update =
     (key: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-      setForm((f) => ({ ...f, [key]: e.target.value }));
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+        setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();

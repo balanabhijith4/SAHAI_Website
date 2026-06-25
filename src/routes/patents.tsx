@@ -85,7 +85,7 @@ function Group({ title, eyebrow, items, status }: { title: string; eyebrow: stri
       </Reveal>
       <Stagger className="grid gap-px bg-hairline ring-1 ring-hairline rounded-2xl overflow-hidden" stagger={0.06}>
         {items.map((p) => (
-          <StaggerItem key={p.no}>
+          <LeftSlideItem key={p.no}>
             <motion.article
               whileHover={{ x: 6 }}
               transition={{ duration: 0.3 }}
@@ -104,10 +104,26 @@ function Group({ title, eyebrow, items, status }: { title: string; eyebrow: stri
               </span>
               <button className="text-sm font-medium text-ink group-hover:text-accent transition-colors">View →</button>
             </motion.article>
-          </StaggerItem>
+          </LeftSlideItem>
         ))}
       </Stagger>
     </>
+  );
+}
+
+function LeftSlideItem({ children }: { children: React.ReactNode }) {
+  const variants = {
+    hidden: { opacity: 0, x: -60, scale: 0.97, filter: "blur(6px)" },
+    visible: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }
+  };
+  return (
+    <motion.div 
+      variants={variants} 
+      transition={{ type: "spring", stiffness: 85, damping: 18, mass: 1.2 }}
+      style={{ willChange: "transform, opacity, filter" }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
