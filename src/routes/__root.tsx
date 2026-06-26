@@ -48,9 +48,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-canvas px-4">
       <div className="max-w-md text-center">
         <p className="eyebrow text-accent mb-6">Something broke</p>
-        <h1 className="font-display text-3xl font-semibold text-ink">
-          This page didn't load.
-        </h1>
+        <h1 className="font-display text-3xl font-semibold text-ink">This page didn't load.</h1>
         <p className="mt-3 text-sm text-ink-soft">
           You can try again or head back to the homepage.
         </p>

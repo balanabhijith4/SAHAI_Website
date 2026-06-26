@@ -361,13 +361,34 @@ type Domain = {
 const DOMAINS: Domain[] = [
   { id: "ml", label: "Machine Learning", short: "ML", ring: 0, angle: 0, size: "lg" },
   { id: "dl", label: "Deep Learning", short: "DL", ring: 0, angle: 72, size: "md" },
-  { id: "cv", label: "Computational Science for Social Good", short: "CV", ring: 0, angle: 144, size: "lg" },
-  { id: "nlp", label: "Natural Language Processing", short: "NLP", ring: 0, angle: 216, size: "md" },
+  {
+    id: "cv",
+    label: "Computational Science for Social Good",
+    short: "CV",
+    ring: 0,
+    angle: 144,
+    size: "lg",
+  },
+  {
+    id: "nlp",
+    label: "Natural Language Processing",
+    short: "NLP",
+    ring: 0,
+    angle: 216,
+    size: "md",
+  },
   { id: "gen", label: "Generative AI", short: "GenAI", ring: 0, angle: 288, size: "lg" },
   { id: "hai", label: "Data Mining", short: "HAI", ring: 1, angle: 36, size: "sm" },
   { id: "kg", label: "Knowledge Graphs", short: "KG", ring: 1, angle: 108, size: "md" },
   { id: "xai", label: "Data Compressing", short: "XAI", ring: 1, angle: 180, size: "sm" },
-  { id: "edge", label: "Computational Linguistics", short: "Edge", ring: 1, angle: 252, size: "sm" },
+  {
+    id: "edge",
+    label: "Computational Linguistics",
+    short: "Edge",
+    ring: 1,
+    angle: 252,
+    size: "sm",
+  },
   { id: "rob", label: "Human Computer Interaction", short: "HCI", ring: 1, angle: 324, size: "md" },
 ];
 
@@ -489,13 +510,15 @@ export function ResearchEcosystemSphere() {
               <div className={`relative shrink-0 ${cfg.ball}`}>
                 {/* ambient glow, doesn't spin */}
                 <span
-                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-md ${cfg.glow} ${d.ring === 0 ? "bg-accent/40" : "bg-ink/25"
-                    } animate-pulse`}
+                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-md ${cfg.glow} ${
+                    d.ring === 0 ? "bg-accent/40" : "bg-ink/25"
+                  } animate-pulse`}
                 />
                 {/* base sphere body */}
                 <span
-                  className={`absolute inset-0 rounded-full ${d.ring === 0 ? "bg-accent" : "bg-ink"
-                    } shadow-[inset_-3px_-3px_6px_rgba(0,0,0,0.25),0_4px_10px_rgba(0,0,0,0.2)]`}
+                  className={`absolute inset-0 rounded-full ${
+                    d.ring === 0 ? "bg-accent" : "bg-ink"
+                  } shadow-[inset_-3px_-3px_6px_rgba(0,0,0,0.25),0_4px_10px_rgba(0,0,0,0.2)]`}
                 />
                 {/* rotating shine — this is what sells the "spinning globe" effect */}
                 <motion.span

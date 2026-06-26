@@ -18,25 +18,82 @@ export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
       { title: "Founder — SPARKS Lab" },
-      { name: "description", content: "Dr. C.Oswald, founder of SPARKS Lab — research vision, journey and contributions to AI at NIT Tiruchirappalli." },
+      {
+        name: "description",
+        content:
+          "Dr. C.Oswald, founder of SPARKS Lab — research vision, journey and contributions to AI at NIT Tiruchirappalli.",
+      },
       { property: "og:title", content: "Meet the Founder · SPARKS Lab" },
-      { property: "og:description", content: "Vision, journey and research philosophy behind SPARKS Lab." },
+      {
+        property: "og:description",
+        content: "Vision, journey and research philosophy behind SPARKS Lab.",
+      },
     ],
   }),
   component: FounderPage,
 });
 
 const journey = [
-  { year: "2022", title: "Assistant Professor", institution: "NIT Tiruchirappalli", body: "Department of Computer Science and Engineering (Sep 2022 – present)." },
-  { year: "2022", title: "Assistant Professor", institution: "IIIT Kottayam", body: "Department of Computer Science and Engineering (July – Sep 2022)." },
-  { year: "2021", title: "Institute Postdoctoral Fellow", institution: "IIT Kanpur", body: "Department of Computer Science and Engineering. Mentor: Prof. Arnab Bhattacharya (Feb 2021 – July 2022)." },
-  { year: "2019", title: "Assistant Professor-Senior", institution: "VIT Chennai", body: "Department of Computer Science and Engineering (June 2019 – Feb 2021)." },
-  { year: "2018", title: "Assistant Professor", institution: "SRM IST, Chennai", body: "Department of Computer Science and Engineering (June 2018 – May 2019)." },
-  { year: "2018", title: "Ph.D. in Computer Science and Engineering", institution: "IIITDM Kancheepuram", body: "Thesis: Efficient Algorithms for Text and Image Compression based on Knowledge Engineering. Advisor: B. Sivaselvan (July 2013 - Nov 2018)." },
-  { year: "2013", title: "M.Tech. in Software Engineering", institution: "Karunya University", body: "University I Rank [8.7/10]. Thesis: Hybrid Heuristic Algorithms for University Course Timetabling Problem (July 2011 - May 2013)." },
-  { year: "2012", title: "Intern", institution: "IBM India Systems & Software Lab, Bangalore", body: "IBM AIX – Functional Verification Testing (FVT) (Dec 2012 – July 2013)." },
-  { year: "2009", title: "Programmer Analyst", institution: "Cognizant Technology Solutions, Chennai", body: "Professional experience (Dec 2009 – May 2011)." },
-  { year: "2009", title: "B.E. in Computer Science and Engineering", institution: "Sona College of Technology, Anna University", body: "Best Co-curricular Student [8.4/10] (June 2005 – May 2009)." },
+  {
+    year: "2022",
+    title: "Assistant Professor",
+    institution: "NIT Tiruchirappalli",
+    body: "Department of Computer Science and Engineering (Sep 2022 – present).",
+  },
+  {
+    year: "2022",
+    title: "Assistant Professor",
+    institution: "IIIT Kottayam",
+    body: "Department of Computer Science and Engineering (July – Sep 2022).",
+  },
+  {
+    year: "2021",
+    title: "Institute Postdoctoral Fellow",
+    institution: "IIT Kanpur",
+    body: "Department of Computer Science and Engineering. Mentor: Prof. Arnab Bhattacharya (Feb 2021 – July 2022).",
+  },
+  {
+    year: "2019",
+    title: "Assistant Professor-Senior",
+    institution: "VIT Chennai",
+    body: "Department of Computer Science and Engineering (June 2019 – Feb 2021).",
+  },
+  {
+    year: "2018",
+    title: "Assistant Professor",
+    institution: "SRM IST, Chennai",
+    body: "Department of Computer Science and Engineering (June 2018 – May 2019).",
+  },
+  {
+    year: "2018",
+    title: "Ph.D. in Computer Science and Engineering",
+    institution: "IIITDM Kancheepuram",
+    body: "Thesis: Efficient Algorithms for Text and Image Compression based on Knowledge Engineering. Advisor: B. Sivaselvan (July 2013 - Nov 2018).",
+  },
+  {
+    year: "2013",
+    title: "M.Tech. in Software Engineering",
+    institution: "Karunya University",
+    body: "University I Rank [8.7/10]. Thesis: Hybrid Heuristic Algorithms for University Course Timetabling Problem (July 2011 - May 2013).",
+  },
+  {
+    year: "2012",
+    title: "Intern",
+    institution: "IBM India Systems & Software Lab, Bangalore",
+    body: "IBM AIX – Functional Verification Testing (FVT) (Dec 2012 – July 2013).",
+  },
+  {
+    year: "2009",
+    title: "Programmer Analyst",
+    institution: "Cognizant Technology Solutions, Chennai",
+    body: "Professional experience (Dec 2009 – May 2011).",
+  },
+  {
+    year: "2009",
+    title: "B.E. in Computer Science and Engineering",
+    institution: "Sona College of Technology, Anna University",
+    body: "Best Co-curricular Student [8.4/10] (June 2005 – May 2009).",
+  },
 ];
 
 const founderStats = [
@@ -70,8 +127,16 @@ function FounderPage() {
           <Stagger className="mt-6 flex flex-wrap gap-6" stagger={0.08}>
             {[
               { label: "Website", url: "https://oswaldc.netlify.app/teaching", icon: Globe },
-              { label: "NITT Profile", url: "https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/", icon: Building2 },
-              { label: "LinkedIn", url: "https://www.linkedin.com/in/oswald-c-bb5b37b7/", icon: Linkedin }
+              {
+                label: "NITT Profile",
+                url: "https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/",
+                icon: Building2,
+              },
+              {
+                label: "LinkedIn",
+                url: "https://www.linkedin.com/in/oswald-c-bb5b37b7/",
+                icon: Linkedin,
+              },
             ].map(({ label, url, icon: Icon }) => (
               <StaggerItem key={label}>
                 <motion.a
@@ -118,7 +183,7 @@ function FounderPage() {
                 "Ontology and Knowledge Graphs",
                 "Question-Answering (English and Indian Languages)",
                 "Text/Image Compression",
-                "Graph Compression"
+                "Graph Compression",
               ].map((t, i) => (
                 <motion.span
                   key={t}
@@ -126,7 +191,12 @@ function FounderPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.04, duration: 0.5 }}
-                  whileHover={{ y: -2, scale: 1.04, backgroundColor: "oklch(0.68 0.165 55 / 0.12)", transition: { duration: 0.15 } }}
+                  whileHover={{
+                    y: -2,
+                    scale: 1.04,
+                    backgroundColor: "oklch(0.68 0.165 55 / 0.12)",
+                    transition: { duration: 0.15 },
+                  }}
                   className="rounded-full bg-surface ring-1 ring-border px-3 py-1.5 text-xs font-medium cursor-default"
                 >
                   {t}
@@ -153,15 +223,16 @@ function FounderPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
               />
-              "We believe the next decade of AI will be defined not by who builds the
-              largest models, but by who builds the most trustworthy, interpretable and
-              consequential ones. SPARKS Lab exists to do that work, here in India, with
-              students who will lead it."
+              "We believe the next decade of AI will be defined not by who builds the largest
+              models, but by who builds the most trustworthy, interpretable and consequential ones.
+              SPARKS Lab exists to do that work, here in India, with students who will lead it."
             </motion.blockquote>
           </Reveal>
 
           <div className="flex flex-wrap gap-4 pt-2">
-            <MagneticButton href="/research" primary>Explore research</MagneticButton>
+            <MagneticButton href="/research" primary>
+              Explore research
+            </MagneticButton>
             <MagneticButton href="/contact">Get in touch →</MagneticButton>
           </div>
         </div>
@@ -204,11 +275,11 @@ function FounderPortrait() {
     >
       <div className="absolute inset-0 bg-dotgrid opacity-30" />
       <img
-  src="images\oswald_sir.jpg"
-  alt="Dr. C. Oswald"
-  className="absolute inset-0 w-full h-full object-cover"
-/>
-<div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-ink/90 to-transparent text-canvas"></div>
+        src="images\oswald_sir.jpg"
+        alt="Dr. C. Oswald"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-ink/90 to-transparent text-canvas"></div>
       <motion.div
         className="absolute -top-10 -right-10 size-48 rounded-full bg-accent/25 blur-3xl"
         animate={{ scale: [1, 1.25, 1], opacity: [0.45, 0.75, 0.45] }}
@@ -223,7 +294,9 @@ function FounderPortrait() {
       <div className="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-ink/90 to-transparent text-canvas">
         <div className="eyebrow text-accent text-[9px] mb-2">Founder</div>
         <div className="font-display text-3xl font-semibold leading-tight">Dr. C.Oswald</div>
-        <div className="mt-2 text-sm text-canvas/70">Assistant Professor · Dept. of CSE, NIT Trichy</div>
+        <div className="mt-2 text-sm text-canvas/70">
+          Assistant Professor · Dept. of CSE, NIT Trichy
+        </div>
       </div>
     </motion.div>
   );
@@ -408,13 +481,7 @@ function Timeline() {
   );
 }
 
-function TimelineItem({
-  item,
-  index,
-}: {
-  item: typeof journey[number];
-  index: number;
-}) {
+function TimelineItem({ item, index }: { item: (typeof journey)[number]; index: number }) {
   const isLeft = index % 2 === 0;
   const cardRef = useRef<HTMLDivElement>(null);
   const inView = useInView(cardRef, { once: true, amount: 0.4 });
@@ -440,7 +507,9 @@ function TimelineItem({
             />
           )}
         </AnimatePresence>
-        <div className={`size-3 rounded-full ring-4 ring-canvas transition-colors duration-500 ${inView ? "bg-accent shadow-[0_0_0_1px_oklch(0.68_0.165_55_/_0.4)]" : "bg-ink/30"}`} />
+        <div
+          className={`size-3 rounded-full ring-4 ring-canvas transition-colors duration-500 ${inView ? "bg-accent shadow-[0_0_0_1px_oklch(0.68_0.165_55_/_0.4)]" : "bg-ink/30"}`}
+        />
         <motion.div
           className="absolute inset-0 size-3 rounded-full bg-accent"
           animate={inView ? { scale: [1, 2.6, 1], opacity: [0.5, 0, 0.5] } : {}}
@@ -511,7 +580,7 @@ const awardsData = [
   "Elite Alumni Award, Sona College of Technology – 2017",
   "Outstanding Overall Co-Curricular Performance in Undergrad – 2009",
   "Best NSS Volunteer Award – 2009",
-  "NASSCOM Certified Student Trainer on “Associate Analytics”"
+  "NASSCOM Certified Student Trainer on “Associate Analytics”",
 ];
 
 const teachingData = [
@@ -522,14 +591,14 @@ const teachingData = [
   "Software Engineering (CSPE73): Jan’24, Jan’23, Comprehensive Viva (CSIR81): Jan’23",
   "Data Structures and Algorithms: Jan’26, Jan’25, Jan’24, June’19, June’20",
   "Problem Solving and Programming in Python: June’20, Jan’19, June’19",
-  "Software Quality and Reliability: Jan’20, Software Reliability: June’18, Jan’18"
+  "Software Quality and Reliability: Jan’20, Software Reliability: June’18, Jan’18",
 ];
 
 const eventsOrganized = [
   "AICTE sponsored ATAL online FDP on “Generative AI and Ethical AI: Techniques and Applications at NITT.",
   "ACM sponsored “ROCS: Research Opportunities on Computer Science”, 05 April, 2024.",
   "One Week Workshop on “Machine Learning: Techniques and Trends”, 26 – 30 June, 2023 at NIT Tiruchirappalli.",
-  "Industrial Guest Lectures on Data Structures and Algorithms in LinkedIn, Problem Solving techniques in Google, Big Data Analytics at Zoho (at NITT and VIT-C)"
+  "Industrial Guest Lectures on Data Structures and Algorithms in LinkedIn, Problem Solving techniques in Google, Big Data Analytics at Zoho (at NITT and VIT-C)",
 ];
 
 const eventsParticipated = [
@@ -539,7 +608,7 @@ const eventsParticipated = [
   "Talk on Why Machine Learning is a buzzword?, An Informal Introduction to Reinforcement Learning at MLDS’23, NITT.",
   "Talk on Introduction to scikit-learn at ICSSP’23, NITT.",
   "Talk on Types of Itemsets and their algorithms, Workshop DAMI' 2018 at IIITD&M Kancheepuram.",
-  "CODS’15, CODS'16, VLDB'16, CODS'17 and CODS’18 through travel grants from ACM SIGKDD."
+  "CODS’15, CODS'16, VLDB'16, CODS'17 and CODS’18 through travel grants from ACM SIGKDD.",
 ];
 
 function ActivitiesSection() {
@@ -609,11 +678,13 @@ function ActivitiesSection() {
                 <span className="text-accent text-2xl">❖</span> Events & Talks
               </h3>
             </Reveal>
-            
+
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               <div>
                 <Reveal>
-                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">Organized Events</h4>
+                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">
+                    Organized Events
+                  </h4>
                 </Reveal>
                 <ul className="space-y-5">
                   {eventsOrganized.map((event, i) => (
@@ -626,10 +697,12 @@ function ActivitiesSection() {
                   ))}
                 </ul>
               </div>
-              
+
               <div>
                 <Reveal>
-                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">Talks & Participation</h4>
+                  <h4 className="font-display text-xl font-semibold mb-6 text-ink/80">
+                    Talks & Participation
+                  </h4>
                 </Reveal>
                 <ul className="space-y-5">
                   {eventsParticipated.map((event, i) => (

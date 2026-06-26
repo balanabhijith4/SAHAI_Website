@@ -18,12 +18,13 @@ export function SiteFooter() {
             <p className="text-sm text-canvas/60 leading-relaxed max-w-md">
               Smart Platform for AI Research and Knowledge Systems.
               <br />
-               CSE Department,
-               <br />
-                National Institute of Technology Tiruchirappalli.
+              CSE Department,
+              <br />
+              National Institute of Technology Tiruchirappalli.
             </p>
             <p className="mt-6 text-xs text-canvas/40 font-mono leading-relaxed">
-              Tanjore Main Road, NH-67<br />
+              Tanjore Main Road, NH-67
+              <br />
               Tiruchirappalli — 620015, Tamil Nadu, India
             </p>
           </div>
@@ -103,13 +104,9 @@ export function SiteFooter() {
             <p className="eyebrow text-canvas/40">
               © {new Date().getFullYear()} SPARKS Lab · All rights reserved
             </p>
-<p className="eyebrow text-white">
-  Designed & Developed by
-</p>
+            <p className="eyebrow text-white">Designed & Developed by</p>
 
-<p className="eyebrow text-white mt-1">
-  Surya Ghosh · Nooh · Preetham Reddy · Aditi
-</p>
+            <p className="eyebrow text-white mt-1">Surya Ghosh · Nooh · Preetham Reddy · Aditi</p>
           </div>
 
           <div className="flex items-center gap-6 text-xs text-canvas/50 font-mono">

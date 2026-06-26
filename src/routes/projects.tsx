@@ -19,16 +19,21 @@ type ProjectItem = {
   id: string;
   title: string;
   status: "Ongoing" | "Completed";
-  type: "Funded" | "Student";
+  type: "Funded" | "Course";
   amount?: string;
   agency?: string;
   pi?: string[];
   copi?: string[];
   team?: string[];
   link?: string;
+  linkLabel?: string;
   description?: string;
   hue: string;
+  image?: string;
 };
+
+import mindscribeImg from "../../images/mindscribe.jpg";
+import saksharImg from "../../images/SAKSHAR.png";
 
 const projectData: ProjectItem[] = [
   {
@@ -38,40 +43,42 @@ const projectData: ProjectItem[] = [
     title: "MindScribe: Giving Voice to Silent Minds",
     amount: "10 Lakhs",
     agency: "IIT Indore DRISHTI CPS Foundation under the NM-ICPS Scheme",
-    pi: [
-      "Dr. Chandresh Kumar Maurya, Associate Professor, Dept. of CSE, IIT Indore."
-    ],
+    pi: ["Dr. Chandresh Kumar Maurya, Associate Professor, Dept. of CSE, IIT Indore."],
     copi: [
       "Dr. C. Oswald, NIT Tiruchirappalli",
-      "Prof. Amit Agrawal, Head, Neurosurgery, AIIMS Bhopal"
+      "Prof. Amit Agrawal, Head, Neurosurgery, AIIMS Bhopal",
     ],
-    hue: "from-[#C8B8A8] to-[#E6D8C8]"
+    hue: "from-[#C8B8A8] to-[#E6D8C8]",
+    image: mindscribeImg,
   },
   {
     id: "p2",
     type: "Funded",
     status: "Completed",
-    title: "Exploring ‘Smart’ Pedagogy through the End to End Development of a Technology-Enhanced Learning (TEL) system",
+    title:
+      "Exploring ‘Smart’ Pedagogy through the End to End Development of a Technology-Enhanced Learning (TEL) system",
     amount: "13.43 Lakhs",
     agency: "ICSSR (India)-JSPS (Japan) Joint Research Programme in the field of Social Sciences",
-    pi: [
-      "Dr. Rachel Philip, Assistant Professor, School of Liberal Arts, IIT Jodhpur."
-    ],
+    pi: ["Dr. Rachel Philip, Assistant Professor, School of Liberal Arts, IIT Jodhpur."],
     copi: [
       "Prof. Takafumi Matsumaru, Waseda Univeristy",
       "Dr. Riby Abraham Boby, IIT Jodhpur",
       "Dr. Sivananthan Sampath, IIT Delhi",
       "Dr. C. Oswald, NIT Tiruchirappalli",
-      "Dr. Rajlaxmi Chouhan, IIT Jodhpur"
+      "Dr. Rajlaxmi Chouhan, IIT Jodhpur",
     ],
-    hue: "from-[#D8B0B0] to-[#E8C8C8]"
+    hue: "from-[#D8B0B0] to-[#E8C8C8]",
+    image: saksharImg,
+    link: "https://drive.google.com/file/d/18aaWEmoQGfNDemcCWN4KJQhUvKg25vwW/preview",
+    linkLabel: "Watch Video ↗",
   },
   {
     id: "p3",
-    type: "Student",
+    type: "Course",
     status: "Completed",
     title: "Algorithm Visualizer",
-    description: "An interactive web-based educational platform that helps students understand complex computer science algorithms through step-by-step graphical animations and real-time execution tracing.",
+    description:
+      "An interactive web-based educational platform that helps students understand complex computer science algorithms through step-by-step graphical animations and real-time execution tracing.",
     link: "https://algorithmvisualizer.github.io/AlgoVis/",
     team: [
       "Vaibhave S",
@@ -79,40 +86,41 @@ const projectData: ProjectItem[] = [
       "Shyam Sundaram S",
       "Akash A",
       "Oswald C",
-      "Dept. of CSE, VIT Chennai."
+      "Dept. of CSE, VIT Chennai.",
     ],
-    hue: "from-[#D0C0A8] to-[#E0D4C0]"
+    hue: "from-[#D0C0A8] to-[#E0D4C0]",
   },
   {
     id: "p4",
-    type: "Student",
+    type: "Course",
     status: "Completed",
     title: "Hungarian Method Visualizer",
-    description: "A specialized tool designed to visually demonstrate the Hungarian algorithm for solving assignment problems, making mathematical optimization concepts intuitive and highly accessible.",
+    description:
+      "A specialized tool designed to visually demonstrate the Hungarian algorithm for solving assignment problems, making mathematical optimization concepts intuitive and highly accessible.",
     link: "https://hungvisual.github.io/HungVis/",
-    team: [
-      "Shubh Todi",
-      "Oswald C",
-      "Department of CSE, VIT Chennai."
-    ],
-    hue: "from-[#B8B0D0] to-[#D0C8E0]"
-  }
+    team: ["Shubh Todi", "Oswald C", "Department of CSE, VIT Chennai."],
+    hue: "from-[#B8B0D0] to-[#D0C8E0]",
+  },
 ];
 
 function ProjectsPage() {
-  const [filter, setFilter] = useState<"Funded" | "Student">("Funded");
-  const filtered = projectData.filter(p => p.type === filter);
+  const [filter, setFilter] = useState<"Funded" | "Course">("Funded");
+  const filtered = projectData.filter((p) => p.type === filter);
 
   return (
     <>
       <PageHeader
-        title={<>Research Grants & <span className="italic font-light text-ink/50">Initiatives.</span></>}
+        title={
+          <>
+            Research Grants & <span className="italic font-light text-ink/50">Initiatives.</span>
+          </>
+        }
       />
 
       <section className="container-page pb-24">
         <Reveal>
           <div className="flex flex-wrap gap-4 sm:gap-8 mb-12 border-b border-hairline pb-4">
-            {(["Funded", "Student"] as const).map(f => (
+            {(["Funded", "Course"] as const).map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -136,23 +144,40 @@ function ProjectsPage() {
           <Stagger className="grid lg:grid-cols-2 gap-8" stagger={0.08} key={filter}>
             {filtered.length > 0 ? (
               filtered.map((p, i) => {
-                const isFullSpan = filtered.length === 1 || (filtered.length % 2 !== 0 && i === filtered.length - 1);
-                
+                const isFullSpan =
+                  filtered.length === 1 || (filtered.length % 2 !== 0 && i === filtered.length - 1);
+
                 return (
                   <StaggerItem key={p.id} className={isFullSpan ? "lg:col-span-2" : "col-span-1"}>
                     <motion.div
                       className={`group flex ${isFullSpan ? "flex-col lg:flex-row" : "flex-col"} overflow-hidden rounded-3xl bg-surface ring-1 ring-border shadow-sm hover:shadow-2xl hover:ring-accent/40 hover:-translate-y-1.5 transition-all duration-300 h-full`}
                     >
                       {/* Image Space */}
-                      <div className={`relative bg-gradient-to-br ${p.hue} ${isFullSpan ? "min-h-[250px] lg:min-h-full lg:w-[30%] shrink-0" : "min-h-[200px] sm:min-h-[250px] shrink-0"}`}>
-                        <div className="absolute inset-0 opacity-25" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(0,0,0,0.25) 1px, transparent 0)", backgroundSize: "14px 14px" }} />
-                        <div className="absolute left-6 top-6 flex items-center gap-2">
-                          <span className="rounded-full bg-canvas/85 backdrop-blur px-3 py-1.5 eyebrow text-[10px] text-ink">{p.type} Project</span>
-                        </div>
+                      <div
+                        className={`relative bg-gradient-to-br ${p.hue} ${isFullSpan ? "min-h-[250px] lg:min-h-full lg:w-[30%] shrink-0" : "min-h-[200px] sm:min-h-[250px] shrink-0"}`}
+                      >
+                        {p.image ? (
+                          <img
+                            src={p.image}
+                            alt={p.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div
+                            className="absolute inset-0 opacity-25"
+                            style={{
+                              backgroundImage:
+                                "radial-gradient(circle at 1px 1px, rgba(0,0,0,0.25) 1px, transparent 0)",
+                              backgroundSize: "14px 14px",
+                            }}
+                          />
+                        )}
                       </div>
 
                       {/* Content Space */}
-                      <div className={`flex flex-col flex-1 p-6 pb-8 sm:p-8 sm:pb-8 md:p-10 md:pb-8 ${isFullSpan ? "lg:w-[70%]" : ""}`}>
+                      <div
+                        className={`flex flex-col flex-1 p-6 pb-8 sm:p-8 sm:pb-8 md:p-10 md:pb-8 ${isFullSpan ? "lg:w-[70%]" : ""}`}
+                      >
                         <div className="flex flex-col md:flex-row justify-between md:items-start gap-6">
                           <div className="flex-1">
                             <h3 className="font-display text-2xl sm:text-3xl font-semibold text-ink leading-snug mb-4">
@@ -170,7 +195,8 @@ function ProjectsPage() {
                             )}
                             {p.agency && (
                               <div className="mt-2 text-base text-ink-soft">
-                                <span className="font-medium text-ink">Funding Agency:</span> {p.agency}
+                                <span className="font-medium text-ink">Funding Agency:</span>{" "}
+                                {p.agency}
                               </div>
                             )}
                           </div>
@@ -181,33 +207,48 @@ function ProjectsPage() {
                               rel="noopener noreferrer"
                               className="shrink-0 inline-flex items-center gap-2 rounded-full bg-ink text-canvas px-5 py-2.5 text-sm font-medium hover:bg-accent hover:-translate-y-0.5 transition-all"
                             >
-                              Visit Project ↗
+                              {p.linkLabel || "Visit Project ↗"}
                             </a>
                           )}
                         </div>
 
-                        <div className="mt-auto pt-8 mt-8 border-t border-hairline grid sm:grid-cols-2 gap-6">
+                        <div className="pt-8 mt-auto border-t border-hairline grid sm:grid-cols-2 gap-6">
                           {p.pi && p.pi.length > 0 && (
                             <div>
-                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em]">Principal Investigator</span>
-                              <CollapsiblePersonList people={p.pi} itemClassName="text-sm md:text-base text-ink" />
+                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em] block mb-3">
+                                Principal Investigator
+                              </span>
+                              <CollapsiblePersonList
+                                people={p.pi}
+                                itemClassName="text-sm text-ink font-medium"
+                              />
                             </div>
                           )}
                           {p.copi && p.copi.length > 0 && (
                             <div>
-                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em]">Co-Investigators</span>
-                              <CollapsiblePersonList people={p.copi} itemClassName={p.id === "p2" ? "text-xs md:text-sm text-ink-soft" : "text-sm md:text-base text-ink"} />
+                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em] block mb-3">
+                                Co-Investigators
+                              </span>
+                              <CollapsiblePersonList
+                                people={p.copi}
+                                itemClassName="text-sm text-ink-soft"
+                              />
                             </div>
                           )}
                           {p.team && p.team.length > 0 && (
-                            <div className="sm:col-span-2">
-                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em]">Team</span>
-                              <CollapsiblePersonList people={p.team} itemClassName="text-sm md:text-base text-ink" />
+                            <div className="sm:col-span-2 mt-4 sm:mt-0">
+                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em] block mb-3">
+                                Team
+                              </span>
+                              <CollapsiblePersonList
+                                people={p.team}
+                                itemClassName="text-sm text-ink-soft"
+                              />
                             </div>
                           )}
                         </div>
-                        </div>
-                      </motion.div>
+                      </div>
+                    </motion.div>
                   </StaggerItem>
                 );
               })
@@ -228,13 +269,22 @@ function ProjectsPage() {
   );
 }
 
-function CollapsiblePersonList({ people, itemClassName }: { people: string[], itemClassName?: string }) {
+function CollapsiblePersonList({
+  people,
+  itemClassName,
+}: {
+  people: string[];
+  itemClassName?: string;
+}) {
   if (!people || people.length === 0) return null;
 
   return (
     <ul className="mt-2 space-y-2 min-w-0">
       {people.map((name, idx) => (
-        <li key={idx} className={`${itemClassName || "text-sm md:text-base text-ink"} leading-snug flex items-start gap-2`}>
+        <li
+          key={idx}
+          className={`${itemClassName || "text-sm md:text-base text-ink"} leading-snug flex items-start gap-2`}
+        >
           <span className="text-accent/60 mt-1.5 text-[8px] shrink-0">●</span>
           <span className="text-wrap break-words">{name}</span>
         </li>

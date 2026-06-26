@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ResearchEcosystemSphere } from "../components/ResearchEcosystemSphere";
 import { Reveal, RevealChars, RevealWords, Stagger, StaggerItem } from "../components/Reveal";
 
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -48,9 +47,7 @@ function NewsTicker() {
           <span className="relative inline-flex h-2 w-2 rounded-full bg-canvas" />
         </span>
 
-        <span className="eyebrow text-canvas text-[10px] tracking-wider">
-          News
-        </span>
+        <span className="eyebrow text-canvas text-[10px] tracking-wider">News</span>
       </a>
 
       {/* Scrolling News */}
@@ -87,7 +84,7 @@ function TypewriterLab() {
 
   useEffect(() => {
     let timeout: NodeJS.Timeout | number;
-    
+
     if (!isDeleting && displayedText.length < text.length) {
       timeout = setTimeout(() => setDisplayedText(text.slice(0, displayedText.length + 1)), 250);
     } else if (isDeleting && displayedText.length > 0) {
@@ -137,10 +134,6 @@ function Hero() {
 
       <div className="container-page grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
         <div>
-
-
-
-
           <h1 className="font-display text-6xl sm:text-7xl lg:text-[8.5rem] font-semibold tracking-tight leading-[0.85] text-balance">
             <span className="inline-flex">
               <RevealChars text="SAH" delay={0.1} charDelay={0.05} />
@@ -158,11 +151,9 @@ function Hero() {
             <Reveal className="font-semibold italic text-ink block mb-4">
               <span className="text-accent font-bold text-[1.15em]">S</span>ocial{" "}
               <span className="text-accent font-bold text-[1.15em]">A</span>ware{" "}
-              <span className="text-accent font-bold text-[1.15em]"></span>Intelligence{" "}
-              for{" "}
-              <span className="text-accent font-bold text-[1.15em]">H</span>umanity{" "}
-              and L<span className="text-accent font-bold text-[1.15em]">A</span>nguage{" "}
-              system Lab.
+              <span className="text-accent font-bold text-[1.15em]"></span>Intelligence for{" "}
+              <span className="text-accent font-bold text-[1.15em]">H</span>umanity and L
+              <span className="text-accent font-bold text-[1.15em]">A</span>nguage system Lab.
             </Reveal>
             <RevealWords
               text="The laboratory advances Human-Centered Artificial Intelligence through ethical and responsible research, developing technologies that empower communities, address societal challenges, and create lasting humanitarian impact."
@@ -170,8 +161,6 @@ function Hero() {
               wordDelay={0.03}
             />
           </p>
-
-
         </div>
 
         {/* Ecosystem visualization */}
@@ -219,9 +208,6 @@ function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-
-
     </section>
   );
 }
@@ -256,7 +242,9 @@ function TrustBar() {
             S
           </div>
           <div className="min-w-0">
-            <div className="font-display text-base font-semibold truncate">SAH<span className="text-accent">AI</span> Lab</div>
+            <div className="font-display text-base font-semibold truncate">
+              SAH<span className="text-accent">AI</span> Lab
+            </div>
             <div className="eyebrow text-[9px] truncate">Social Aware Intelligence</div>
           </div>
         </div>
@@ -279,7 +267,6 @@ function TrustBar() {
     </section>
   );
 }
-
 
 /* ─────────────────────────────────────────────────────────── IMPACT STATS */
 
@@ -316,10 +303,9 @@ function ImpactStats() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setVisible(true),
-      { threshold: 0.25 }
-    );
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setVisible(true), {
+      threshold: 0.25,
+    });
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -328,12 +314,10 @@ function ImpactStats() {
     <section className="container-page pt-0 pb-0" ref={ref}>
       <Reveal className="flex flex-col md:flex-row items-start md:items-end justify-between mb-14 gap-6">
         <div>
-
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] max-w-2xl text-balance">
             Research that <span className="italic font-light text-ink/50">compounds.</span>
           </h2>
         </div>
-
       </Reveal>
 
       <Reveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-hairline ring-1 ring-hairline rounded-3xl overflow-hidden">
@@ -381,18 +365,69 @@ function StatCard({
 
 /* ─────────────────────────────────────────────────────────── ABOUT STORY */
 
-
-
 /* ─────────────────────────────────────────────────────── RESEARCH ECOSYSTEM */
 
 const domains = [
-  { id: "dm", title: "Data Mining (AI, Machine Learning, Deep Learning)", points: ["Text, Image and Video Mining", "Frequent Pattern Mining", "Classification and Clustering of Text/Image Data"], projects: 1 },
-  { id: "nlp", title: "Natural Language Processing", points: ["Indic Languages", "EEG to Text Processing", "Named Entity Recognition", "Speech Recognition"], projects: 1 },
-  { id: "ir", title: "Information Retrieval", points: ["Knowledge Graphs", "Ontology", "Question-Answering"], projects: 1 },
-  { id: "dc", title: "Data Compression", points: ["Text Compression", "Image, Video Compression", "Graph Compression"], projects: 1 },
-  { id: "cssg", title: "Computational Science for Social Good", points: ["Fake News Detection", "Multimodal Hate Speech detection", "Computational Linguistics and Clinical Psychology"], projects: 1 },
-  { id: "hci", title: "Human-Computer Interaction", points: ["Design of CAPTCHA’s", "Design of Loading Bars"], projects: 1 },
-  { id: "gen", title: "Generative AI", points: ["Large Language Models (LLMs)", "Small Language Models (SLMs)", "Retrieval-Augmented Generation (RAG)", "Multimodal Generative Models"], projects: 1 }
+  {
+    id: "dm",
+    title: "Data Mining (AI, Machine Learning, Deep Learning)",
+    points: [
+      "Text, Image and Video Mining",
+      "Frequent Pattern Mining",
+      "Classification and Clustering of Text/Image Data",
+    ],
+    projects: 1,
+  },
+  {
+    id: "nlp",
+    title: "Natural Language Processing",
+    points: [
+      "Indic Languages",
+      "EEG to Text Processing",
+      "Named Entity Recognition",
+      "Speech Recognition",
+    ],
+    projects: 1,
+  },
+  {
+    id: "ir",
+    title: "Information Retrieval",
+    points: ["Knowledge Graphs", "Ontology", "Question-Answering"],
+    projects: 1,
+  },
+  {
+    id: "dc",
+    title: "Data Compression",
+    points: ["Text Compression", "Image, Video Compression", "Graph Compression"],
+    projects: 1,
+  },
+  {
+    id: "cssg",
+    title: "Computational Science for Social Good",
+    points: [
+      "Fake News Detection",
+      "Multimodal Hate Speech detection",
+      "Computational Linguistics and Clinical Psychology",
+    ],
+    projects: 1,
+  },
+  {
+    id: "hci",
+    title: "Human-Computer Interaction",
+    points: ["Design of CAPTCHA’s", "Design of Loading Bars"],
+    projects: 1,
+  },
+  {
+    id: "gen",
+    title: "Generative AI",
+    points: [
+      "Large Language Models (LLMs)",
+      "Small Language Models (SLMs)",
+      "Retrieval-Augmented Generation (RAG)",
+      "Multimodal Generative Models",
+    ],
+    projects: 1,
+  },
 ];
 
 function ResearchEcosystem() {
@@ -400,13 +435,9 @@ function ResearchEcosystem() {
   return (
     <section className="container-page py-22">
       <Reveal className="mb-12">
-
         <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] text-balance">
-          Research {" "}
-          <span className="font-light text-ink/50">Domains</span>{" "}
-
+          Research <span className="font-light text-ink/50">Domains</span>{" "}
         </h2>
-
       </Reveal>
 
       <Reveal className="flex flex-wrap justify-center gap-3 lg:gap-4 items-stretch">
@@ -415,17 +446,21 @@ function ResearchEcosystem() {
             key={d.id}
             onMouseEnter={() => setHover(d.id)}
             onMouseLeave={() => setHover(null)}
-            className={`w-full sm:w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] lg:w-[calc(25%-12px)] group relative text-left p-4 rounded-2xl ring-1 transition-all duration-500 flex flex-col ${hover && hover !== d.id
-              ? "ring-ink/10 bg-surface opacity-50"
-              : "ring-ink/20 bg-surface hover:ring-accent hover:-translate-y-1 hover:shadow-lg"
-              }`}
+            className={`w-full sm:w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] lg:w-[calc(25%-12px)] group relative text-left p-4 rounded-2xl ring-1 transition-all duration-500 flex flex-col ${
+              hover && hover !== d.id
+                ? "ring-ink/10 bg-surface opacity-50"
+                : "ring-ink/20 bg-surface hover:ring-accent hover:-translate-y-1 hover:shadow-lg"
+            }`}
           >
             <h3 className="font-display text-xl font-semibold tracking-tight leading-snug mb-5">
               {d.title}
             </h3>
             <ul className="flex-1 space-y-3 w-full">
               {d.points.map((pt, idx) => (
-                <li key={idx} className="text-base text-ink-soft leading-relaxed flex items-start gap-2.5">
+                <li
+                  key={idx}
+                  className="text-base text-ink-soft leading-relaxed flex items-start gap-2.5"
+                >
                   <span className="text-accent mt-2 text-[9px]">●</span>
                   <span className="flex-1 text-left">{pt}</span>
                 </li>
@@ -445,18 +480,18 @@ const projects = [
   {
     tag: "Funded",
     title: "MindScribe: Giving Voice to Silent Minds",
-    body: "An ongoing initiative funded by IIT Indore DRISHTI CPS Foundation under the NM-ICPS Scheme, led by Dr. C. Oswald and multi-institutional collaborators.",
+    body: "A pioneering NM-ICPS initiative funded by IIT Indore DRISHTI CPS Foundation, translating EEG brain signals into meaningful text to restore communication for individuals with speech and motor impairments. Led by Dr. C. Oswald with multi-institutional collaborators.",
     metrics: [
       ["Amount", "10 Lakhs"],
       ["Status", "Ongoing"],
-      ["Type", "Funded"],
+      ["Focus", "BCI + NLP"],
     ],
     accent: "accent",
   },
   {
     tag: "Funded",
     title: "Exploring ‘Smart’ Pedagogy through TEL System",
-    body: "An ICSSR (India)-JSPS (Japan) Joint Research Programme aimed at developing an end-to-end Technology-Enhanced Learning system.",
+    body: "An ICSSR (India)-JSPS (Japan) Joint Research Programme aimed at developing an end-to-end Technology-Enhanced Learning system bridging Indian and Japanese educational methodologies through AI-driven personalization.",
     metrics: [
       ["Amount", "13.43 L"],
       ["Status", "Completed"],
@@ -464,7 +499,6 @@ const projects = [
     ],
     accent: "ember",
   },
-
 ];
 
 function FeaturedProjects() {
@@ -473,7 +507,6 @@ function FeaturedProjects() {
       <div className="container-page">
         <Reveal className="flex items-end justify-between mb-12 flex-wrap gap-6">
           <div>
-
             <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] max-w-2xl text-balance">
               Projects shaping the field.
             </h2>
@@ -486,19 +519,18 @@ function FeaturedProjects() {
           </Link>
         </Reveal>
 
-        <Stagger className="space-y-4">
+        <Stagger className="grid lg:grid-cols-2 gap-6">
           {projects.map((p, i) => (
             <StaggerItem key={p.title}>
-              <article
-                className="group grid lg:grid-cols-[1fr_1.1fr] gap-0 rounded-2xl overflow-hidden bg-surface ring-1 ring-border hover:ring-ink transition-all hover:shadow-[0_30px_80px_-30px_oklch(0.18_0.012_60/0.3)]"
-              >
+              <article className="group h-full grid grid-rows-[auto_1fr] rounded-2xl overflow-hidden bg-surface ring-1 ring-border hover:ring-ink transition-all hover:shadow-[0_30px_80px_-30px_oklch(0.18_0.012_60/0.3)]">
                 <div
-                  className={`relative aspect-[16/9] lg:aspect-auto lg:min-h-[260px] overflow-hidden ${p.accent === "accent"
-                    ? "bg-accent/10"
-                    : p.accent === "ember"
-                      ? "bg-ember/10"
-                      : "bg-sage/10"
-                    }`}
+                  className={`relative aspect-[16/9] overflow-hidden ${
+                    p.accent === "accent"
+                      ? "bg-accent/10"
+                      : p.accent === "ember"
+                        ? "bg-ember/10"
+                        : "bg-sage/10"
+                  }`}
                 >
                   <div className="absolute inset-0 bg-dotgrid opacity-40" />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -523,7 +555,7 @@ function FeaturedProjects() {
                       {p.metrics.map(([k, v]) => (
                         <div key={k}>
                           <div className="font-display text-lg font-bold">{v}</div>
-                          <div className="eyebrow text-[12px] mt-2 text-black-5000">{k}</div>
+                          <div className="eyebrow text-[12px] mt-2">{k}</div>
                         </div>
                       ))}
                     </div>
@@ -535,7 +567,6 @@ function FeaturedProjects() {
                         Case study
                         <span className="transition-transform group-hover:translate-x-1">→</span>
                       </Link>
-
                     </div>
                   </div>
                 </div>
@@ -547,7 +578,6 @@ function FeaturedProjects() {
     </section>
   );
 }
-
 
 function ProjectVisual({ variant }: { variant: number }) {
   if (variant === 0) {
@@ -625,7 +655,7 @@ function ProjectVisual({ variant }: { variant: number }) {
               fill={active ? "oklch(0.55 0.06 160)" : "oklch(0.55 0.06 160 / 0.15)"}
             />
           );
-        })
+        }),
       )}
     </svg>
   );
@@ -644,33 +674,37 @@ function Collaborators() {
     "Waseda University, Japan",
     "University of New South Wales, Australia",
     "IIT Bombay",
-    "Blue Yonder"
+    "Blue Yonder",
   ];
   return (
     <section className="py-5 overflow-hidden border-y border-hairline">
       <div className="container-page mb-12">
         <div className="flex items-end justify-between flex-wrap gap-6">
           <div>
-
             <h2 className="font-display text-2xl lg:text-4xl font-semibold tracking-tight max-w-xl text-balance">
               Collaborating Institutes
             </h2>
           </div>
-
         </div>
       </div>
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-canvas to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-canvas to-transparent z-10" />
-        <div className="flex w-max gap-12 pr-12 animate-marquee whitespace-nowrap py-4" style={{ animationDuration: "360s" }}>
-          {Array(20).fill(partners).flat().map((p, i) => (
-            <div
-              key={i}
-              className="font-display text-2xl lg:text-3xl font-semibold text-ink/30 hover:text-ink transition-colors flex-shrink-0"
-            >
-              {p}
-            </div>
-          ))}
+        <div
+          className="flex w-max gap-12 pr-12 animate-marquee whitespace-nowrap py-4"
+          style={{ animationDuration: "360s" }}
+        >
+          {Array(20)
+            .fill(partners)
+            .flat()
+            .map((p, i) => (
+              <div
+                key={i}
+                className="font-display text-2xl lg:text-3xl font-semibold text-ink/30 hover:text-ink transition-colors flex-shrink-0"
+              >
+                {p}
+              </div>
+            ))}
         </div>
       </div>
     </section>
@@ -690,7 +724,6 @@ function HomePage() {
 
       <Collaborators />
       {/* <TestimonialsMarquee /> */}
-
     </>
   );
 }

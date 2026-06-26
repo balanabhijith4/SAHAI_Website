@@ -54,14 +54,24 @@ const contactDetails: [string, React.ReactNode][] = [
         Interested interns can email to:
         <div className="flex items-center flex-wrap gap-2 mt-3 mb-2">
           <span className="text-xs">Dr C Oswald:</span>
-          <a href="mailto:oswald@nitt.edu" className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20">oswald@nitt.edu</a>
+          <a
+            href="mailto:oswald@nitt.edu"
+            className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20"
+          >
+            oswald@nitt.edu
+          </a>
         </div>
         <div className="flex items-center flex-wrap gap-2 mt-1">
           <span className="text-xs">Abhijith Balan:</span>
-          <a href="mailto:406123001@gmail.com" className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20">406123001@gmail.com</a>
+          <a
+            href="mailto:406123001@gmail.com"
+            className="text-accent hover:text-ink font-mono text-xs bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20"
+          >
+            406123001@gmail.com
+          </a>
         </div>
       </span>
-    </div>
+    </div>,
   ],
   // ["Partnerships", "partnerships@sparks.nitt.edu"],
   // ["Press", "press@sparks.nitt.edu"],
@@ -81,8 +91,8 @@ function ContactPage() {
 
   const update =
     (key: keyof typeof form) =>
-      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-        setForm((f) => ({ ...f, [key]: e.target.value }));
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,7 +108,7 @@ function ContactPage() {
           subject: form.subject,
           message: form.message,
         },
-        { publicKey: EMAILJS_PUBLIC_KEY }
+        { publicKey: EMAILJS_PUBLIC_KEY },
       );
       setStatus("sent");
       setForm({
@@ -325,7 +335,7 @@ function Contact({ label, value }: { label: string; value: React.ReactNode }) {
       className="rounded-2xl bg-surface ring-1 ring-border p-6 hover:ring-accent/40 transition-all"
     >
       <p className="eyebrow text-[9px] mb-2">{label}</p>
-      {typeof value === 'string' ? (
+      {typeof value === "string" ? (
         <p className="font-mono text-sm text-ink">{value}</p>
       ) : (
         <div className="text-sm text-ink">{value}</div>

@@ -8,7 +8,11 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery — SPARKS Lab" },
-      { name: "description", content: "Photographs from the lab, workshops, conferences, hackathons and student life at SPARKS Lab, NIT Trichy." },
+      {
+        name: "description",
+        content:
+          "Photographs from the lab, workshops, conferences, hackathons and student life at SPARKS Lab, NIT Trichy.",
+      },
       { property: "og:title", content: "Gallery · SPARKS Lab" },
       { property: "og:description", content: "Inside the lab." },
     ],
@@ -16,7 +20,7 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const categories = ["All", "Lab", "Workshop", "Conference","Guest Lecture"];
+const categories = ["All", "Lab", "Workshop", "Conference", "Guest Lecture"];
 
 // Synthesized swatch-cards — visual texture without external images
 const palettes = [
@@ -31,7 +35,17 @@ const palettes = [
 const items = Array.from({ length: 18 }).map((_, i) => ({
   id: i,
   cat: categories[(i % (categories.length - 1)) + 1],
-  caption: ["Atlas model launch", "Neuro-symbolic workshop", "Lab anniversary", "Hackathon finals", "PhD defense", "Student orientation", "Conference travel", "Guest lecture", "Annual symposium"][i % 9],
+  caption: [
+    "Atlas model launch",
+    "Neuro-symbolic workshop",
+    "Lab anniversary",
+    "Hackathon finals",
+    "PhD defense",
+    "Student orientation",
+    "Conference travel",
+    "Guest lecture",
+    "Annual symposium",
+  ][i % 9],
   ratio: i % 5 === 0 ? "row-span-2" : i % 7 === 0 ? "col-span-2" : "",
   palette: palettes[i % palettes.length],
 }));
@@ -43,14 +57,25 @@ function GalleryPage() {
   return (
     <>
       <PageHeader
-        title={<>Moments inside the <br/><span className="italic font-light text-ink/50">lab.</span></>}
+        title={
+          <>
+            Moments inside the <br />
+            <span className="italic font-light text-ink/50">lab.</span>
+          </>
+        }
       />
 
       {/* Auto-scroll highlight strips */}
       <section className="space-y-3 pb-16 pt-12 border-t border-hairline">
         {[0, 1].map((row) => (
           <div key={row} className="relative overflow-hidden">
-            <div className="flex gap-3 animate-marquee py-2" style={{ animationDirection: row % 2 ? "reverse" : "normal", animationDuration: "60s" }}>
+            <div
+              className="flex gap-3 animate-marquee py-2"
+              style={{
+                animationDirection: row % 2 ? "reverse" : "normal",
+                animationDuration: "60s",
+              }}
+            >
               {[...items, ...items].map((it, i) => (
                 <div
                   key={`${row}-${i}`}
@@ -85,7 +110,11 @@ function GalleryPage() {
         </Reveal>
 
         <AnimatePresence mode="wait">
-          <Stagger key={filter} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] gap-3" stagger={0.04}>
+          <Stagger
+            key={filter}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[180px] gap-3"
+            stagger={0.04}
+          >
             {filtered.map((it) => (
               <StaggerItem key={it.id} className={it.ratio}>
                 <figure

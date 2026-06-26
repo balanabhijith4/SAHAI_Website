@@ -27,10 +27,9 @@ export function SiteNav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${scrolled
-        ? "bg-canvas/85 backdrop-blur-xl border-b border-hairline"
-        : "bg-transparent"
-        }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+        scrolled ? "bg-canvas/85 backdrop-blur-xl border-b border-hairline" : "bg-transparent"
+      }`}
     >
       <div className="container-page flex h-20 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3 min-w-0 group">
@@ -40,11 +39,9 @@ export function SiteNav() {
           </div>
           <div className="flex flex-col leading-none min-w-0">
             <span className="font-display text-[17px] font-semibold tracking-tight truncate">
-              SAH<span className="text-accent">AI{" "}</span>{" "}Lab
+              SAH<span className="text-accent">AI </span> Lab
             </span>
-            <span className="eyebrow text-[10px] mt-0.5 truncate">
-              NIT Tiruchirappalli · CSE
-            </span>
+            <span className="eyebrow text-[10px] mt-0.5 truncate">NIT Tiruchirappalli · CSE</span>
           </div>
         </Link>
 
@@ -54,7 +51,9 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               className="relative py-2 text-[17px] font-medium text-ink/70 transition-colors duration-300 hover:text-ink group"
-              activeProps={{ className: "text-ink font-semibold [&>span:nth-child(2)]:scale-x-100" }}
+              activeProps={{
+                className: "text-ink font-semibold [&>span:nth-child(2)]:scale-x-100",
+              }}
             >
               <span className="inline-block transition-transform duration-300 origin-left group-hover:scale-[1.03]">
                 {l.label}
@@ -90,8 +89,12 @@ export function SiteNav() {
             className="xl:hidden grid place-items-center size-10 rounded-md hover:bg-muted"
           >
             <div className="flex flex-col gap-1.5">
-              <span className={`h-px w-5 bg-ink transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-              <span className={`h-px w-5 bg-ink transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+              <span
+                className={`h-px w-5 bg-ink transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`}
+              />
+              <span
+                className={`h-px w-5 bg-ink transition-transform ${open ? "-translate-y-[3px] -rotate-45" : ""}`}
+              />
             </div>
           </button>
         </div>
