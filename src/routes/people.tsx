@@ -10,11 +10,7 @@ export const Route = createFileRoute("/people")({
   head: () => ({
     meta: [
       { title: "People — SPARKS Lab" },
-      {
-        name: "description",
-        content:
-          "Faculty, researchers, scholars and students of SPARKS Lab at NIT Tiruchirappalli.",
-      },
+      { name: "description", content: "Faculty, researchers, scholars and students of SPARKS Lab at NIT Tiruchirappalli." },
       { property: "og:title", content: "People · SPARKS Lab" },
       // { property: "og:description", content: "Meet the researchers building the future of AI at SPARKS Lab." },
     ],
@@ -31,6 +27,7 @@ type Person = {
   email?: string;
   scholar?: string;
   linkedin?: string;
+
 };
 
 type Variant = "large" | "medium" | "compact";
@@ -53,148 +50,62 @@ Human-Computer Interaction`,
     photo: "images/faculty/oswald_sir.jpg",
     email: "oswald@nitt.edu",
     scholar: "https://scholar.google.com/citations?user=6kX5pyoAAAAJ&hl=en",
-    linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/",
+    linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/"
   },
 ];
 const scholars: Person[] = [
-  {
-    name: "Abhijith  Balan",
-    role: "Ph.D · Full-Time",
-    interests: "Knowledge graphs · LLM reasoning",
-    initials: "MI",
-    photo: "",
-  },
-  {
-    name: "Anju  K  B",
-    role: "Ph.D  · QIP Scheme ",
-    interests: "Healthcare AI · clinical NLP",
-    initials: "RS",
-    photo: "",
-  },
-  {
-    name: "Sambasiva  Rao  Chindam",
-    role: "Ph.D · Part-Time",
-    interests: "Edge inference · sparse models",
-    initials: "SP",
-    photo: "images/Scholars/sambasivarao.JPG",
-  },
+  { name: "Abhijith  Balan", role: "Ph.D · Full-Time", interests: "Knowledge graphs · LLM reasoning", initials: "MI", photo: "" },
+  { name: "Anju  K  B", role: "Ph.D  · QIP Scheme ", interests: "Healthcare AI · clinical NLP", initials: "RS", photo: "" },
+  { name: "Sambasiva  Rao  Chindam", role: "Ph.D · Part-Time", interests: "Edge inference · sparse models", initials: "SP", photo: "images/Scholars/sambasivarao.JPG" },
 ];
 const PGstudents: Person[] = [
-  {
-    name: "Yash Gogoria",
-    role: "M.Tech · CSE (2024)",
-    interests:
-      "·Coloring Sketches using Conditional GAN    ·Landscape Painting Generation using Generative AI Models",
-    initials: "YG",
-    photo: "",
-  },
-  {
-    name: "Sachin Kumar Gupt",
-    role: "M.Tech · CSE (2024)",
-    interests:
-      "·Deep Learning Approaches for Covid Chest X-Ray Image Classification \n · Generative AI Model based Hindi Text to Realistic Image Generation ",
-    initials: "SKG",
-    photo: "",
-  },
-  {
-    name: "Abhisek Raj",
-    role: "M.Tech · CSE (2025)",
-    interests:
-      "·Predicting Suicidal Ideation Risks and Empathetic Text Generation Using LLM \n· Predicting Suicidal Ideation Risks using LLM and Transfer Learning",
-    initials: "AR",
-    photo: "images/PG/Abhishek_Raj.jpg",
-  },
-  {
-    name: "Rakesh Kumar Rakesh",
-    role: "M.Tech · CSE (2026)",
-    interests: "·Knowledge graph Embedding Based Biomedical Named Entity Recognition",
-    initials: "RKR",
-    photo: "images/PG/Rakesh Kumar Rakesh .jpeg",
-  },
+  { name: "Yash Gogoria", role: "M.Tech · CSE (2024)", interests: "·Coloring Sketches using Conditional GAN    ·Landscape Painting Generation using Generative AI Models", initials: "YG", photo: "" },
+  { name: "Sachin Kumar Gupt", role: "M.Tech · CSE (2024)", interests: "·Deep Learning Approaches for Covid Chest X-Ray Image Classification \n · Generative AI Model based Hindi Text to Realistic Image Generation ", initials: "SKG", photo: "" },
+  { name: "Abhisek Raj", role: "M.Tech · CSE (2025)", interests: "·Predicting Suicidal Ideation Risks and Empathetic Text Generation Using LLM \n· Predicting Suicidal Ideation Risks using LLM and Transfer Learning", initials: "AR", photo: "images/PG/Abhishek_Raj.jpg" },
+  { name: "Rakesh Kumar Rakesh", role: "M.Tech · CSE (2026)", interests: "·Knowledge graph Embedding Based Biomedical Named Entity Recognition", initials: "RKR", photo: "images/PG/Rakesh Kumar Rakesh .jpeg" },
 ];
 
 const UGstudents: Person[] = [
-  {
-    name: "Srikanth V",
-    role: "B.Tech (2025)",
-    interests: "Enhancing Verizon Computer Support Using Dialogflow and Interaction Analytics",
-    initials: "SV",
-    photo: "",
-  },
-  {
-    name: "Amarjit",
-    role: "B.Tech (2024)",
-    interests:
-      "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar",
-    initials: "A",
-    photo: "",
-  },
-  {
-    name: "Dharanish Rahul S",
-    role: "B.Tech (2024)",
-    interests:
-      "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar",
-    initials: "DRS",
-    photo: "",
-  },
-  {
-    name: "Mithilesh K",
-    role: "B.Tech (2024)",
-    interests:
-      "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar",
-    initials: "MK",
-    photo: "",
-  },
-  {
-    name: "Joshua Mahadevan",
-    role: "B.Tech (2024)",
-    interests:
-      "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women",
-    initials: "JM",
-    photo: "",
-  },
-  {
-    name: "Lokkamithran",
-    role: "B.Tech (2024)",
-    interests:
-      "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women",
-    initials: "LK",
-    photo: "",
-  },
-  {
-    name: "Mubeena",
-    role: "B.Tech (2024)",
-    interests:
-      "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women",
-    initials: "MB",
-    photo: "",
-  },
+  { name: "Srikanth V", role: "B.Tech (2025)", interests: "Enhancing Verizon Computer Support Using Dialogflow and Interaction Analytics", initials: "SV", photo: "" },
+  { name: "Amarjit", role: "B.Tech (2024)", interests: "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar", initials: "A", photo: "" },
+  { name: "Dharanish Rahul S", role: "B.Tech (2024)", interests: "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar", initials: "DRS", photo: "" },
+  { name: "Mithilesh K", role: "B.Tech (2024)", interests: "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar", initials: "MK", photo: "" },
+  { name: "Joshua Mahadevan", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "JM", photo: "" },
+  { name: "Lokkamithran", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "LK", photo: "" },
+  { name: "Mubeena", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "MB", photo: "" },
 ];
 
 const interns: Person[] = [
-  { name: "Aditi Baskaran", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
-  { name: "Nooh K ", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
+  { name: "Aditi Baskaran", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Aditi Baskaran.jpeg" },
+  { name: "Nooh K ", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Nooh_K.png" },
   { name: "Adarsh SPL", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
-  { name: "K. Preetham Reddy", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
-  { name: "Madhu Parameswari Ganesan", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
+  { name: "K. Preetham Reddy", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/PreethamReddy.jpg" },
+  { name: "Surya Narayan Ghosh", role: "Research Intern (2026)", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "images/Interns/2026/SNghosh.jpg" },
   { name: "Golla Madhu Kiran", role: "Research Intern (2026)", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "" },
-  { name: "Surya Narayan Ghosh", role: "Research Intern (2026)", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "" },
-  { name: "Harsha Dhayini R", role: "Research Intern (2026)", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "" },
-  { name: "Kabilan G", role: "Research Intern (2024)", interests: "Enhancements in Nested NER", initials: "IO", photo: "" },
-  { name: "Aranganathan S ", role: "Research Intern (2024)", interests: "Nested NER in Tamil", initials: "IO", photo: "" },
-  { name: "Rohan Jose", role: "Research Intern (2024)", interests: "Offensive and Hate Speech Detection of Malayalam  using Deep Learning Techniques", initials: "IO", photo: "" },
-  { name: "Hrishikesh Mhaiskar", role: "Research Intern (2024)", interests: "Thought Recognition from EEG Signals for Indic Languages.", initials: "IO", photo: "" },
-  { name: "Sudhanshu Kumar", role: "Research Intern (2024)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "" },
-  { name: "Raushan Kumar ", role: "Research Intern (2024)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "" },
-  { name: "Swetha N", role: "Research Intern (2024)", interests: "An Audio Dataset for code mixed Tamil English Hate and offensive speech detection", initials: "IO", photo: "" },
-  { name: "Sudharsan M ", role: "Research Intern (2024)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "" },
-  { name: "Faiq Alam", role: "Research Intern (2024)", interests: "KG Creation and Reasoning in Indian Context ", initials: "IO", photo: "" },
-  { name: "K.Naveen Ragav ", role: "Research Intern (2024)", interests: "", initials: "IO", photo: "" },
-  { name: "Priyanka K.", role: "Research Intern (2024)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "" },
-  { name: "Kalyan Sudarsan ", role: "Research Intern (2024)", interests: "", initials: "IO", photo: "" },
-  { name: "VIJEYASRI T", role: "Research Intern (2024)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "" },
-  { name: "Gobika R ", role: "Research Intern (2024)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "" },
-  { name: "Vinithaa P", role: "Research Intern (2024)", interests: "MULTI-CLASS SPEECH DISORDER DETECTION USING FRACTAL ANALYSIS AND MFCC", initials: "IO", photo: "" },
+  { name: "Madhu Parameswari Ganesan", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Madhu Parameswari Ganesan.png" },
+  { name: "Harsha Dhayini R", role: "Research Intern (2026)", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "images/Interns/2026/Harsha.png" },
+
+
+
+  { name: "Kabilan G", role: "Research Intern (2025)", interests: "Enhancements in Nested NER", initials: "IO", photo: "" },
+  { name: "Aranganathan S ", role: "Research Intern (2025)", interests: "Nested NER in Tamil", initials: "IO", photo: "images/Interns/2025/Aranganathan S _NIT Surathkal.jpeg" },
+  { name: "Rohan Jose", role: "Research Intern (2025)", interests: "Offensive and Hate Speech Detection of Malayalam  using Deep Learning Techniques", initials: "IO", photo: "images/Interns/2025/Rohan_Jose.jpg" },
+  { name: "Hrishikesh Mhaiskar", role: "Research Intern (2025)", interests: "Thought Recognition from EEG Signals for Indic Languages.", initials: "IO", photo: "" },
+  { name: "Sudhanshu Kumar", role: "Research Intern (2025)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "images/Interns/2025/Sudhanshu_Kumar.jpg" },
+  { name: "Raushan Kumar ", role: "Research Intern (2025)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "" },
+  { name: "Swetha N", role: "Research Intern (2025)", interests: "An Audio Dataset for code mixed Tamil English Hate and offensive speech detection", initials: "IO", photo: "" },
+  { name: "Sudharsan M ", role: "Research Intern (2025)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/Sudharsan M.png" },
+  { name: "Faiq Alam", role: "Research Intern (2025)", interests: "KG Creation and Reasoning in Indian Context ", initials: "IO", photo: "images/Interns/2025/Faiq_Alam.JPG" },
+  { name: "K.Naveen Ragav ", role: "Research Intern (2025)", interests: "", initials: "IO", photo: "" },
+  { name: "Priyanka K.", role: "Research Intern (2025)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/PriyankaK.png" },
+  { name: "Kalyan Sudarsan ", role: "Research Intern (2025)", interests: "", initials: "IO", photo: "images/Interns/2025/Kalyan .heic" },
+  { name: "VIJEYASRI T", role: "Research Intern (2025)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Vijeyasri.T.jpg" },
+  { name: "Gobika R ", role: "Research Intern (2025)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Gobika_R.jpeg.jpg" },
+  { name: "Vinithaa P", role: "Research Intern (2025)", interests: "MULTI-CLASS SPEECH DISORDER DETECTION USING FRACTAL ANALYSIS AND MFCC", initials: "IO", photo: "" },
+
+
+
+
   { name: "Nagul Pranav", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IO", photo: "" },
   { name: "Balaji", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
   { name: "Gudapadi Nikhil", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
@@ -224,49 +135,13 @@ function PeoplePage() {
       {/* <PageHeader
         eyebrow=""
         title={<>The people behind the <span className="italic font-light text-ink/50">research.</span></>}
-      />
+      /> */}
 
-      <Section
-        title="Faculty"
-        eyebrow=""
-        people={faculty}
-        variant="large"
-        isFirst
-        direction="left"
-      />
-      <Section
-        title="PhD Scholars"
-        eyebrow=""
-        people={scholars}
-        variant="medium"
-        direction="right"
-      />
-      <Section
-        title="PG Students"
-        eyebrow=""
-        people={PGstudents}
-        variant="compact"
-        itemsPerPage={6}
-        direction="left"
-        showProjectLabel
-      />
-      <Section
-        title="UG Students"
-        eyebrow=""
-        people={UGstudents}
-        variant="compact"
-        itemsPerPage={6}
-        direction="right"
-        showProjectLabel
-      />
-      <Section
-        title="Interns"
-        eyebrow=""
-        people={interns}
-        variant="compact"
-        itemsPerPage={6}
-        direction="left"
-      />
+      <Section title="Faculty" eyebrow="" people={faculty} variant="large" isFirst direction="left" />
+      <Section title="PhD Scholars" eyebrow="" people={scholars} variant="medium" direction="right" />
+      <Section title="PG Students" eyebrow="" people={PGstudents} variant="compact" itemsPerPage={6} direction="left" showProjectLabel />
+      <Section title="UG Students" eyebrow="" people={UGstudents} variant="compact" itemsPerPage={6} direction="right" showProjectLabel />
+      <Section title="Interns" eyebrow="" people={interns} variant="compact" itemsPerPage={6} direction="left" />
       <section className="container-page pt-6 pb-0">
         <Reveal>
           <motion.div
@@ -293,15 +168,10 @@ function PeoplePage() {
               </h2>
             </div>
             <div className="space-y-2 text-sm text-canvas/70 relative">
-              <p>
-                Ph.D. positions open year-round across all research domains. Industry-funded
-                scholarships available for exceptional candidates.
-              </p>
-              <p>
-                M.Tech and B.Tech students from NIT Trichy can apply through the lab's internal
-                mentorship program every semester.
-              </p>
+              <p>Ph.D. positions open year-round across all research domains. Industry-funded scholarships available for exceptional candidates.</p>
+              <p>M.Tech and B.Tech students from NIT Trichy can apply through the lab's internal mentorship program every semester.</p>
             </div>
+
           </motion.div>
         </Reveal>
       </section>
@@ -354,24 +224,15 @@ const tierStyles: Record<
   },
 };
 
-function PersonCard({
-  p,
-  variant,
-  showProjectLabel,
-}: {
-  p: Person;
-  variant: Variant;
-  showProjectLabel?: boolean;
-}) {
+function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Variant; showProjectLabel?: boolean }) {
   const s = tierStyles[variant];
 
   return (
     <motion.article
       whileHover={{ y: -6 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className={`group h-full w-full rounded-2xl bg-surface ring-1 ring-border hover:ring-ink hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] transition-all ${
-        variant === "large" ? "max-w-5xl" : ""
-      } ${s.cardPadding}`}
+      className={`group h-full w-full rounded-2xl bg-surface ring-1 ring-border hover:ring-ink hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] transition-all ${variant === "large" ? "max-w-5xl" : ""
+        } ${s.cardPadding}`}
     >
       <div className={`flex items-stretch ${s.gap}`}>
         <motion.div
@@ -392,18 +253,15 @@ function PersonCard({
             />
           ) : null}
           <span
-            className={`absolute inset-0 grid place-items-center font-display tracking-tight text-ink ${
-              p.photo ? "hidden" : ""
-            } ${s.initialsSize}`}
+            className={`absolute inset-0 grid place-items-center font-display tracking-tight text-ink ${p.photo ? "hidden" : ""
+              } ${s.initialsSize}`}
           >
             {p.initials}
           </span>
         </motion.div>
 
         <div className="min-w-0 flex-1 flex flex-col">
-          <h3
-            className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}
-          >
+          <h3 className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}>
             {cleanName(p.name)}
           </h3>
           <p className={`mt-3.5 font-mono uppercase tracking-[0.18em] text-accent ${s.roleSize}`}>
@@ -425,7 +283,9 @@ function PersonCard({
             </p>
           )}
 
-          {p.email && <p className="mt-2 font-mono text-xs text-ink-soft break-all">{p.email}</p>}
+          {p.email && (
+            <p className="mt-2 font-mono text-xs text-ink-soft break-all">{p.email}</p>
+          )}
         </div>
       </div>
 
@@ -459,28 +319,22 @@ function PersonCard({
   );
 }
 
-function DirectionalCardReveal({
-  children,
-  direction,
-}: {
-  children: React.ReactNode;
-  direction: "left" | "right" | "up";
-}) {
+function DirectionalCardReveal({ children, direction }: { children: React.ReactNode, direction: "left" | "right" | "up" }) {
   const variants = {
     hidden: {
       opacity: 0,
       x: direction === "left" ? -60 : direction === "right" ? 60 : 0,
       y: direction === "up" ? 40 : 0,
       scale: 0.97,
-      filter: "blur(6px)",
+      filter: "blur(6px)"
     },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
-    },
+      filter: "blur(0px)"
+    }
   };
 
   return (
@@ -572,11 +426,8 @@ function Section({
             <button
               key={n}
               onClick={() => setPage(n)}
-              className={`size-8 rounded-full font-mono text-xs transition-colors ${
-                n === page
-                  ? "bg-ink text-canvas"
-                  : "text-ink-soft hover:text-accent hover:bg-accent/10"
-              }`}
+              className={`size-8 rounded-full font-mono text-xs transition-colors ${n === page ? "bg-ink text-canvas" : "text-ink-soft hover:text-accent hover:bg-accent/10"
+                }`}
             >
               {n}
             </button>

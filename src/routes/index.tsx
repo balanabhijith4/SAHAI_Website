@@ -118,23 +118,23 @@ function TypewriterLab() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[94vh] flex items-center pt-16 lg:pt-20 pb-20 overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center pt-8 lg:pt-12 pb-8 overflow-hidden">
       {/* Backdrop layers — parallax depth */}
       <div className="absolute inset-0 -z-10 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
       <motion.div
-        className="absolute top-1/4 -left-40 w-[560px] h-[560px] rounded-full bg-accent/15 blur-[140px] -z-10"
+        className="absolute top-1/4 -left-40 w-[400px] h-[400px] rounded-full bg-accent/15 blur-[140px] -z-10"
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-0 -right-40 w-[520px] h-[520px] rounded-full bg-sage/15 blur-[140px] -z-10"
+        className="absolute bottom-0 -right-40 w-[360px] h-[360px] rounded-full bg-sage/15 blur-[140px] -z-10"
         animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container-page grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+      <div className="container-page grid lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-8 items-center">
         <div>
-          <h1 className="font-display text-6xl sm:text-7xl lg:text-[8.5rem] font-semibold tracking-tight leading-[0.85] text-balance">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-[5.5rem] font-semibold tracking-tight leading-[0.85] text-balance">
             <span className="inline-flex">
               <RevealChars text="SAH" delay={0.1} charDelay={0.05} />
               <span className="text-accent">
@@ -147,8 +147,8 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-xl sm:text-2xl text-ink-soft leading-relaxed text-pretty">
-            <Reveal className="font-semibold italic text-ink block mb-4">
+          <p className="mt-5 max-w-2xl text-base sm:text-lg text-ink-soft leading-relaxed text-pretty">
+            <Reveal className="font-semibold italic text-ink block mb-2">
               <span className="text-accent font-bold text-[1.15em]">S</span>ocial{" "}
               <span className="text-accent font-bold text-[1.15em]">A</span>ware{" "}
               <span className="text-accent font-bold text-[1.15em]"></span>Intelligence for{" "}
@@ -165,7 +165,7 @@ function Hero() {
 
         {/* Ecosystem visualization */}
         <motion.div
-          className="relative w-full max-w-2xl mx-auto"
+          className="relative w-full max-w-md lg:max-w-lg mx-auto"
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
