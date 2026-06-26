@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, Stagger, StaggerItem, RevealWords } from "../components/Reveal";
-import { Linkedin, GraduationCap } from "lucide-react";
+import { Linkedin, GraduationCap, Book, Library, FileText, Globe } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/people")({
@@ -25,13 +25,17 @@ export const Route = createFileRoute("/people")({
 type Person = {
   name: string;
   role: string;
-  interests: string;
+  interests: ReactNode | string;
   initials: string;
   photo?: string;
   email?: string;
   scholar?: string;
   linkedin?: string;
-
+  dblp?: string;
+  academia?: string;
+  researchGate?: string;
+  scopus?: string;
+  details?: ReactNode;
 };
 
 type Variant = "large" | "medium" | "compact";
@@ -44,21 +48,77 @@ const faculty: Person[] = [
   {
     name: "Dr.C.  Oswald ",
     role: "Faculty Coordinator",
-    interests: `·Machine Learning
-    ·Deep Learning
-    ·Data Mining
-    ·Natural Language Processing
-    ·Human Computer Interaction
-    ·Text Mining, Social Media Analytics, Computational Science for Social Good
-    ·Ontology and Knowledge Graphs, Question-Answering (English and Indian Languages)
-    ·Text/Image Compression, Graph Compression
-    `,
+    interests: (
+      <ul className="list-disc pl-5 space-y-1 marker:text-accent">
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>Data Mining</li>
+        <li>Natural Language Processing</li>
+        <li>Human Computer Interaction</li>
+        <li>Text Mining, Social Media Analytics, Computational Science for Social Good</li>
+        <li>Ontology and Knowledge Graphs, Question-Answering (English and Indian Languages)</li>
+        <li>Text/Image Compression, Graph Compression</li>
+      </ul>
+    ),
 
     initials: "AA",
     photo: "images/faculty/oswald_sir.jpg",
     email: "oswald@nitt.edu",
     scholar: "https://scholar.google.com/citations?user=6kX5pyoAAAAJ&hl=en",
-    linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/"
+    linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/",
+    dblp: "https://dblp.uni-trier.de/pid/173/6662.html",
+    academia: "https://vit-in.academia.edu/OswaldChristopher",
+    researchGate: "https://www.researchgate.net/scientific-contributions/2111321378-C-Oswald",
+    scopus: "https://www.scopus.com/authid/detail.uri?authorId=56419629800",
+    details: (
+      <div className="space-y-6 text-sm sm:text-base text-ink/90">
+        <div className="space-y-2">
+          <h4 className="font-semibold text-lg text-ink flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent inline-block"></span> Postdoctoral Fellowship
+          </h4>
+          <p className="leading-relaxed pl-3.5">
+            In my Postdoctoral fellowship, I am blessed to be mentored by <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Arnab Bhattacharya</a>, Professor, Dept. of Computer Science and Engineering, IIT Kanpur from Feb 2021 - July 2022. It has been a turning point in my research career. I have been inspired to work in the field of Natural Language Processing with a passion towards Indic Languages which I continue still.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
+            <div>Ph.D. in Computer Science and Engineering <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[July 2013 - Nov 2018]</span></div>
+          </h4>
+          <div className="pl-3.5 space-y-1.5">
+            <p className="leading-relaxed">
+              <a href="http://iiitdm.ac.in/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Indian Institute of Information Technology, Design and Manufacturing Kancheepuram</a><br />
+              <span className="text-sm text-ink-soft">(An Institution of National Importance, MHRD, Govt. of India)</span>
+            </p>
+            <p className="leading-relaxed"><strong>Dissertation Topic:</strong> Efficient Algorithms for text and image compression based on Knowledge Engineering</p>
+            <p className="leading-relaxed">
+              I am fortunate enough to be supervised by <a href="https://www.iiitdm.ac.in/People/displayProfileFaculty.php?sivaselvanb@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. B. Sivaselvan</a>, Associate Professor, Department of CSE, IIITDM Kancheepuram. From him, I have been blessed to learn an amalgamation of moral values, ethics, didactic, along with research. My Doctoral Committee members were <a href="https://www.cse.iitm.ac.in/profile.php?arg=MTA=" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. NS Narayanaswamy</a>, <a href="https://www.iiitdm.ac.in/People/displayProfileFaculty.php?sadagopan@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. N. Sadagopan</a> and <a href="https://www.iiitdm.ac.in/People/displayProfileFaculty.php?shalu@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. M A Shalu</a> who have upholded and showed me the paths in various tough situations of my Ph.D. tenure. Many thanks to my thesis examiners, <a href="https://raj.cse.uconn.edu/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Sanguthevar Rajasekaran</a> and <a href="https://www.cse.iitm.ac.in/~ravi/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Balaraman Ravindran</a> for their valuable advices.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
+            <div>M.Tech. in Software Engineering (Rank Holder) <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[July 2011 - May 2013]</span></div>
+          </h4>
+          <div className="pl-3.5 space-y-1.5">
+            <p className="leading-relaxed">Karunya University, Coimbatore.</p>
+            <p className="leading-relaxed"><strong>Dissertation Topic:</strong> Hybrid Particle Swarm Optimization for University Course Timetabling Problem</p>
+            <p className="leading-relaxed"><strong>Advisor:</strong> <a href="https://mysite.kku.edu.sa/site/anandevadurai/home?lan=ar" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. C Anand Devadurai</a></p>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
+            <div>B.E. in Computer Science and Engineering <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[June 2005 – May 2009]</span></div>
+          </h4>
+          <p className="leading-relaxed pl-3.5">Sona College of Technology (Anna University, Chennai)<br /><span className="text-sm text-ink-soft">(Best Co-curricular Student Awardee)</span></p>
+        </div>
+      </div>
+    )
   },
 ];
 const scholars: Person[] = [
@@ -203,7 +263,7 @@ const tierStyles: Record<
   large: {
     cardPadding: "p-5 lg:p-8",
     gap: "gap-6 lg:gap-10",
-    photoWidth: "w-24 sm:w-32 lg:w-56",
+    photoWidth: "w-24 h-24 sm:w-32 sm:h-32 lg:w-44 lg:h-56",
     photoMinHeight: "",
     nameSize: "text-2xl lg:text-3xl font-semibold",
     roleSize: "text-xs",
@@ -213,8 +273,8 @@ const tierStyles: Record<
   medium: {
     cardPadding: "p-4 sm:p-5",
     gap: "gap-4 sm:gap-5",
-    photoWidth: "w-24 sm:w-32 lg:w-36",
-    photoMinHeight: "min-h-[160px]",
+    photoWidth: "w-24 h-32 sm:w-32 sm:h-40 lg:w-36 lg:h-44",
+    photoMinHeight: "",
     nameSize: "text-lg font-semibold",
     roleSize: "text-[11px]",
     interestSize: "mt-2 text-[13px] sm:text-sm",
@@ -223,7 +283,7 @@ const tierStyles: Record<
   compact: {
     cardPadding: "p-3.5",
     gap: "gap-3.5",
-    photoWidth: "w-20 h-20 sm:w-24 sm:h-28",
+    photoWidth: "w-20 h-24 sm:w-24 sm:h-28",
     photoMinHeight: "",
     nameSize: "text-base sm:text-lg font-semibold",
     roleSize: "text-xs",
@@ -242,31 +302,128 @@ function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Vari
       className={`group h-full w-full rounded-2xl bg-surface ring-1 ring-border hover:ring-ink hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.15)] transition-all ${variant === "large" ? "max-w-5xl" : ""
         } ${s.cardPadding}`}
     >
-      <div className={`flex items-stretch ${s.gap}`}>
-        <motion.div
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className={`relative shrink-0 self-stretch overflow-hidden rounded-xl bg-gradient-to-br from-accent/30 to-sage/20 ${s.photoWidth} ${s.photoMinHeight}`}
-        >
-          {p.photo ? (
-            <img
-              src={p.photo}
-              alt={cleanName(p.name)}
-              className="absolute inset-0 size-full object-cover"
-              loading="lazy"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                e.currentTarget.nextElementSibling?.classList.remove("hidden");
-              }}
-            />
-          ) : null}
-          <span
-            className={`absolute inset-0 grid place-items-center font-display tracking-tight text-ink ${p.photo ? "hidden" : ""
-              } ${s.initialsSize}`}
+      <div className={`flex flex-col sm:flex-row sm:items-start items-center ${s.gap}`}>
+        <div className="flex flex-col shrink-0 items-center sm:items-start gap-4">
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-accent/30 to-sage/20 ${s.photoWidth} ${s.photoMinHeight}`}
           >
-            {p.initials}
-          </span>
-        </motion.div>
+            {p.photo ? (
+              <img
+                src={p.photo}
+                alt={cleanName(p.name)}
+                className="absolute inset-0 size-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  e.currentTarget.nextElementSibling?.classList.remove("hidden");
+                }}
+              />
+            ) : null}
+            <span
+              className={`absolute inset-0 grid place-items-center font-display tracking-tight text-ink ${p.photo ? "hidden" : ""
+                } ${s.initialsSize}`}
+            >
+              {p.initials}
+            </span>
+          </motion.div>
+
+          <div className="flex flex-col items-center sm:items-start gap-3 w-full max-w-[190px]">
+            {p.email && (
+              <p className="font-mono text-[13px] lg:text-[14px] text-ink break-all font-medium text-center sm:text-left">{p.email}</p>
+            )}
+
+            {(p.scholar || p.linkedin || p.dblp || p.academia || p.researchGate || p.scopus) && (
+              <div className="grid grid-cols-3 gap-x-2 gap-y-4 mt-2 mb-2 w-full place-items-center">
+                {p.linkedin && (
+                  <a
+                    href={p.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-[#0A66C2] group-hover:text-white transition-colors">
+                      <Linkedin className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
+                  </a>
+                )}
+                {p.scholar && (
+                  <a
+                    href={p.scholar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Google Scholar profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-accent group-hover:text-canvas transition-colors">
+                      <GraduationCap className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-accent transition-colors">Scholar</span>
+                  </a>
+                )}
+                {p.dblp && (
+                  <a
+                    href={p.dblp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="DBLP profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-accent group-hover:text-canvas transition-colors">
+                      <Book className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-accent transition-colors">DBLP</span>
+                  </a>
+                )}
+                {p.academia && (
+                  <a
+                    href={p.academia}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Academia profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-accent group-hover:text-canvas transition-colors">
+                      <Library className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-accent transition-colors">Academia</span>
+                  </a>
+                )}
+                {p.researchGate && (
+                  <a
+                    href={p.researchGate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="ResearchGate profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-accent group-hover:text-canvas transition-colors">
+                      <Globe className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-accent transition-colors shrink-0 whitespace-nowrap">ResearchGate</span>
+                  </a>
+                )}
+                {p.scopus && (
+                  <a
+                    href={p.scopus}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Scopus profile"
+                    className="flex flex-col items-center gap-1.5 group"
+                  >
+                    <div className="flex items-center justify-center size-8 rounded-full bg-muted text-ink-soft group-hover:bg-accent group-hover:text-canvas transition-colors">
+                      <FileText className="size-4" />
+                    </div>
+                    <span className="text-[10px] font-medium text-ink-soft group-hover:text-accent transition-colors">Scopus</span>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
 
         <div className="min-w-0 flex-1 flex flex-col">
           <h3 className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}>
@@ -281,46 +438,21 @@ function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Vari
               <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink">
                 Project Title
               </p>
-              <p className="mt-1 text-[12.5px] leading-snug text-ink-soft whitespace-pre-line">
+              <div className="mt-1 text-[12.5px] leading-snug text-ink-soft whitespace-pre-line">
                 {p.interests}
-              </p>
+              </div>
             </div>
           ) : (
-            <p className={`text-ink-soft leading-relaxed whitespace-pre-line ${s.interestSize}`}>
+            <div className={`text-ink-soft leading-relaxed whitespace-pre-line ${s.interestSize}`}>
               {p.interests}
-            </p>
-          )}
-
-          {p.email && (
-            <p className="mt-2 font-mono text-xs text-ink-soft break-all">{p.email}</p>
+            </div>
           )}
         </div>
       </div>
 
-      {(p.scholar || p.linkedin) && (
-        <div className="mt-4 flex gap-3 pt-3 border-t border-hairline">
-          {p.scholar && (
-            <a
-              href={p.scholar}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Google Scholar profile"
-              className="inline-flex items-center justify-center size-7 rounded-full bg-muted text-ink-soft hover:bg-accent hover:text-canvas transition-colors"
-            >
-              <GraduationCap className="size-3.5" />
-            </a>
-          )}
-          {p.linkedin && (
-            <a
-              href={p.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn profile"
-              className="inline-flex items-center justify-center size-7 rounded-full bg-muted text-ink-soft hover:bg-[#0A66C2] hover:text-white transition-colors"
-            >
-              <Linkedin className="size-3.5" />
-            </a>
-          )}
+      {p.details && (
+        <div className="mt-6 pt-6 border-t border-hairline/60">
+          {p.details}
         </div>
       )}
     </motion.article>
