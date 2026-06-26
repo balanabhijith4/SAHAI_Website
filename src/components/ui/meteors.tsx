@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export const Meteors = ({ number = 20, className }: { number?: number; className?: string }) => {
-  const [meteors, setMeteors] = useState<Array<{ id: number; left: number; delay: number; duration: number }>>([]);
+  const [meteors, setMeteors] = useState<
+    Array<{ id: number; left: number; delay: number; duration: number }>
+  >([]);
 
   useEffect(() => {
     // Generate meteors only on client side to avoid hydration mismatch

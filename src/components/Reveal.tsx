@@ -57,17 +57,11 @@ export function Stagger({
   );
 }
 
-export function StaggerItem({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <motion.div 
-      className={className} 
-      variants={defaultVariants} 
+    <motion.div
+      className={className}
+      variants={defaultVariants}
       transition={{ type: "spring", stiffness: 85, damping: 18, mass: 1.2 }}
       style={{ willChange: "transform, opacity, filter" }}
     >
