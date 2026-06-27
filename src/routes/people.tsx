@@ -302,7 +302,7 @@ const tierStyles: Record<
   },
 };
 
-function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Variant; showProjectLabel?: boolean }) {
+function PersonCard({ p, variant, showProjectLabel, hideSocialLabels }: { p: Person; variant: Variant; showProjectLabel?: boolean; hideSocialLabels?: boolean }) {
   const s = tierStyles[variant];
 
   return (
@@ -362,12 +362,21 @@ function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Vari
         </div>
 
         <div className="min-w-0 flex-1 flex flex-col">
-          <h3 className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}>
-            {cleanName(p.name)}
-          </h3>
-          <p className={`mt-3.5 font-bold uppercase tracking-[0.18em] text-accent ${s.roleSize}`}>
-            {p.role}
-          </p>
+          <div className="flex justify-between items-start gap-2">
+            <div>
+              <h3 className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}>
+                {cleanName(p.name)}
+              </h3>
+              <p className={`mt-3.5 font-bold uppercase tracking-[0.18em] text-accent ${s.roleSize}`}>
+                {p.role}
+              </p>
+            </div>
+            {hideSocialLabels && (
+              <a href={p.linkedin && p.linkedin !== "a" ? p.linkedin : "#"} target={p.linkedin && p.linkedin !== "a" ? "_blank" : undefined} rel="noopener noreferrer" className="flex-shrink-0 flex items-center justify-center p-2 rounded-full bg-muted text-ink-soft hover:bg-muted/80 transition-colors group">
+                <Linkedin className="size-4" />
+              </a>
+            )}
+          </div>
 
           {showProjectLabel ? (
             <div className="mt-2.5">
@@ -386,7 +395,7 @@ function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Vari
 
           {(p.scholar || p.linkedin || p.dblp || p.academia || p.researchGate || p.scopus) && (
             <div className={`flex flex-wrap gap-3 ${variant === "large" ? "mt-6" : "mt-auto pt-6"}`}>
-              {p.linkedin && (
+              {(!hideSocialLabels && p.linkedin && p.linkedin !== "a") && (
                 <a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted text-ink-soft hover:bg-muted/80 transition-colors text-xs font-medium group">
                   <Linkedin className="size-3.5" />
                   <span>LinkedIn</span>
@@ -523,7 +532,7 @@ function Section({
           <Stagger className={gridClasses} stagger={0.06}>
             {visiblePeople.map((p, i) => (
               <DirectionalCardReveal key={`${p.name}-${i}`} direction={direction}>
-                <PersonCard p={p} variant={variant} showProjectLabel={showProjectLabel} />
+                <PersonCard p={p} variant={variant} showProjectLabel={showProjectLabel} hideSocialLabels={title !== "Faculty"} />
               </DirectionalCardReveal>
             ))}
           </Stagger>
