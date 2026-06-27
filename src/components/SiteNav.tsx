@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 const links = [
   { to: "/", label: "Home" },
   // { to: "/founder", label: "Founder" },
+  { to: "/research", label: "Research" },
   { to: "/people", label: "People" },
-  { to: "/teaching", label: "Teaching" },
-  // { to: "/research", label: "Research" },
   { to: "/projects", label: "Projects" },
   { to: "/publications", label: "Publications" },
   // { to: "/news", label: "News" },
+  { to: "/teaching", label: "Teaching" },
   { to: "/patents", label: "Patents" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
@@ -32,7 +32,7 @@ export function SiteNav() {
         scrolled ? "bg-canvas/85 backdrop-blur-xl border-b border-hairline" : "bg-transparent"
       }`}
     >
-      <div className="container-page flex h-20 items-center justify-between gap-6">
+      <div className="w-[99vw] mx-auto px-4 md:px-8 flex h-20 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3 min-w-0 group">
           <div className="relative shrink-0 flex items-center justify-center -ml-1">
             <img src="/sahai-logo.png" alt="SAHAI Lab Logo" className="h-14 sm:h-16 w-auto object-contain drop-shadow-sm" />
@@ -45,12 +45,12 @@ export function SiteNav() {
           </div>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-8">
-          {links.slice(1).map((l) => (
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
+          {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="relative py-2 text-[17px] font-medium text-ink/70 transition-colors duration-300 hover:text-ink group"
+              className="relative py-2 text-[16px] xl:text-[17px] font-medium text-ink/70 transition-colors duration-300 hover:text-ink group"
               activeProps={{
                 className: "text-ink font-semibold [&>span:nth-child(2)]:scale-x-100",
               }}
@@ -102,7 +102,7 @@ export function SiteNav() {
 
       {open && (
         <div className="xl:hidden border-t border-hairline bg-canvas/95 backdrop-blur-xl">
-          <nav className="container-page py-7 grid grid-cols-2 gap-2">
+          <nav className="w-[99vw] mx-auto px-4 md:px-8 py-7 grid grid-cols-2 gap-4">
             {links.map((l) => (
               <Link
                 key={l.to}

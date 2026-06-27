@@ -369,115 +369,6 @@ function StatCard({
 
 /* ─────────────────────────────────────────────────────────── ABOUT STORY */
 
-/* ─────────────────────────────────────────────────────── RESEARCH ECOSYSTEM */
-
-const domains = [
-  {
-    id: "dm",
-    title: "Data Mining (AI, Machine Learning, Deep Learning)",
-    points: [
-      "Text, Image and Video Mining",
-      "Frequent Pattern Mining",
-      "Classification and Clustering of Text/Image Data",
-    ],
-    projects: 1,
-  },
-  {
-    id: "nlp",
-    title: "Natural Language Processing",
-    points: [
-      "Indic Languages",
-      "EEG to Text Processing",
-      "Named Entity Recognition",
-      "Speech Recognition",
-    ],
-    projects: 1,
-  },
-  {
-    id: "ir",
-    title: "Information Retrieval",
-    points: ["Knowledge Graphs", "Ontology", "Question-Answering"],
-    projects: 1,
-  },
-  {
-    id: "dc",
-    title: "Data Compression",
-    points: ["Text Compression", "Image, Video Compression", "Graph Compression"],
-    projects: 1,
-  },
-  {
-    id: "cssg",
-    title: "Computational Science for Social Good",
-    points: [
-      "Fake News Detection",
-      "Multimodal Hate Speech detection",
-      "Computational Linguistics and Clinical Psychology",
-    ],
-    projects: 1,
-  },
-  {
-    id: "hci",
-    title: "Human-Computer Interaction",
-    points: ["Design of CAPTCHA’s", "Design of Loading Bars"],
-    projects: 1,
-  },
-  {
-    id: "gen",
-    title: "Generative AI",
-    points: [
-      "Large Language Models (LLMs)",
-      "Small Language Models (SLMs)",
-      "Retrieval-Augmented Generation (RAG)",
-      "Multimodal Generative Models",
-    ],
-    projects: 1,
-  },
-];
-
-function ResearchEcosystem() {
-  const [hover, setHover] = useState<string | null>(null);
-  return (
-    <section className="container-page py-22">
-      <Reveal className="mb-12">
-        <h2 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95] text-balance">
-          Research <span className="font-light text-ink/50">Domains</span>{" "}
-        </h2>
-      </Reveal>
-
-      <Reveal className="flex flex-wrap justify-center gap-3 lg:gap-4 items-stretch">
-        {domains.map((d, i) => (
-          <button
-            key={d.id}
-            onMouseEnter={() => setHover(d.id)}
-            onMouseLeave={() => setHover(null)}
-            className={`w-full sm:w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] lg:w-[calc(25%-12px)] group relative text-left p-4 rounded-2xl ring-1 transition-all duration-500 flex flex-col ${
-              hover && hover !== d.id
-                ? "ring-ink/10 bg-surface opacity-50"
-                : "ring-ink/20 bg-surface hover:ring-accent hover:-translate-y-1 hover:shadow-lg"
-            }`}
-          >
-            <h3 className="font-display text-xl font-semibold tracking-tight leading-snug mb-5">
-              {d.title}
-            </h3>
-            <ul className="flex-1 space-y-3 w-full">
-              {d.points.map((pt, idx) => (
-                <li
-                  key={idx}
-                  className="text-base text-ink-soft leading-relaxed flex items-start gap-2.5"
-                >
-                  <span className="text-accent mt-2 text-[9px]">●</span>
-                  <span className="flex-1 text-left">{pt}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-5 h-px bg-hairline group-hover:bg-accent transition-colors w-full" />
-          </button>
-        ))}
-      </Reveal>
-    </section>
-  );
-}
-
 /* ────────────────────────────────────────────────────── FEATURED PROJECTS */
 
 import mindscribeImg from "../../images/mindscribe.jpg";
@@ -739,7 +630,6 @@ function HomePage() {
       <Hero />
 
       <ImpactStats />
-      <ResearchEcosystem />
       <FeaturedProjects />
 
       <Collaborators />
