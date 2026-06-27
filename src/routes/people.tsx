@@ -122,7 +122,7 @@ const faculty: Person[] = [
   },
 ];
 const scholars: Person[] = [
-  { name: "Abhijith  Balan", role: "Ph.D · Full-Time", interests: "Knowledge graphs · LLM reasoning", initials: "MI", photo: "" },
+  { name: "Abhijith  Balan", role: "Ph.D · Full-Time", interests: "·NLP \n·Named Entity Recognition\n ·Computational Linguistics \n ·Information Retrieval/Extraction", initials: "MI", photo: "images/Scholars/Abhijith_Balan.jpeg" },
   { name: "Anju  K  B", role: "Ph.D  · QIP Scheme ", interests: "Healthcare AI · clinical NLP", initials: "RS", photo: "" },
   { name: "Sambasiva  Rao  Chindam", role: "Ph.D · Part-Time", interests: "Edge inference · sparse models", initials: "SP", photo: "images/Scholars/sambasivarao.JPG" },
 ];
@@ -131,9 +131,15 @@ const PGstudents: Person[] = [
   { name: "Sachin Kumar Gupt", role: "M.Tech · CSE (2024)", interests: "·Deep Learning Approaches for Covid Chest X-Ray Image Classification \n · Generative AI Model based Hindi Text to Realistic Image Generation ", initials: "SKG", photo: "" },
   { name: "Abhisek Raj", role: "M.Tech · CSE (2025)", interests: "·Predicting Suicidal Ideation Risks and Empathetic Text Generation Using LLM \n· Predicting Suicidal Ideation Risks using LLM and Transfer Learning", initials: "AR", photo: "images/PG/Abhishek_Raj.jpg" },
   { name: "Rakesh Kumar Rakesh", role: "M.Tech · CSE (2026)", interests: "·Knowledge graph Embedding Based Biomedical Named Entity Recognition", initials: "RKR", photo: "images/PG/Rakesh Kumar Rakesh .jpeg" },
+  { name: "Anurag Kadam", role: "M.Tech · CSE (2027)", interests: "", initials: "RKR", photo: "" },
+
 ];
 
 const UGstudents: Person[] = [
+  { name: "Aditya G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "" },
+  { name: "Vijay G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "" },
+  { name: "Aadit Krishna R", role: "B.Tech (2026)", interests: "", initials: "A", photo: "" },
+
   { name: "Srikanth V", role: "B.Tech (2025)", interests: "Enhancing Verizon Computer Support Using Dialogflow and Interaction Analytics", initials: "SV", photo: "" },
   { name: "Amarjit", role: "B.Tech (2024)", interests: "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar", initials: "A", photo: "" },
   { name: "Dharanish Rahul S", role: "B.Tech (2024)", interests: "Knowledge Graph based Templatized Question Answering tool for School Level Tamil Grammar", initials: "DRS", photo: "images/UG/Dharanish Rahul S.jpeg" },
@@ -144,57 +150,59 @@ const UGstudents: Person[] = [
 ];
 
 const interns: Person[] = [
-  { name: "Aditi Baskaran", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Aditi Baskaran.jpeg" },
-  { name: "Nooh K ", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Nooh_K.png" },
-  { name: "Adarsh SPL", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
-  { name: "K. Preetham Reddy", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/PreethamReddy.jpg" },
-  { name: "Surya Narayan Ghosh", role: "Research Intern (2026)", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "images/Interns/2026/SNghosh.jpg" },
-  { name: "Golla Madhu Kiran", role: "Research Intern (2026)", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "" },
-  { name: "Madhu Parameswari Ganesan", role: "Research Intern (2026)", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Madhu Parameswari Ganesan.png" },
-  { name: "Harsha Dhayini R", role: "Research Intern (2026)", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "images/Interns/2026/Harsha.png" },
+  { name: "Aditi Baskaran", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Aditi Baskaran.jpeg" },
+  { name: "Nooh K ", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Nooh_K.png" },
+  { name: "Adarsh SPL", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "" },
+  { name: "K. Preetham Reddy", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/PreethamReddy.jpg" },
+  { name: "Surya Narayan Ghosh", role: "2026", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "images/Interns/2026/SNghosh.jpg" },
+  { name: "Golla Madhu Kiran", role: "2026", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "images/Interns/2026/MadhuKiranGolla.jpeg" },
+  { name: "Madhu Parameswari Ganesan", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "images/Interns/2026/Madhu Parameswari Ganesan.png" },
+  { name: "Harsha Dhayini R", role: "2026", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "images/Interns/2026/Harsha.png" },
 
 
 
-  { name: "Kabilan G", role: "Research Intern (2025)", interests: "Enhancements in Nested NER", initials: "IO", photo: "" },
-  { name: "Aranganathan S ", role: "Research Intern (2025)", interests: "Nested NER in Tamil", initials: "IO", photo: "images/Interns/2025/Aranganathan S _NIT Surathkal.jpeg" },
-  { name: "Rohan Jose", role: "Research Intern (2025)", interests: "Offensive and Hate Speech Detection of Malayalam  using Deep Learning Techniques", initials: "IO", photo: "images/Interns/2025/Rohan_Jose.jpg" },
-  { name: "Hrishikesh Mhaiskar", role: "Research Intern (2025)", interests: "Thought Recognition from EEG Signals for Indic Languages.", initials: "IO", photo: "" },
-  { name: "Sudhanshu Kumar", role: "Research Intern (2025)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "images/Interns/2025/Sudhanshu_Kumar.jpg" },
-  { name: "Raushan Kumar ", role: "Research Intern (2025)", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "" },
-  { name: "Swetha N", role: "Research Intern (2025)", interests: "An Audio Dataset for code mixed Tamil English Hate and offensive speech detection", initials: "IO", photo: "" },
-  { name: "Sudharsan M ", role: "Research Intern (2025)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/Sudharsan M.png" },
-  { name: "Faiq Alam", role: "Research Intern (2025)", interests: "KG Creation and Reasoning in Indian Context ", initials: "IO", photo: "images/Interns/2025/Faiq_Alam.JPG" },
-  { name: "K.Naveen Ragav ", role: "Research Intern (2025)", interests: "", initials: "IO", photo: "" },
-  { name: "Priyanka K.", role: "Research Intern (2025)", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/PriyankaK.png" },
-  { name: "Kalyan Sudarsan ", role: "Research Intern (2025)", interests: "", initials: "IO", photo: "images/Interns/2025/Kalyan .heic" },
-  { name: "VIJEYASRI T", role: "Research Intern (2025)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Vijeyasri.T.jpg" },
-  { name: "Gobika R ", role: "Research Intern (2025)", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Gobika_R.jpeg.jpg" },
-  { name: "Vinithaa P", role: "Research Intern (2025)", interests: "MULTI-CLASS SPEECH DISORDER DETECTION USING FRACTAL ANALYSIS AND MFCC", initials: "IO", photo: "" },
+  { name: "Kabilan G", role: "2025", interests: "Enhancements in Nested NER", initials: "IO", photo: "" },
+  { name: "Aranganathan S ", role: "2025", interests: "Nested NER in Tamil", initials: "IO", photo: "images/Interns/2025/Aranganathan S _NIT Surathkal.jpeg" },
+  { name: "Rohan Jose", role: "2025", interests: "Offensive and Hate Speech Detection of Malayalam  using Deep Learning Techniques", initials: "IO", photo: "images/Interns/2025/Rohan_Jose.jpg" },
+  { name: "Hrishikesh Mhaiskar", role: "2025", interests: "Thought Recognition from EEG Signals for Indic Languages.", initials: "IO", photo: "" },
+  { name: "Sudhanshu Kumar", role: "2025", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "images/Interns/2025/Sudhanshu_Kumar.jpg" },
+  { name: "Raushan Kumar ", role: "2025", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "" },
+  { name: "Swetha N", role: "2025", interests: "An Audio Dataset for code mixed Tamil English Hate and offensive speech detection", initials: "IO", photo: "" },
+  { name: "Sudharsan M ", role: "2025", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/Sudharsan M.png" },
+  { name: "Faiq Alam", role: "2025", interests: "KG Creation and Reasoning in Indian Context ", initials: "IO", photo: "images/Interns/2025/Faiq_Alam.JPG" },
+  { name: "K.Naveen Ragav ", role: "2025", interests: "", initials: "IO", photo: "" },
+  { name: "Priyanka K.", role: "2025", interests: "KG Creation in Tamil Ayurvedic Text", initials: "IO", photo: "images/Interns/2025/PriyankaK.png" },
+  { name: "Kalyan Sudarsan ", role: "2025", interests: "", initials: "IO", photo: "images/Interns/2025/Kalyan .heic" },
+  { name: "VIJEYASRI T", role: "2025", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Vijeyasri.T.jpg" },
+  { name: "Gobika R ", role: "2025", interests: "REAL-TIME SPEECH ENHANCEMENT FOR DYSARTHRIA INDIVIDUALS USING NLP AND DEEP LEARNING", initials: "IO", photo: "images/Interns/2025/Gobika_R.jpeg.jpg" },
+  { name: "Vinithaa P", role: "2025", interests: "MULTI-CLASS SPEECH DISORDER DETECTION USING FRACTAL ANALYSIS AND MFCC", initials: "IO", photo: "" },
 
 
 
 
-  { name: "Nagul Pranav", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IO", photo: "" },
-  { name: "Balaji", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Gudapadi Nikhil", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "R Vinish Krishna", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Vasan R", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Janarthanan T", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Arvind Krishna", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Krithik", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Tanush Somishetty", role: "Research Intern (2024)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Yogesh Perumal", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Abhijit Baidya", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Hashim Faisal syed", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Isai Visaahan P M", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Karthik Balaji N V", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Kirthik B", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Nisha Preethika S", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Piyush Sonekar", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Prabhakar", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Raunak Rajpal", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Sreenidhi N", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
-  { name: "Vasukumar P", role: "Research Intern (2023)", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Nagul Pranav", role: "2024", interests: "Computer Vision", initials: "IO", photo: "" },
+  { name: "Balaji", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Gudapadi Nikhil", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "R Vinish Krishna", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Vasan R", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Janarthanan T", role: "2024", interests: "Computer Vision", initials: "IT", photo: "images/Interns/2024/Janarthanan_106121053.jpg" },
+  { name: "Arvind Krishna", role: "2024", interests: "Computer Vision", initials: "IT", photo: "images/Interns/2024/Aravind Krishna P M.JPG" },
+  { name: "Krithik", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Tanush Somishetty", role: "2024", interests: "Computer Vision", initials: "IT", photo: "" },
+
+
+  { name: "Yogesh Perumal", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Abhijit Baidya", role: "2023", interests: "Computer Vision", initials: "IT", photo: "images/Interns/2023/Abhijit Baidya.jpg" },
+  { name: "Hashim Faisal syed", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Isai Visaahan P M", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Karthik Balaji N V", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Kirthik B", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Nisha Preethika S", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Piyush Sonekar", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Prabhakar", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Raunak Rajpal", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Sreenidhi N", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
+  { name: "Vasukumar P", role: "2023", interests: "Computer Vision", initials: "IT", photo: "" },
 ];
 
 function PeoplePage() {
@@ -230,7 +238,7 @@ function PeoplePage() {
               <ArrowRight className="size-4" />
             </Link>
             <div className="relative">
-              <p className="eyebrow text-accent mb-3">Join us</p>
+           
               <h2 className="font-display text-3xl lg:text-4xl font-semibold tracking-tight leading-[0.95]">
                 We're always looking for curious minds.
               </h2>
@@ -429,13 +437,13 @@ function PersonCard({ p, variant, showProjectLabel }: { p: Person; variant: Vari
           <h3 className={`font-display tracking-tight leading-tight group-hover:text-accent transition-colors ${s.nameSize}`}>
             {cleanName(p.name)}
           </h3>
-          <p className={`mt-3.5 font-mono uppercase tracking-[0.18em] text-accent ${s.roleSize}`}>
+          <p className={`mt-3.5 font-bold uppercase tracking-[0.18em] text-accent ${s.roleSize}`}>
             {p.role}
           </p>
 
           {showProjectLabel ? (
             <div className="mt-2.5">
-              <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink">
+              <p className="font-mono font-bold text-[9px] uppercase tracking-[0.18em] text-ink">
                 Project Title
               </p>
               <div className="mt-1 text-[12.5px] leading-snug text-ink-soft whitespace-pre-line">
