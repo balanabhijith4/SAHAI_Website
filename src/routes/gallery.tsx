@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHeader } from "../components/PageHeader";
 import { Reveal, Stagger, StaggerItem } from "../components/Reveal";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -45,9 +44,8 @@ const items = Object.entries(imageModules).map(([path, src], index) => {
   const rawCaption = (relativePath.split("/").pop() || "").replace(/\.[^.]+$/, "");
 
   let caption: string | null = rawCaption;
-  // If the caption looks like a randomly generated file name, drop it
   if (
-    /^(whatsapp|img_|dsc|snap|untitled|\d{8,})/i.test(caption) ||
+    /^(whatsapp|img[-_\s]*\d|dsc|snap|untitled|\d{8,})/i.test(caption) ||
     caption.length < 3 ||
     /^[0-9a-fA-F-]+$/.test(caption)
   ) {
@@ -63,28 +61,72 @@ const items = Object.entries(imageModules).map(([path, src], index) => {
   };
 });
 
+type GalleryItem = typeof items[number];
+
 const categories = ["All", "Collaborations", "Conferences", "Events", "Club Activities", "Talks", "Students"];
 
 function GalleryPage() {
   const [filter, setFilter] = useState("All");
+  const [selected, setSelected] = useState<GalleryItem | null>(null);
+
   const filtered = filter === "All" ? items : items.filter((i) => i.cat === filter);
 
   return (
     <>
-      <PageHeader
-        title={
-          <>
-            Moments inside the <br />
-            <span className="italic font-light text-ink/50">lab.</span>
-          </>
-        }
-      />
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key="backdrop"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 backdrop-blur-sm p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setSelected(null)}
+          >
+            <motion.figure
+              key="lightbox-card"
+              className={`relative max-h-[90vh] max-w-4xl w-full overflow-hidden rounded-3xl bg-gradient-to-br ${selected.palette[0]} ${selected.palette[1]} ring-1 ring-border shadow-2xl`}
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 320, damping: 28 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selected.src}
+                alt={selected.caption || "Gallery photo"}
+                className="w-full max-h-[80vh] object-contain block"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent pointer-events-none" />
 
+              {/* Caption */}
+              <figcaption className="absolute inset-x-0 bottom-0 p-5 text-canvas pointer-events-none">
+                <div className="font-bold text-xs text-canvas/70 uppercase tracking-wider mb-1">{selected.cat}</div>
+                {selected.caption && <div className="text-base font-medium leading-snug">{selected.caption}</div>}
+              </figcaption>
+
+              {/* Close button */}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-ink/50 hover:bg-ink/80 text-canvas flex items-center justify-center transition-colors"
+                aria-label="Close"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </button>
+            </motion.figure>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Marquee strip */}
       <section className="space-y-3 border-t border-hairline pb-16 pt-12">
         {[0, 1].map((row) => {
           const half = Math.ceil(items.length / 2);
           const rowItems = row === 0 ? items.slice(0, half) : items.slice(half);
-
           return (
             <div key={row} className="relative overflow-hidden">
               <div
@@ -94,13 +136,14 @@ function GalleryPage() {
                 {[...rowItems, ...rowItems].map((it, i) => (
                   <div
                     key={`${row}-${i}`}
-                    className={`relative h-44 w-72 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br ${it.palette[0]} ${it.palette[1]} ring-1 ring-border`}
+                    className={`relative h-44 w-72 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br ${it.palette[0]} ${it.palette[1]} ring-1 ring-border cursor-pointer`}
+                    onClick={() => setSelected(it)}
                   >
                     <img src={it.src} alt={it.caption || "Gallery photo"} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4 flex justify-between font-mono text-[10px] text-canvas/90">
-                      <span className="truncate pr-2">{it.caption || ""}</span>
-                      <span className="shrink-0">{it.cat}</span>
+                    <div className="absolute bottom-3 left-4 right-4 flex justify-between font-mono text-canvas/90 items-end">
+                      <span className="truncate pr-2 text-[10px]">{it.caption || ""}</span>
+                      <span className="shrink-0 text-xs font-bold">{it.cat}</span>
                     </div>
                   </div>
                 ))}
@@ -110,6 +153,7 @@ function GalleryPage() {
         })}
       </section>
 
+      {/* Filterable grid */}
       <section className="container-page pb-32">
         <Reveal className="mb-10 flex flex-wrap gap-2">
           {categories.map((c) => (
@@ -129,11 +173,14 @@ function GalleryPage() {
           <Stagger key={filter} className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4" stagger={0.04}>
             {filtered.map((it) => (
               <StaggerItem key={it.id} className="break-inside-avoid">
-                <figure className={`relative w-full overflow-hidden rounded-2xl bg-gradient-to-br ${it.palette[0]} ${it.palette[1]} ring-1 ring-border transition-transform hover:scale-[1.02]`}>
+                <figure
+                  className={`relative w-full overflow-hidden rounded-2xl bg-gradient-to-br ${it.palette[0]} ${it.palette[1]} ring-1 ring-border transition-transform hover:scale-[1.02] cursor-pointer`}
+                  onClick={() => setSelected(it)}
+                >
                   <img src={it.src} alt={it.caption || "Gallery photo"} className="w-full h-auto block" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent pointer-events-none" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-4 text-canvas pointer-events-none">
-                    <div className="eyebrow text-canvas/60 text-[9px] mb-1">{it.cat}</div>
+                    <div className="font-bold text-xs text-canvas/90 uppercase tracking-wider mb-1">{it.cat}</div>
                     {it.caption && <div className="text-sm font-medium leading-tight">{it.caption}</div>}
                   </figcaption>
                 </figure>
