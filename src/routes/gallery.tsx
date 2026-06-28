@@ -15,7 +15,7 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const imageModules = import.meta.glob("../../gallery_pics/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF,heic,HEIC,jfif,JFIF}", {
+const imageModules = import.meta.glob("/gallery_pics/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF,heic,HEIC,jfif,JFIF}", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
@@ -39,7 +39,7 @@ const categoryMap: Record<string, string> = {
 };
 
 const items = Object.entries(imageModules).map(([path, src], index) => {
-  const relativePath = path.replace("../../gallery_pics/", "");
+  const relativePath = path.replace("/gallery_pics/", "");
   const topLevelFolder = relativePath.split("/")[0];
   const rawCaption = (relativePath.split("/").pop() || "").replace(/\.[^.]+$/, "");
 

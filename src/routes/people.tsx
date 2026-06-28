@@ -62,7 +62,7 @@ const faculty: Person[] = [
     ),
 
     initials: "AA",
-    photo: "/images/faculty/oswald_sir.jpg",
+    photo: "/images/faculty/oswaldsir.jpg",
     email: "oswald@nitt.edu",
     personalEmail: "oswald.mecse@gmail.com",
     phone: "0431-250-3223",
@@ -132,7 +132,7 @@ const PGstudents: Person[] = [
   { name: "Yash Gogoria", role: "M.Tech · CSE (2024)", interests: "·Coloring Sketches using Conditional GAN    ·Landscape Painting Generation using Generative AI Models", initials: "YG", photo: "",linkedin:"a" },
   { name: "Sachin Kumar Gupt", role: "M.Tech · CSE (2024)", interests: "·Deep Learning Approaches for Covid Chest X-Ray Image Classification \n · Generative AI Model based Hindi Text to Realistic Image Generation ", initials: "SKG", photo: "",linkedin:"a" },
   { name: "Abhisek Raj", role: "M.Tech · CSE (2025)", interests: "·Predicting Suicidal Ideation Risks and Empathetic Text Generation Using LLM \n· Predicting Suicidal Ideation Risks using LLM and Transfer Learning", initials: "AR", photo: "/images/PG/Abhishek_Raj.jpg",linkedin:"a" },
-  { name: "Rakesh Kumar Rakesh", role: "M.Tech · CSE (2026)", interests: "·Knowledge graph Embedding Based Biomedical Named Entity Recognition", initials: "RKR", photo: "/images/PG/Rakesh Kumar Rakesh .jpeg",linkedin:"a" },
+  { name: "Rakesh Kumar Rakesh", role: "M.Tech · CSE (2026)", interests: "·Knowledge graph Embedding Based Biomedical Named Entity Recognition", initials: "RKR", photo: "/images/PG/RakeshKumarRakesh.jpeg",linkedin:"a" },
   { name: "Anurag Kadam", role: "M.Tech · CSE (2027)", interests: "", initials: "RKR", photo: "",linkedin:"a" },
 
 ];
@@ -152,13 +152,13 @@ const UGstudents: Person[] = [
 ];
 
 const interns: Person[] = [
-  { name: "Aditi Baskaran", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/Aditi Baskaran.jpeg",linkedin:"https://www.linkedin.com/in/aditi-baskaran/" },
+  { name: "Aditi Baskaran", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/AditiBaskaran.jpeg",linkedin:"https://www.linkedin.com/in/aditi-baskaran/" },
   { name: "Nooh K ", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/Nooh_K.png",linkedin:"https://www.linkedin.com/in/nooh-k-71a8a4292/" },
   { name: "Adarsh SPL", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/Adarsh.jpeg",linkedin:"a" },
   { name: "K. Preetham Reddy", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/PreethamReddy.jpg",linkedin:"https://www.linkedin.com/in/katreddy-preetham-reddy" },
   { name: "Surya Narayan Ghosh", role: "2026", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "/images/Interns/2026/SNghosh.jpg",linkedin:"https://www.linkedin.com/in/ghosh-surya-22679b285/" },
   { name: "Golla Madhu Kiran", role: "2026", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "/images/Interns/2026/MadhuKiranGolla.jpeg",linkedin:"https://www.linkedin.com/in/golla-madhu-kiran-6b5a1b322/" },
-  { name: "Madhu Parameswari Ganesan", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/Madhu Parameswari Ganesan.png",linkedin:"https://www.linkedin.com/in/madhu-parameswari-ganesan/" },
+  { name: "Madhu Parameswari Ganesan", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/MadhuParameswariGanesan.png",linkedin:"https://www.linkedin.com/in/madhu-parameswari-ganesan/" },
   { name: "Harsha Dhayini R", role: "2026", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "/images/Interns/2026/Harsha.png",linkedin:"a" },
 
 
