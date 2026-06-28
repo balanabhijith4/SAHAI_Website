@@ -32,8 +32,8 @@ type ProjectItem = {
   image?: string;
 };
 
-import mindscribeImg from "../../people/images/mindscribe.jpg";
-import saksharImg from "../../people/images/SAKSHAR.png";
+// import mindscribeImg from "../../people/images/mindscribe.jpg";
+// import saksharImg from "../../people/images/SAKSHAR.png";
 
 const projectData: ProjectItem[] = [
   {
@@ -50,7 +50,7 @@ const projectData: ProjectItem[] = [
       "Prof. Amit Agrawal, Head, Neurosurgery, AIIMS Bhopal",
     ],
     hue: "from-[#C8B8A8] to-[#E6D8C8]",
-    image: mindscribeImg,
+    image: "/public/images/mindscribe.jpg",
   },
   {
     id: "p2",
@@ -69,7 +69,7 @@ const projectData: ProjectItem[] = [
       "Dr. Rajlaxmi Chouhan, IIT Jodhpur",
     ],
     hue: "from-[#D8B0B0] to-[#E8C8C8]",
-    image: saksharImg,
+    image: "/public/images/SAKSHAR.png",
     link: "https://drive.google.com/file/d/18aaWEmoQGfNDemcCWN4KJQhUvKg25vwW/preview",
     linkLabel: "Watch Video ↗",
   },
