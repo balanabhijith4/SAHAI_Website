@@ -390,8 +390,8 @@
 
 // /* ────────────────────────────────────────────────────── FEATURED PROJECTS */
 
-// import mindscribeImg from "../../images/mindscribe.jpg";
-// import saksharImg from "../../images/SAKSHAR.png";
+// import mindscribeImg from "../../people/images/mindscribe.jpg";
+// import saksharImg from "../../people/images/SAKSHAR.png";
 
 // const projects = [
 //   {
@@ -1035,8 +1035,8 @@ function StatCard({
 
 /* ────────────────────────────────────────────────────── FEATURED PROJECTS */
 
-import mindscribeImg from "../../images/mindscribe.jpg";
-import saksharImg from "../../images/SAKSHAR.png";
+// import mindscribeImg from "../../people/images/mindscribe.jpg";
+// import saksharImg from "../../people/images/SAKSHAR.png";
 
 const projects = [
   {
@@ -1049,7 +1049,7 @@ const projects = [
       ["Focus", "BCI + NLP"],
     ],
     accent: "accent",
-    image: mindscribeImg,
+    image: "/images/mindscribe.jpg",
     link: "/projects",
     linkLabel: "Details →"
   },
@@ -1063,7 +1063,7 @@ const projects = [
       ["Partners", "2"],
     ],
     accent: "ember",
-    image: saksharImg,
+    image: "/images/SAKSHAR.png",
     link: "https://drive.google.com/file/d/18aaWEmoQGfNDemcCWN4KJQhUvKg25vwW/preview",
     linkLabel: "Watch Video ↗",
     imageClass: "object-contain"

@@ -32,8 +32,8 @@ type ProjectItem = {
   image?: string;
 };
 
-import mindscribeImg from "../../images/mindscribe.jpg";
-import saksharImg from "../../images/SAKSHAR.png";
+import mindscribeImg from "../../people/images/mindscribe.jpg";
+import saksharImg from "../../people/images/SAKSHAR.png";
 
 const projectData: ProjectItem[] = [
   {
