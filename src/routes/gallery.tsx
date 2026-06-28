@@ -30,18 +30,22 @@ const palettes = [
 ];
 
 const categoryMap: Record<string, string> = {
-  Collaborations: "Collaborations",
-  "Conferences attended": "Conferences",
-  "Events Conducted": "Events",
-  "NITT Club Activities": "Club Activities",
-  Talks: "Talks",
-  "With students": "Students",
+  collaborations: "Collaborations",
+  conferencesattended: "Conferences",
+  "conferences attended": "Conferences",
+  events: "Events",
+  eventscconducted: "Events",
+  cubactivities: "Club Activities",
+  nittclubactivities: "Club Activities",
+  talks: "Talks",
+  students: "Students",
+  withstudents: "Students",
 };
 
 const items = Object.entries(imageModules).map(([path], index) => {
   const relativePath = path.replace("../../public/gallery_pics/", "");
   const publicSrc = `/gallery_pics/${encodeURI(relativePath)}`;
-  const topLevelFolder = relativePath.split("/")[0];
+  const topLevelFolder = relativePath.split("/")[0].toLowerCase().replace(/[^a-z0-9]+/g, "");
   const rawCaption = (relativePath.split("/").pop() || "").replace(/\.[^.]+$/, "");
 
   let caption: string | null = rawCaption;
