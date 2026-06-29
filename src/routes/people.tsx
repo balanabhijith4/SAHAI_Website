@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/people")({
   head: () => ({
     meta: [
-      { title: "People — SPARKS Lab" },
+      { title: "People — SAHAI Lab" },
       {
         name: "description",
         content:
@@ -156,7 +156,7 @@ const interns: Person[] = [
   { name: "Adarsh SPL", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/Adarsh.jpeg",linkedin:"a" },
   { name: "K. Preetham Reddy", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/PreethamReddy.jpg",linkedin:"https://www.linkedin.com/in/katreddy-preetham-reddy" },
   { name: "Surya Narayan Ghosh", role: "2026", interests: "Hypergraph Guided Structural Fusion for Nested Biomedical NER", initials: "IO", photo: "/images/Interns/2026/SNghosh.jpg",linkedin:"https://www.linkedin.com/in/ghosh-surya-22679b285/" },
-  { name: "Golla Madhu Kiran", role: "2026", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "/images/Interns/2026/MadhuKiranGolla.jpeg",linkedin:"https://www.linkedin.com/in/golla-madhu-kiran-6b5a1b322/" },
+  { name: "Golla Madhu Kiran", role: "2026", interests: "Boundary-Aware Parameter-Efficient Tuning for Nested Biomedical Named Entity Recognition", initials: "IO", photo: "/images/Interns/2026/MadhuKiranGolla.JPG",linkedin:"https://www.linkedin.com/in/golla-madhu-kiran-6b5a1b322/" },
   { name: "Madhu Parameswari Ganesan", role: "2026", interests: "Lightweight SLM-Based Academic Evaluation Assistant", initials: "IO", photo: "/images/Interns/2026/MadhuParameswariGanesan.png",linkedin:"https://www.linkedin.com/in/madhu-parameswari-ganesan/" },
   { name: "Harsha Dhayini R", role: "2026", interests: "Transforming Tamil Ayurvedic Text to Knowledge Graph", initials: "IO", photo: "/images/Interns/2026/Harsha.png",linkedin:"a" },
 

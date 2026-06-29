@@ -7,7 +7,7 @@ import { Reveal } from "../components/Reveal";
 export const Route = createFileRoute("/teaching")({
   head: () => ({
     meta: [
-      { title: "Teaching — SPARKS Lab" },
+      { title: "Teaching — SAHAI Lab" },
       { name: "description", content: "Courses taught and downloadable teaching materials from SPARKS Lab." },
       { property: "og:title", content: "Teaching · SPARKS Lab" },
     ],

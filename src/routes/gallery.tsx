@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — SPARKS Lab" },
+      { title: "Gallery — SAHAI Lab" },
       { name: "description", content: "Photographs from the lab, workshops, conferences, hackathons and student life at SPARKS Lab, NIT Trichy." },
       { property: "og:title", content: "Gallery · SPARKS Lab" },
       { property: "og:description", content: "Inside the lab." },
