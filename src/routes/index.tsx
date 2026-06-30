@@ -685,14 +685,14 @@ export const Route = createFileRoute("/")({
 
 const announcements = [
   "🎉 SAHAI Lab secures new NM-ICPS funding for the MindScribe project from IIT Indore",
-  "📄 New paper presented in the ACM TKDD journal — Configurable Graph Summarization",
-  "🤝 ICSSR(India)-JSPS(Japan) Joint Research Programme completed successfully",
+  "📄 New paper published in the ACM TKDD journal — Configurable Graph Summarization",
+  "🤝 ICSSR(India)-JSPS(Japan) Joint Research Funding Project completed successfully",
   "📢 10 students successfully completed the Summer 2026 Research Internship",
-  "🎓 2 conference papers published successfully at ICSCST 2026",
+  "🎓 2 conference papers presented successfully at ICSCST 2026",
 ];
 function NewsTicker() {
   return (
-    <div className="fixed top-17 left-0 right-0 z-[55] h-11 bg-ink text-canvas overflow-hidden flex items-center">
+    <div className="fixed top-[92px] left-0 right-0 z-[55] h-11 bg-ink text-canvas overflow-hidden flex items-center">
       {/* News Label */}
       <a
         href="https://www.nitt.edu/home/"
@@ -843,7 +843,7 @@ function Hero() {
 
           {/* Ecosystem visualization */}
           <motion.div
-           className="relative w-full max-w-2xl mx-auto flex items-center justify-center lg:justify-start min-h-[60vh] lg:min-h-0 lg:-mt-44 xl:-mt-56 lg:translate-x-12 xl:translate-x-20 lg:translate-y-12 xl:translate-y-12"
+           className="relative w-full max-w-2xl mx-auto flex items-center justify-center lg:justify-start min-h-[60vh] lg:min-h-0 lg:-mt-44 xl:-mt-56 lg:translate-x-12 xl:translate-x-20 lg:translate-y-12 xl:translate-y-14"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 0.95 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -963,10 +963,12 @@ const stats = [
   { num: 7, suffix: "", label: "Journals", note: "Peer reviewed publications" },
   { num: 30, suffix: "+", label: "Conferences", note: "National & International" },
   { num: 2, suffix: "", label: "Funded Projects", note: "Active research streams" },
+  { num: 3, suffix: "", label: "Ph.D Students", note: "Research Scholars" },
+  { num: 26, suffix: "+", label: "Project Students", note: "UG and PG students" },
   { num: 42, suffix: "+", label: "Interns", note: "Research scholars & students" },
   { num: 10, suffix: "", label: "Collaborators", note: "Industry & academia" },
   { num: 5, suffix: "", label: "Awards", note: "Best Paper and others" },
-  { num: 26, suffix: "+", label: "Students", note: "UG and PG students" },
+  
 ];
 
 function ImpactStats() {
@@ -992,7 +994,7 @@ function ImpactStats() {
         </div>
       </Reveal>
 
-      <Reveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-px bg-hairline ring-1 ring-hairline rounded-3xl overflow-hidden">
+      <Reveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-8 gap-px bg-hairline ring-1 ring-hairline rounded-3xl overflow-hidden">
         {stats.map((s, i) => (
           <StatCard key={s.label} {...s} index={i} visible={visible} />
         ))}
@@ -1237,6 +1239,7 @@ function ProjectVisual({ variant }: { variant: number }) {
 
 function Collaborators() {
   const partners = [
+    "NIT Tiruchirapalli",
     "IIT Delhi",
     "IIT Jodhpur",
     "IIT Indore",

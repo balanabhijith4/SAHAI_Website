@@ -27,17 +27,45 @@ export const Route = createFileRoute("/contact")({
 });
 
 const faqs = [
-  {
-    q: "How can I apply for a Ph.D. at SAHAI Lab?",
-    a: "Doctoral admissions are processed through NIT Trichy's institutional Ph.D. portal each semester. Strong candidates are encouraged to email the lab in advance to discuss research fit.",
-  },
-  {
-    q: "Do you accept internships or visiting scholars?",
-    a: "Yes — we host 6–12 month visiting research positions for advanced master's and doctoral students. Applications are reviewed twice per year.",
-  },
+ {
+  q: "How to apply for an Internship at your lab?",
+  a: (
+    <>
+      We accept only summer internships for around 2 months (May and June). The
+      application will open around February/March on the{" "}
+      <a
+        href="https://www.nitt.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent hover:underline font-medium"
+      >
+        NIT Tiruchirappalli website
+      </a>
+      . You are supposed to send an email to the faculty coordinator and get a
+      consent before applying through the portal.
+    </>
+  ),
+},
+{
+  q: "How can I get a Ph.D position in your lab?",
+  a: (
+    <>
+      Doctoral admissions are processed through the NIT Tiruchirappalli's institutional Ph.D. portal each semester, across all research domains. HTRA scholarships are available for meritorious full time candidates. We also encourage Part-time Ph.D. candidates, who may contact us, in prior, for more details. Please refer to{" "}
+      <a
+        href="https://www.nitt.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent hover:underline font-medium"
+      >
+        NIT Tiruchirappalli website
+      </a>{" "}
+      regularly.
+    </>
+  ),
+},
   {
     q: "Can industry partners collaborate with the lab?",
-    a: "We run several active industry consortia. Reach out via the partnerships address with a one-page brief on your problem area.",
+    a: "We welcome Industry collaborations for projects concerning societal needs. We run a few active industry consortia too. Feel free to reach out to us for more details.  ",
   },
 ];
 
@@ -50,7 +78,7 @@ const contactDetails: [string, React.ReactNode][] = [
         Interested Ph.D, Intern students may feel free to contact us by writing an email to
         <a
           href="mailto:oswald@nitt.edu"
-          className="text-accent hover:text-ink font-mono text-[13px] bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20"
+          className="text-accent hover:text-ink font-mono text-[15px] bg-accent/10 px-2 py-1 rounded transition-colors hover:bg-accent/20"
         >
           oswald@nitt.edu
         </a>

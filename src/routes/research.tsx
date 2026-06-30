@@ -86,21 +86,93 @@ const domains: Domain[] = [
 ];
 
 const invitedEvents: React.ReactNode[] = [
+  // 2026
+  <>Talk on <strong className="font-semibold text-ink">"From Large to Lightweight: Intelligent Riddle Evaluation Using Large and Small Language Models"</strong> and <strong className="font-semibold text-ink">"Attention-Driven Intelligence: A Journey Through Transformer Architectures"</strong> at the FDP on <strong className="font-semibold text-ink">Agentic Systems, KARE</strong>, June 2026</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Attention Mechanisms and Transformer Architectures"</strong> at <strong className="font-semibold text-ink">Sona College of Technology, Salem</strong>, May 2026</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Creative Methods and Tools for Effective Research Dissemination"</strong> at <strong className="font-semibold text-ink">Sona College of Technology, Salem</strong>, May 2026</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Federated Learning & Privacy-Preserving Techniques"</strong> at <strong className="font-semibold text-ink">PMC Tech, Hosur</strong>, April 2026</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"AI & ML Applications for Mechanical Engineers (AMAME)"</strong> at <strong className="font-semibold text-ink">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai</strong>, March 2026</>,
+
+  // 2025
+  <>Talk on <strong className="font-semibold text-ink">"A Tale of Two Cities: Machine Learning for Social Good – Applications and Trends"</strong> at <strong className="font-semibold text-ink">K. Ramakrishnan College of Engineering, Tiruchirappalli</strong>, October 2025</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Generative AI - Basics"</strong> at the STTP on <strong className="font-semibold text-ink">Design for Additive Manufacturing, IIITDM Kancheepuram</strong>, July 2025</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"From Words to Worlds: Generative AI for Computational Social Good"</strong> at <strong className="font-semibold text-ink">RCODS, IIITDM Kancheepuram</strong>, March 2025</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Generative AI"</strong> at the <strong className="font-semibold text-ink">Winter School on Interdisciplinary Pathways in Computational Social Sciences, IIT Jodhpur</strong>, February 2025</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Smart Predictive Maintenance: Harnessing Machine Learning for Manufacturing Efficiency"</strong> at the FDP on <strong className="font-semibold text-ink">Application of Digital Technologies in Manufacturing Environment, NIT Tiruchirappalli</strong>, February 2025</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Unlocking the Power of Data: Exploring Machine Learning and Its Real-World Applications"</strong> at <strong className="font-semibold text-ink">MIET Arts and Science College, Tiruchirappalli</strong>, January 2025</>,
+
+  // 2024
+  <>One-day Workshop on <strong className="font-semibold text-ink">"Artificial Intelligence in Non-Destructive Testing (AI NDT)"</strong> at <strong className="font-semibold text-ink">Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai</strong>, April 2024</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Industry Applications of Artificial Intelligence and Machine Learning"</strong> during the <strong className="font-semibold text-ink">Industry 4.0 Lecture Series, NIT Tiruchirappalli</strong>, March 2024</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"A Tale of Two Cities: Machine Learning with Quantum Computing – Concepts and Applications"</strong> at <strong className="font-semibold text-ink">University of Technology and Applied Science, Ibri, Sultanate of Oman</strong>, February 2024</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"A Tale of Two Cities: Machine Learning for Humanities & Social Sciences – Applications and Trends"</strong> at the <strong className="font-semibold text-ink">International Seminar on Innovation and Inclusion Through Technology-Enhanced Learning, IIT Jodhpur</strong>, February 2024</>,
+
+  // 2023
+  <>Talk on <strong className="font-semibold text-ink">"Problem Solving and Ideation"</strong> at <strong className="font-semibold text-ink">CMR Technical Campus, Hyderabad</strong>, November 2023</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Introduction to Scikit Learn and Pandas"</strong> at the <strong className="font-semibold text-ink">Workshop on Computational Social Science, NIT Tiruchirappalli</strong>, August 2023</>,
+
+  <>Talk on <strong className="font-semibold text-ink">"Reinforcement Learning"</strong> and <strong className="font-semibold text-ink">"Why is Machine Learning a Buzzword in Today's World?"</strong> at the <strong className="font-semibold text-ink">National Workshop on Machine Learning and Data Science – Techniques and Trends, NIT Tiruchirappalli</strong>, June 2023</>,
+
+  // 2021
+  <>Talk on <strong className="font-semibold text-ink">"After Ph.D, What Next?"</strong> at <strong className="font-semibold text-ink">RSD 2021, IIITDM Kancheepuram</strong>, February 2021</>,
+
+  // 2020
+  <>Talk on <strong className="font-semibold text-ink">"Career Opportunities for a Budding Engineering Student – The Way Forward"</strong> at <strong className="font-semibold text-ink">Kongunadu College of Engineering and Technology, Tiruchirappalli</strong>, July 2020</>,
+
+  // 2019
+  <>Talk on <strong className="font-semibold text-ink">"Efficient Algorithms for Text and Image Compression Based on Knowledge Engineering"</strong> at <strong className="font-semibold text-ink">VIT Chennai</strong>, November 2019</>,
+
+  // Undated
   <>Talk on <strong className="font-semibold text-ink">AI and ML in Robotics</strong> at <strong className="font-semibold text-ink">Karpaga Vinayaga College of Engineering and Technology, Chennai</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">Entrepreneurship, Innovation and Creativity</strong> at <strong className="font-semibold text-ink">CMR Technical Campus Hyderabad</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">Career Opportunities for budding Engineering Graduates</strong> at <strong className="font-semibold text-ink">Sona College of Technology, Salem</strong> and <strong className="font-semibold text-ink">Kongunadu College of Engineering, Trichy</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">Data Science</strong> at <strong className="font-semibold text-ink">Solamalai College of Engineering, Madurai</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">An Introduction to Supervised and Unsupervised Learning</strong> at <strong className="font-semibold text-ink">Guru Nanak College, Chennai</strong> and <strong className="font-semibold text-ink">SRM University, Chennai</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">Machine Learning</strong> at <strong className="font-semibold text-ink">KGiSL Institute of Technology, Coimbatore</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">An Informal Introduction to Machine Learning and Reinforcement Learning</strong> at <strong className="font-semibold text-ink">NIT Tiruchirappalli</strong></>,
+
   <>Talk on <strong className="font-semibold text-ink">Types of Itemsets and their algorithms</strong>, Workshop DAMI' 2018 at <strong className="font-semibold text-ink">IIITDM Kancheepuram</strong></>,
+
   <><strong className="font-semibold text-ink">CODS'15, CODS'16, VLDB'16, CODS'14 and CODS'18</strong> through travel grants from <strong className="font-semibold text-ink">ACM SIGKDD</strong></>,
+
   <>Doctoral Committee Member — <strong className="font-semibold text-ink">VIT, Amrita University, KTU</strong></>,
 ];
 
 const organizedEvents: React.ReactNode[] = [
-  <>Five-day self-sponsored National Workshop on <strong className="font-semibold text-ink">"Machine Learning and Data Science — Techniques and Trends,"</strong> <strong className="font-semibold text-ink">NIT Tiruchirappalli</strong>, 26–30 June 2023 (co-organized with Dr. J. Pavan Kumar)</>,
-  <>One-Day National Level Workshop on <strong className="font-semibold text-ink">"Pixels on Point,"</strong> <strong className="font-semibold text-ink">VIT Chennai</strong>, 22 February 2020</>,
+  <>
+    AICTE-sponsored <strong className="font-semibold text-ink">ATAL Faculty Development Program (FDP)</strong> on{" "}
+    <strong className="font-semibold text-ink">Generative AI and Ethical AI: Techniques and Applications</strong> at{" "}
+    <strong className="font-semibold text-ink">NIT Tiruchirappalli (NITT)</strong>.
+  </>,
+
+  <>
+    ACM-sponsored <strong className="font-semibold text-ink">ROCS: Research Opportunities on Computer Science</strong>, held on{" "}
+    <strong className="font-semibold text-ink">05 April 2024</strong>.
+  </>,
+
+  <>Five-day self-sponsored National Workshop on <strong className="font-semibold text-ink">"Machine Learning and Data Science — Techniques and Trends"</strong>, <strong className="font-semibold text-ink">NIT Tiruchirappalli</strong>, 26–30 June 2023 (co-organized with Dr. J. Pavan Kumar)</>,
+
+  <>One-Day National Level Workshop on <strong className="font-semibold text-ink">"Pixels on Point"</strong>, <strong className="font-semibold text-ink">VIT Chennai</strong>, 22 February 2020</>,
+
   <>Industrial guest lectures on <strong className="font-semibold text-ink">Data Structures and Algorithms</strong> (<strong className="font-semibold text-ink">LinkedIn</strong>) and <strong className="font-semibold text-ink">Problem Solving Techniques</strong> (<strong className="font-semibold text-ink">Google</strong>), <strong className="font-semibold text-ink">VIT Chennai</strong></>,
 ];
 

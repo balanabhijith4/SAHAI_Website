@@ -32,7 +32,7 @@ export function SiteNav() {
       className={`sticky top-0 z-[999] w-full transition-all duration-500 ${scrolled ? "bg-canvas/85 backdrop-blur-xl border-b border-hairline" : "bg-transparent"
         }`}
     >
-      <div className="w-[99vw] mx-auto px-4 md:px-8 flex h-20 items-center justify-between gap-6">
+      <div className="w-[99vw] mx-auto px-4 md:px-8 flex h-23 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3 min-w-0 group">
           <button
             onClick={(e) => {
@@ -42,12 +42,12 @@ export function SiteNav() {
             className="relative shrink-0 flex items-center justify-center -ml-1 cursor-zoom-in group/logo"
             aria-label="Expand Logo"
           >
-            <img src="/sahai-logo.png" alt="SAHAI Lab Logo" className="h-18 sm:h-18 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover/logo:scale-110" />
+            <img src="/sahai-logo.png" alt="SAHAI Lab Logo" className="h-25 sm:h-25 w-auto object-contain drop-shadow-sm transition-transform duration-300 group-hover/logo:scale-110" />
           </button>
           <div className="flex flex-col leading-none min-w-0">
-            <span className="font-display text-[20px] font-semibold tracking-tight truncate">
-              SAH<span className="text-accent">AI </span> Lab
-            </span>
+            <span className="text-[20px] font-bold tracking-normal font-sans">
+  SAH<span className="text-accent">AI</span>{"  "}Lab
+</span>
             <span className="eyebrow font-bold text-[12.5px] text-ink/80 mt-0.5 truncate tracking-widest">NIT Tiruchirappalli ·CSE</span>
           </div>
         </Link>

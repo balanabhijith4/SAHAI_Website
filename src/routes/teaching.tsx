@@ -16,13 +16,18 @@ export const Route = createFileRoute("/teaching")({
 });
 
 const courses = [
-  { title: "Artificial Intelligence", semester: "Fall 22-23, 23-24" },
-  { title: "Big Data Analytics", semester: "Fall 22-23, 23-24" },
-  { title: "Software Engineering", semester: "Winter 22-23" },
-  { title: "Machine Learning for Engineering Applications", semester: "Winter 22-23" },
-  { title: "Software Quality and Reliability", semester: "Winter 19-20" },
-  { title: "Artificial Intelligence", semester: "Fall 18-19" },
-  { title: "Software Reliability", semester: "Fall 18-19 and Winter 18-19" },
+  { title: "Data Analytics", semester: "July’26" },
+  { title: "Data Structures", semester: "July’26, July’25" },
+  { title: "Machine Learning (CSPE65)", semester: "Jan’25" },
+  { title: "Database Management Systems (CSMI17)", semester: "July’24" },
+  { title: "Big Data Analytics(CSOE11)", semester: "July’23, Jan’22" },
+  { title: "Artificial Intelligence (CSMI17)", semester: "July’23, July’22, Jan’18" },
+  { title: "Software Engineering (CSPE73)", semester: "Jan’24, Jan’23" },
+  { title: "Comprehensive Viva (CSIR81)", semester: "Jan’23" },
+  { title: "Data Structures and Algorithms", semester: "Jan’26, Jan’25, Jan’24, June’20, June’19" },
+  { title: "Problem Solving and Programming in Python", semester: "June’20, Jan’19, June’19" },
+  { title: "Software Quality and Reliability:", semester: "Jan’20," },
+  { title: "Software Reliability:", semester: "June’18, Jan’18" },
 ];
 
 const materials = [
@@ -36,7 +41,7 @@ const materials = [
     ],
   },
   {
-    title: "Solutions for Few Problems in Python",
+    title: "Solutions for Few Problems (in Python)",
     description: "Student Contributor: Aditya Kumar Gupta, Department of CSE, VIT Chennai.",
     href: "teaching_material/python_sol.pdf",
     
@@ -86,7 +91,7 @@ function TeachingPage() {
               <div>
                 
                 <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink">
-                  Learning Materials.
+                  Few Learning Resources
                 </h2>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full bg-muted px-4 py-2 text-sm font-medium text-ink">

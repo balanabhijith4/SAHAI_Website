@@ -378,7 +378,7 @@ const sizeConfig: Record<Domain["size"], { ball: string; glow: string; shine: st
 
 export function ResearchEcosystemSphere() {
   const inner = 34;
-  const outer = 49;
+  const outer = 47;
   const [tick, setTick] = useState(0);
 
   useEffect(() => {

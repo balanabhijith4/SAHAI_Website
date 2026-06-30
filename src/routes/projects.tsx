@@ -90,6 +90,7 @@ const projectData: ProjectItem[] = [
       "Dept. of CSE, VIT Chennai.",
     ],
     hue: "from-[#D0C0A8] to-[#E0D4C0]",
+    image:"images/Algo_visualiser.png"
   },
   {
     id: "p4",

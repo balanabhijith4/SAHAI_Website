@@ -23,7 +23,7 @@ const patents = {
       title:
         "An Integrated System and Method for a Touchless, Paperless Election Voting for Government and Private mode",
       inventors: "C.Oswald , M. Mohamad Fasil Ansaary, P. Raghava Ratna",
-      link: "",
+      link: "https://patentscope.wipo.int/search/en/detail.jsf?docId=IN317616042&_cid=P22-MR0AT2-74006-1",
     },
     {
       no: "202041035035",
@@ -37,7 +37,8 @@ const patents = {
       year: 2020,
       title: "Smart Attendance Marking System (SAMS) using Computer Vision",
       inventors: "Balasundaram A, Manas Ranjan Prusty, Inayathullah M A, C.Oswald",
-    },
+      link:"https://patentscope.wipo.int/search/en/detail.jsf?docId=IN298658817&_cid=P22-MR0ATJ-74426-1"
+    }
   ],
   filed: [
     {
@@ -46,6 +47,7 @@ const patents = {
       title:
         "A cab service method for visually and hearing impaired and women passengers using Internet of Things",
       inventors: "C.Oswald, Trishit Chakraborty, Agniva Mitra, Nagineni Ashish, Ritabrata Nag",
+      link:""
     },
     // { no: "IN-PCT-2024/1891", year: 2024, title: "On-device generative model compression via structured pruning", inventors: "Patel S., Reddy V." },
     // { no: "IN-PCT-2023/4421", year: 2023, title: "Vision-language fusion for surgical scene understanding", inventors: "Sharma R., et al." },
@@ -111,6 +113,7 @@ function Group({
   eyebrow: string;
   items: typeof patents.granted;
   status: string;
+  // link?:string
 }) {
   return (
     <>

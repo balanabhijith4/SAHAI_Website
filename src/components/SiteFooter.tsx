@@ -139,7 +139,7 @@ export function SiteFooter() {
     rel="noopener noreferrer"
     className="hover:text-accent transition-colors"
   >
-    Aditi
+    Aditi(Logo Designer)
   </a>
 </p>
           </div>

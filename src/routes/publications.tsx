@@ -31,6 +31,7 @@ type Pub = {
   gradient: string;
   link?: string;
   fullVenue?: string;
+  best?: boolean;
 };
 
 const pubs: Pub[] = [
@@ -305,6 +306,7 @@ const pubs: Pub[] = [
     body: "Forecasting Cryptocurrency Investment Decision using Deep Learning and Ensemble Models.",
     citations: 0,
     gradient: "from-sage/25 via-canvas to-accent/15",
+    best: true,
   },
   {
     venue: "ORSI/ICBAI 2023",
@@ -364,7 +366,120 @@ const pubs: Pub[] = [
     citations: 0,
     gradient: "from-accent/20 via-muted to-ink/10",
     link: "https://link.springer.com/chapter/10.1007/978-981-16-2597-8_30",
+    best: true,
   },
+  {
+  venue: "MIKE 2017",
+  type: "Conference",
+  fullVenue:
+    "Mining Intelligence and Knowledge Exploration (MIKE 2017), Lecture Notes in Computer Science, Vol. 10682, Springer, Cham.",
+  year: 2017,
+  date: "2017",
+  category: "Data Mining, Text Compression",
+  title: "A Graph-Based Frequent Sequence Mining Approach to Text Compression",
+  authors: "Oswald C., Ajith Kumar I., Avinash J., Sivaselvan B.",
+  body: "Proposes a graph-based frequent sequence mining approach for efficient text compression.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "DaSAA 2017",
+  type: "Conference",
+  fullVenue:
+    "Data Science Analytics and Applications (DaSAA 2017), Communications in Computer and Information Science, Vol. 804, Springer, Singapore.",
+  year: 2018,
+  date: "2018",
+  category: "Data Mining, Clustering",
+  title: "A Frequent and Rare Itemset Mining Approach to Transaction Clustering",
+  authors: "Tummala K., Oswald C., Sivaselvan B.",
+  body: "Introduces a transaction clustering technique based on frequent and rare itemset mining.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "AISC",
+  type: "Conference",
+  fullVenue:
+    "Software Engineering, Advances in Intelligent Systems and Computing, Vol. 731, Springer, Singapore.",
+  year: 2019,
+  date: "2019",
+  category: "Data Mining",
+  title: "A Novel Rare Itemset Mining Algorithm Based on Recursive Elimination",
+  authors: "Kataria M., Oswald C., Sivaselvan B.",
+  body: "Presents a recursive elimination algorithm for efficient rare itemset mining.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "PICT 2018",
+  type: "Conference",
+  fullVenue:
+    "Progress in Intelligent Computing Techniques: Theory, Practice, and Applications, Advances in Intelligent Systems and Computing, Vol. 518, Springer, Singapore.",
+  year: 2018,
+  date: "2018",
+  category: "Text Compression",
+  title: "Hierarchical Clustering Approach to Text Compression",
+  authors: "Oswald C., Akshay Vyas V., Arun Kumar K., Vijay Sri L., Sivaselvan B.",
+  body: "Introduces a hierarchical clustering approach for improving text compression.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "ICC3 2017",
+  type: "Conference",
+  fullVenue:
+    "Computational Intelligence, Cyber Security and Computational Models (ICC3 2017), Communications in Computer and Information Science, Vol. 844, Springer, Singapore.",
+  year: 2018,
+  date: "2018",
+  category: "Data Mining, Video Compression",
+  title: "Frequent Sequence Mining Approach to Video Compression",
+  authors: "Karthik M., Oswald C., Sivaselvan B.",
+  body: "Applies frequent sequence mining techniques to improve video compression.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "DaSAA 2017",
+  type: "Conference",
+  fullVenue:
+    "Data Science Analytics and Applications (DaSAA 2017), Communications in Computer and Information Science, Vol. 804, Springer, Singapore.",
+  year: 2018,
+  date: "2018",
+  category: "Optimization, Data Mining",
+  title: "Frequent Pattern Mining Guided Tabu Search",
+  authors: "Avula S., Oswald C., Sivaselvan B.",
+  body: "Integrates frequent pattern mining with Tabu Search for optimization problems.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
+{
+  venue: "MIKE 2015",
+  type: "Conference",
+  fullVenue:
+    "Mining Intelligence and Knowledge Exploration (MIKE 2015), Lecture Notes in Computer Science, Vol. 9468, Springer, Cham.",
+  year: 2015,
+  date: "2015",
+  category: "Data Mining, Text Compression",
+  title: "An Efficient Text Compression Algorithm - Data Mining Perspective",
+  authors: "Oswald C., Ghosh A.I., Sivaselvan B.",
+  body: "Presents a data mining-based algorithm for efficient text compression.",
+  citations: 0,
+  gradient: "from-accent/20 via-muted to-ink/10",
+  link: "",
+  best: false,
+},
   {
     venue: "ICCCSP 2018",
     type: "Conference",
@@ -514,6 +629,7 @@ const pubs: Pub[] = [
     citations: 0,
     gradient: "from-accent/20 via-muted to-ink/10",
     link: "https://ieeexplore.ieee.org/abstract/document/6921931",
+    best: true,
   },
 ];
 
@@ -555,6 +671,25 @@ function PublicationsPage() {
     <>
       <section className="container-page pb-10">
         <Reveal>
+          <a
+      href="/ieee.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-m text-ink-soft hover:text-accent transition-colors mb-7"
+    >
+      <svg
+        className="h-3.5 w-3.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <path d="M14 2v6h6" />
+      </svg>
+
+      Tips to write an IEEE paper, may be useful... :)
+    </a>
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((f) => (
               <button
@@ -616,26 +751,34 @@ function PublicationsPage() {
                     className="relative bg-surface rounded-xl ring-1 ring-border p-4 lg:p-5 flex flex-col md:flex-row justify-between md:items-center transition-all duration-300 hover:bg-canvas hover:-translate-y-1 hover:shadow-md hover:z-10 group"
                   >
                     <div className="flex-1 min-w-0 pr-0 md:pr-6">
-                      <motion.h3
-                        layoutId={`title-${pub.title}-${id}`}
-                        className="font-display font-semibold text-lg text-ink text-left leading-snug group-hover:text-accent transition-colors"
-                      >
-                        {pub.title}
-                      </motion.h3>
-                      <motion.p
-                        layoutId={`description-${pub.title}-${id}`}
-                        className="text-sm text-ink-soft text-left mt-1.5"
-                      >
-                        {pub.authors}
-                      </motion.p>
-                      <motion.p
-                        layoutId={`fullvenue-${pub.title}-${id}`}
-                        className="text-xs italic text-ink-soft text-left mt-1"
-                      >
-                        {pub.fullVenue || pub.venue}
-                      </motion.p>
-                    </div>
-                    
+                  <motion.h3
+                    layoutId={`title-${pub.title}-${id}`}
+                    className="font-display font-semibold text-lg text-ink text-left leading-snug group-hover:text-accent transition-colors"
+                  >
+                    {pub.title}
+                  </motion.h3>
+                  {pub.best && (
+                    <span className="inline-flex items-center gap-1 mt-2 rounded-full bg-accent/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-accent ring-1 ring-accent/30">
+                      <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l2.39 6.55L21 9.27l-5 4.36L17.45 21 12 17.27 6.55 21 8 13.63l-5-4.36 6.61-.72L12 2z" />
+                      </svg>
+                      Best Paper
+                    </span>
+                  )}
+                  <motion.p
+                    layoutId={`description-${pub.title}-${id}`}
+                    className="text-sm text-ink-soft text-left mt-1.5"
+                  >
+                    {pub.authors}
+                  </motion.p>
+                  <motion.p
+                    layoutId={`fullvenue-${pub.title}-${id}`}
+                    className="text-xs italic text-ink-soft text-left mt-1"
+                  >
+                    {pub.fullVenue || pub.venue}
+                  </motion.p>
+                </div>
+                                    
                     {pub.link ? (
                       <motion.a
                         layoutId={`button-${pub.title}-${id}`}
