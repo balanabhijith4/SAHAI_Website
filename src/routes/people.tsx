@@ -81,7 +81,7 @@ const faculty: Person[] = [
             <span className="size-1.5 rounded-full bg-accent inline-block"></span> Postdoctoral Fellowship
           </h4>
           <p className="leading-relaxed pl-3.5">
-            In my Postdoctoral fellowship, I am blessed to be mentored by <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Arnab Bhattacharya</a>, Professor, Dept. of Computer Science and Engineering, IIT Kanpur from Feb 2021 - July 2022. It has been a turning point in my research career. I have been inspired to work in the field of Natural Language Processing with a passion towards Indic Languages which I continue still.
+            In my Postdoctoral fellowship, I am blessed to be mentored by <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Arnab Bhattacharya</a>, Professor, Dept. of Computer Science and Engineering, IIT Kanpur from Feb 2021 - July 2022. It has been a turning point in my research career. Since then I have been inspired to work in the field of Natural Language Processing with a passion towards Indic Languages which I continue still.
           </p>
         </div>
 
@@ -147,8 +147,8 @@ const UGstudents: Person[] = [
   { name: "Joshua Mahadevan", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "JM", photo: "",linkedin:"https://www.linkedin.com/in/joshua-mahadevan-61a1b3208/" },
   { name: "Lokkamithran", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "LK", photo: "",linkedin:"https://www.linkedin.com/in/lokkamithran-m-a508a820b/" },
   { name: "Mubeena", role: "B.Tech (2024)", interests: "Offensive Text Detection in Code-mixed Dravidian Languages towards Marginalised Groups and Women", initials: "MB", photo: "/images/UG/Mubeena.jpg",linkedin:"https://www.linkedin.com/in/mubeena-b-85036621b/" },
-  { name: "Aditya G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "",linkedin:"a" },
-  { name: "Vijay G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "",linkedin:"a" },
+  { name: "Aditya G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "/images/UG/aditya.jpeg",linkedin:"https://in.linkedin.com/in/aditya-goddu-258202303" },
+  { name: "Vijay G", role: "B.Tech (2026)", interests: "", initials: "A", photo: "/images/UG/vijay.jpeg",linkedin:"https://www.linkedin.com/in/vijay-gandaboina-167129261/" },
   { name: "Aadit Krishna R", role: "B.Tech (2026)", interests: "", initials: "A", photo: "",linkedin:"a" },
 ];
 
@@ -437,7 +437,7 @@ function PersonCard({ p, variant, showProjectLabel, hideSocialLabels }: { p: Per
           )}
 {p.cv && (
   <p className="mt-3 text-m text-ink-soft">
-    For detailed information please refer CV{" "}
+    For detailed information, please refer CV{" "}
     <a
       href={p.cv}
       target="_blank"

@@ -671,25 +671,7 @@ function PublicationsPage() {
     <>
       <section className="container-page pb-10">
         <Reveal>
-          <a
-      href="/ieee.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 text-m text-ink-soft hover:text-accent transition-colors mb-7"
-    >
-      <svg
-        className="h-3.5 w-3.5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <path d="M14 2v6h6" />
-      </svg>
-
-      Tips to write an IEEE paper, may be useful... :)
-    </a>
+         
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((f) => (
               <button
@@ -729,11 +711,31 @@ function PublicationsPage() {
               </div>
             </div>
 
-            <div className="ml-auto font-mono text-xs text-ink-soft">{filtered.length} papers</div>
+            {/* <div className="ml-auto font-mono text-xs text-ink-soft">{filtered.length} papers</div> */}
           </div>
         </Reveal>
       </section>
+      <div className="pl-35">
+<a
+  href="/ieee.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1.5 ml-4 text-base font-semibold text-ink-soft hover:text-accent transition-colors mb-7"
+>
+  <svg
+    className="h-3.5 w-3.5"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2v6h6" />
+  </svg>
 
+  Tips to write an IEEE paper, may be useful... :)
+</a>
+</div>
       <section className="container-page pb-32">
         <div className="flex flex-col gap-16 w-full">
           {years.map((year) => (

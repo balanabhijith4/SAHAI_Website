@@ -963,10 +963,10 @@ const stats = [
   { num: 7, suffix: "", label: "Journals", note: "Peer reviewed publications" },
   { num: 30, suffix: "+", label: "Conferences", note: "National & International" },
   { num: 2, suffix: "", label: "Funded Projects", note: "Active research streams" },
-  { num: 3, suffix: "", label: "Ph.D Students", note: "Research Scholars" },
+  { num: 3, suffix: "", label: "Ph.D Scholars", note: "Research Scholars" },
   { num: 26, suffix: "+", label: "Project Students", note: "UG and PG students" },
   { num: 42, suffix: "+", label: "Interns", note: "Research scholars & students" },
-  { num: 10, suffix: "", label: "Collaborators", note: "Industry & academia" },
+  { num: 10, suffix: "", label: "Collaborators", note: "Industry & Academia" },
   { num: 5, suffix: "", label: "Awards", note: "Best Paper and others" },
   
 ];

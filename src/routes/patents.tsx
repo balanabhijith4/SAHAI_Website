@@ -42,7 +42,7 @@ const patents = {
   ],
   filed: [
     {
-      no: "IN-PCT-****",
+      no: "****",
       year: 2024,
       title:
         "A cab service method for visually and hearing impaired and women passengers using Internet of Things",
@@ -70,7 +70,7 @@ function PatentsPage() {
       />
 
       <section className="container-page pt-0 pb-0 border-t border-hairline">
-        <Group title="Granted" eyebrow="01" items={patents.granted} status="Granted" />
+        <Group title="Published" eyebrow="01" items={patents.granted} status="Published" />
       </section>
       <section className="container-page pt-12 pb-0 border-t border-hairline">
         <Group title="Filed" eyebrow="02" items={patents.filed} status="Filed" />
@@ -138,14 +138,14 @@ function Group({
             >
               <div>
                 <div className="font-mono text-sm text-accent">{p.no}</div>
-                <div className="eyebrow text-[9px] mt-1">{p.year}</div>
+                <div className="eyebrow text-[13px] mt-1 font-bold">{p.year}</div>
               </div>
 
               <div>
                 <h3 className="font-display text-lg font-semibold leading-tight group-hover:text-accent transition-colors">
                   {p.title}
                 </h3>
-                <p className="mt-1 text-xs font-mono text-ink-soft">Inventors: {p.inventors}</p>
+                <p className="mt-1 text-m font-mono text-ink-soft">Inventors: {p.inventors}</p>
               </div>
 
               <div className="flex flex-col items-end justify-center gap-2 justify-self-end text-right">
