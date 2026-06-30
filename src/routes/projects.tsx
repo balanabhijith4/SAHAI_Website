@@ -15,16 +15,22 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
 });
 
+type Person = {
+  name: string;
+  affiliation?: string;
+  link?: string;
+};
+
 type ProjectItem = {
   id: string;
   title: string;
   status: "Ongoing" | "Completed";
-  type: "Funded" | "Course";
+  type: "Funded" | "Course" | "Ongoing";
   amount?: string;
   agency?: string;
-  pi?: string[];
-  copi?: string[];
-  team?: string[];
+  pi?: (string | Person)[];
+  copi?: (string | Person)[];
+  team?: (string | Person)[];
   link?: string;
   linkLabel?: string;
   description?: string;
@@ -103,10 +109,32 @@ const projectData: ProjectItem[] = [
     team: ["Shubh Todi", "Oswald C", "Department of CSE, VIT Chennai."],
     hue: "from-[#B8B0D0] to-[#D0C8E0]",
   },
+  {
+    id: "p5",
+    type: "Ongoing",
+    status: "Ongoing",
+    title: "AI4Education",
+    description:
+      "This project develops a lightweight AI tool to help faculty with academic evaluation and feedback. It uses a Small Language Model (SLM) that runs locally, ensuring data privacy, reducing workload, and supporting fair and consistent assessment.",
+    team: [
+      {
+        name: "Dr.-Ing. Prince Gideon Kubendran Amos",
+        affiliation: "Dept. of Metallurgical and Materials Engineering , NIT Tiruchirappalli",
+        link: "https://www.nitt.edu/home/academics/departments/meta/faculty/prince/",
+      },
+      {
+        name: "Dr. Anu Kuriakose",
+        affiliation: "Dept. of Humanities and Social Sciences, NIT Tiruchirappalli",
+        link: "https://www.nitt.edu/home/academics/departments/humanities/faculty/anuk/",
+      },
+    ],
+    hue: "from-[#A8C8D0] to-[#C8E0E6]",
+    image:"/images/ai4edu.png"
+  },
 ];
 
 function ProjectsPage() {
-  const [filter, setFilter] = useState<"Funded" | "Course">("Funded");
+  const [filter, setFilter] = useState<"Funded" | "Ongoing" | "Course">("Funded");
   const filtered = projectData.filter((p) => p.type === filter);
 
   return (
@@ -116,7 +144,7 @@ function ProjectsPage() {
       <section className="container-page pb-24">
         <Reveal>
           <div className="flex flex-wrap gap-4 sm:gap-8 mb-12 border-b border-hairline pb-4">
-            {(["Funded", "Course"] as const).map((f) => (
+            {(["Funded", "Ongoing", "Course"] as const).map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
@@ -216,7 +244,7 @@ function ProjectsPage() {
                               </span>
                               <CollapsiblePersonList
                                 people={p.pi}
-                                itemClassName="text-xs sm:text-sm text-ink font-medium"
+                                itemClassName="text-xs sm:text-sm text-ink font-medium font-bold"
                               />
                             </div>
                           )}
@@ -233,8 +261,8 @@ function ProjectsPage() {
                           )}
                           {p.team && p.team.length > 0 && (
                             <div className="sm:col-span-2 mt-2 sm:mt-0">
-                              <span className="text-[10px] font-bold text-ink/40 uppercase tracking-[0.15em] block mb-1">
-                                Team
+                              <span className="text-m font-display font-semibold text-ink tracking-wide mb-2 block">
+                                {p.type === "Ongoing" ? "Collaborators" : "Team"}
                               </span>
                               <CollapsiblePersonList
                                 people={p.team}
@@ -282,22 +310,47 @@ function CollapsiblePersonList({
   people,
   itemClassName,
 }: {
-  people: string[];
+  people: (string | Person)[];
   itemClassName?: string;
 }) {
   if (!people || people.length === 0) return null;
 
   return (
     <ul className="mt-2 space-y-2 min-w-0">
-      {people.map((name, idx) => (
-        <li
-          key={idx}
-          className={`${itemClassName || "text-sm md:text-base text-ink"} leading-snug flex items-start gap-2`}
-        >
-          <span className="text-accent/60 mt-1.5 text-[8px] shrink-0">●</span>
-          <span className="text-wrap break-words">{name}</span>
-        </li>
-      ))}
+      {people.map((person, idx) => {
+        const isObject = typeof person !== "string";
+        const name = isObject ? person.name : person;
+        const affiliation = isObject ? person.affiliation : undefined;
+        const link = isObject ? person.link : undefined;
+
+        return (
+          <li
+            key={idx}
+            className={`${itemClassName || "text-sm md:text-base text-ink"} leading-snug flex items-start gap-2`}
+          >
+            <span className="text-accent/60 mt-1.5 text-[15px] shrink-0">●</span>
+            <span className="text-wrap break-words">
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-accent/40 underline-offset-2 hover:text-accent transition-colors"
+                >
+                  {name}
+                </a>
+              ) : (
+                name
+              )}
+              {affiliation && (
+                <span className="block text-sm font-bold text-ink/70 tracking-wide mt-0.5">
+                  {affiliation}
+                </span>
+              )}
+            </span>
+          </li>
+        );
+      })}
     </ul>
   );
 }
