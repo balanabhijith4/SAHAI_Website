@@ -523,9 +523,9 @@ export function ResearchEcosystemSphere() {
               </div>
 
               {/* label */}
-              <div className="hidden sm:flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md ring-1 ring-black/5 px-3 py-1.5 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform cursor-default">
-                <div className={`size-1.5 rounded-full shadow-[0_0_8px_rgba(0,0,0,0.3)] ${isGold ? "bg-accent shadow-accent/50" : "bg-ink/70"}`} />
-                <span className="text-[13px] font-bold text-ink whitespace-nowrap tracking-tight">
+              <div className="flex items-center gap-1.5 sm:gap-2 rounded-full bg-white/90 backdrop-blur-md ring-1 ring-black/5 px-2 py-1 sm:px-3 sm:py-1.5 shadow-[0_8px_20px_-6px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform cursor-default">
+                <div className={`size-1.5 rounded-full shrink-0 shadow-[0_0_8px_rgba(0,0,0,0.3)] ${isGold ? "bg-accent shadow-accent/50" : "bg-ink/70"}`} />
+                <span className="text-[10px] sm:text-[13px] font-bold text-ink whitespace-nowrap tracking-tight">
                   {d.label}
                 </span>
               </div>

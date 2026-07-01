@@ -26,8 +26,8 @@ const courses = [
   { title: "Comprehensive Viva (CSIR81)", semester: "Jan’23" },
   { title: "Data Structures and Algorithms", semester: "Jan’26, Jan’25, Jan’24, June’20, June’19" },
   { title: "Problem Solving and Programming in Python", semester: "June’20, Jan’19, June’19" },
-  { title: "Software Quality and Reliability:", semester: "Jan’20," },
-  { title: "Software Reliability:", semester: "June’18, Jan’18" },
+  { title: "Software Quality and Reliability", semester: "Jan’20," },
+  { title: "Software Reliability", semester: "June’18, Jan’18" },
 ];
 
 const materials = [

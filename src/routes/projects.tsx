@@ -115,7 +115,7 @@ const projectData: ProjectItem[] = [
     status: "Ongoing",
     title: "AI4Education",
     description:
-      "This project develops a lightweight AI tool to help faculty with academic evaluation and feedback. It uses Small Language Model (SLM) that runs locally, ensuring data privacy, reducing workload, and supporting fair and consistent assessment.",
+      "This project develops a lightweight AI tool to help faculty with academic evaluation and feedback. It uses Small Language Models (SLM) that runs locally, ensuring data privacy, reducing workload, and supporting fair and consistent assessment.",
     team: [
       {
         name: "Dr.-Ing. Prince Gideon Kubendran Amos",
