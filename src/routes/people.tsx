@@ -165,7 +165,7 @@ const interns: Person[] = [
 
 
   { name: "Kabilan G", role: "2025", interests: "Enhancements in Nested NER", initials: "IO", photo: "",linkedin:"https://www.linkedin.com/in/kabilan-ganesh-148836184" },
-  { name: "Aranganathan S ", role: "2025", interests: "Nested NER in Tamil", initials: "IO", photo: "/images/Interns/2025/Aranganathan S _NIT Surathkal.jpeg",linkedin:"https://www.linkedin.com/in/aranganathan-s" },
+  { name: "Aranganathan S ", role: "2025", interests: "Nested NER in Tamil", initials: "IO", photo: "/images/Interns/2025/Aranganathan_NITSurathkal.jpeg",linkedin:"https://www.linkedin.com/in/aranganathan-s" },
   { name: "Rohan Jose", role: "2025", interests: "Offensive and Hate Speech Detection of Malayalam  using Deep Learning Techniques", initials: "IO", photo: "/images/Interns/2025/Rohan_Jose.jpg",linkedin:"a" },
   { name: "Hrishikesh Mhaiskar", role: "2025", interests: "Thought Recognition from EEG Signals for Indic Languages.", initials: "IO", photo: "/images/Interns/2025/hrishikesh.jpeg",linkedin:"https://www.linkedin.com/in/hrishikeshmhaiskar?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
   { name: "Sudhanshu Kumar", role: "2025", interests: "Automated Identification of Mind Wandering States from EEG Signals", initials: "IO", photo: "/images/Interns/2025/Sudhanshu_Kumar.jpg",linkedin:"https://www.linkedin.com/in/sudhanshu-kumar-a9bb36268" },
@@ -195,7 +195,7 @@ const interns: Person[] = [
 
 
   { name: "Yogesh Perumal", role: "2023", interests: "Computer Vision", initials: "IT", photo: "",linkedin:"a" },
-  { name: "Abhijit Baidya", role: "2023", interests: "Computer Vision", initials: "IT", photo: "/images/Interns/2023/Abhijit Baidya.jpg",linkedin:"https://www.linkedin.com/in/abhijitbaidya/" },
+  { name: "Abhijit Baidya", role: "2023", interests: "Computer Vision", initials: "IT", photo: "/images/Interns/2023/AbhijitBaidya.jpg",linkedin:"https://www.linkedin.com/in/abhijitbaidya/" },
   { name: "Hashim Faisal syed", role: "2023", interests: "Computer Vision", initials: "IT", photo: "/images/Interns/2023/HashimFaisal.jpg",linkedin:"a" },
   { name: "Isai Visaahan P M", role: "2023", interests: "Computer Vision", initials: "IT", photo: "/images/Interns/2023/Isaivisaahan.jpg",linkedin:"a" },
   { name: "Karthik Balaji N V", role: "2023", interests: "Computer Vision", initials: "IT", photo: "/images/Interns/2023/karthik.jpg",linkedin:"a" },
