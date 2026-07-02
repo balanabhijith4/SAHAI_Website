@@ -74,55 +74,7 @@ const faculty: Person[] = [
     researchGate: "https://www.researchgate.net/scientific-contributions/2111321378-C-Oswald",
     scopus: "https://www.scopus.com/authid/detail.uri?authorId=56419629800",
     cv:"/CV-Oswald.pdf",
-    details: (
-      <div className="space-y-6 text-sm sm:text-base text-ink/90">
-        <div className="space-y-2">
-          <h4 className="font-semibold text-lg text-ink flex items-center gap-2">
-            <span className="size-1.5 rounded-full bg-accent inline-block"></span> Postdoctoral Fellowship
-          </h4>
-          <p className="leading-relaxed pl-3.5">
-            In my Postdoctoral fellowship, I am blessed to be mentored by <a href="https://www.cse.iitk.ac.in/users/arnabb/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Arnab Bhattacharya</a>, Professor, Dept. of Computer Science and Engineering, IIT Kanpur from Feb 2021 - July 2022. It has been a turning point in my research career since then. I have been inspired to work in the field of Natural Language Processing with a passion towards Indic Languages which I continue still.
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
-            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
-            <div>Ph.D. in Computer Science and Engineering <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[July 2013 - Nov 2018]</span></div>
-          </h4>
-          <div className="pl-3.5 space-y-1.5">
-            <p className="leading-relaxed">
-              <a href="http://iiitdm.ac.in/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Indian Institute of Information Technology, Design and Manufacturing Kancheepuram</a><br />
-              <span className="text-sm text-ink-soft">(An Institution of National Importance, MHRD, Govt. of India)</span>
-            </p>
-            <p className="leading-relaxed"><strong>Dissertation Topic:</strong> Efficient Algorithms for text and image compression based on Knowledge Engineering</p>
-            <p className="leading-relaxed">
-              I am fortunate enough to be supervised by <a href="https://www.iiitdm.ac.in/people/faculty/sivaselvanb@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. B. Sivaselvan</a>, Associate Professor, Department of CSE, IIITDM Kancheepuram. From him, I have been blessed to learn an amalgamation of moral values, ethics, didactic, along with research. My Doctoral Committee members were <a href="https://cse.iitm.ac.in/innerfaculty.php?fname=Narayanaswamy+N+S" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. NS Narayanaswamy</a>, <a href="https://www.iiitdm.ac.in/people/faculty/sadagopan@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. N. Sadagopan</a> and <a href="https://www.iiitdm.ac.in/people/faculty/shalu@iiitdm.ac.in" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. M A Shalu</a> who have upholded and showed me the paths in various tough situations of my Ph.D. tenure. Many thanks to my thesis examiners, <a href="https://raj.cse.uconn.edu/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Sanguthevar Rajasekaran</a> and <a href="https://wsai.iitm.ac.in/~ravi/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Prof. Balaraman Ravindran</a> for their valuable advices.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
-            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
-            <div>M.Tech. in Software Engineering (Rank Holder) <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[July 2011 - May 2013]</span></div>
-          </h4>
-          <div className="pl-3.5 space-y-1.5">
-            <p className="leading-relaxed">Karunya University, Coimbatore.</p>
-            <p className="leading-relaxed"><strong>Dissertation Topic:</strong> Hybrid Particle Swarm Optimization for University Course Timetabling Problem</p>
-            <p className="leading-relaxed"><strong>Advisor:</strong> <a href="https://scholar.google.com/citations?user=TGR206kAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-medium">Dr. C Anand Devadurai</a></p>
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <h4 className="font-semibold text-lg text-ink flex items-start lg:items-center gap-2">
-            <span className="size-1.5 rounded-full bg-accent inline-block mt-2 lg:mt-0 shrink-0"></span>
-            <div>B.E. in Computer Science and Engineering <span className="text-sm font-normal text-ink-soft whitespace-nowrap lg:ml-2 block lg:inline">[June 2005 – May 2009]</span></div>
-          </h4>
-          <p className="leading-relaxed pl-3.5">Sona College of Technology (Anna University, Chennai)<br /><span className="text-sm text-ink-soft">(Best Co-curricular Student Awardee)</span></p>
-        </div>
-      </div>
-    )
+    // details: ()
   },
 ];
 const scholars: Person[] = [
@@ -437,7 +389,15 @@ function PersonCard({ p, variant, showProjectLabel, hideSocialLabels }: { p: Per
           )}
 {p.cv && (
   <p className="mt-3 text-m text-ink-soft">
-    For detailed information, please refer CV{" "}
+    For detailed information, please refer NITT Website{" "}
+    <a
+      href={"https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center text-accent hover:underline align-middle"
+    >
+
+    CV{" "}
     <a
       href={p.cv}
       target="_blank"
