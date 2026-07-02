@@ -398,7 +398,7 @@ function PersonCard({ p, variant, showProjectLabel, hideSocialLabels }: { p: Per
   >
     NITT Website
   </a>{" "}
-  or download the{" "}
+  or {" "}
   <a
     href={p.cv}
     target="_blank"
