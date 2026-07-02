@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import { PageHeader } from "../components/PageHeader";
 import { Reveal, RevealChars, Stagger, StaggerItem } from "../components/Reveal";
 
@@ -19,6 +20,8 @@ type Person = {
   name: string;
   affiliation?: string;
   link?: string;
+  linkedin?: string;
+  role?: string;
 };
 
 type ProjectItem = {
@@ -88,14 +91,14 @@ const projectData: ProjectItem[] = [
       "An interactive web-based educational platform that helps students understand complex computer science algorithms through step-by-step graphical animations and real-time execution tracing.",
     link: "https://algorithmvisualizer.github.io/AlgoVis/",
     team: [
-      "Vaibhave S",
-      "Shyam Sasidharan Nair",
-      "Shyam Sundaram S",
-      "Akash A",
-      "Oswald C",
+      { name: "Vaibhave S", linkedin: "#", role: "Alumnus, VIT Chennai" },
+      { name: "Shyam Sasidharan Nair", linkedin: "#", role: "Alumnus, VIT Chennai" },
+      { name: "Shyam Sundaram S", linkedin: "#", role: "Alumnus, VIT Chennai" },
+      { name: "Akash A", linkedin: "#", role: "Alumnus, VIT Chennai" },
+      { name: "Oswald C", linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/", role: "Former Faculty, VIT Chennai" },
     ],
     hue: "from-[#D0C0A8] to-[#E0D4C0]",
-    image:"images/Algo_visualiser.png"
+    image: "images/Algo_visualiser.png",
   },
   {
     id: "p4",
@@ -105,7 +108,8 @@ const projectData: ProjectItem[] = [
     description:
       "A specialized tool designed to visually demonstrate the Hungarian algorithm for solving assignment problems, making mathematical optimization concepts intuitive and highly accessible.",
     link: "https://hungvisual.github.io/HungVis/",
-    team: ["Shubh Todi", "Oswald C",],
+    team: [{name:"Shubh Todi", linkedin: "#", role: "Alumnus, VIT Chennai" }, 
+      {name:"Oswald C", linkedin: "https://www.linkedin.com/in/oswald-c-bb5b37b7/", role: "Former Faculty, VIT Chennai"}],
     hue: "from-[#B8B0D0] to-[#D0C8E0]",
   },
   {
@@ -128,7 +132,7 @@ const projectData: ProjectItem[] = [
       },
     ],
     hue: "from-[#A8C8D0] to-[#C8E0E6]",
-    image:"/images/ai4edu.png"
+    image: "/images/ai4edu.png",
   },
 ];
 
@@ -138,8 +142,6 @@ function ProjectsPage() {
 
   return (
     <>
-
-
       <section className="container-page pb-24">
         <Reveal>
           <div className="flex flex-wrap gap-4 sm:gap-8 mb-12 border-b border-hairline pb-4">
@@ -321,6 +323,8 @@ function CollapsiblePersonList({
         const name = isObject ? person.name : person;
         const affiliation = isObject ? person.affiliation : undefined;
         const link = isObject ? person.link : undefined;
+        const linkedin = isObject ? person.linkedin : undefined;
+        const role = isObject ? person.role : undefined;
 
         return (
           <li
@@ -329,18 +333,34 @@ function CollapsiblePersonList({
           >
             <span className="text-accent/60 mt-1.5 text-[15px] shrink-0">●</span>
             <span className="text-wrap break-words">
-              {link ? (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-accent/40 underline-offset-2 hover:text-accent transition-colors"
-                >
-                  {name}
-                </a>
-              ) : (
-                name
-              )}
+              <span className="inline-flex items-center gap-1.5 flex-wrap">
+                {link ? (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-accent/40 underline-offset-2 hover:text-accent transition-colors"
+                  >
+                    {name}
+                  </a>
+                ) : (
+                  <span>{name}</span>
+                )}
+                {linkedin && (
+                  <a  
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${name} on LinkedIn`}
+                    className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-ink/8 text-ink/70 hover:bg-accent hover:text-canvas transition-colors"
+                  >
+                    <Linkedin className="w-3 h-3" strokeWidth={2.5} />
+                  </a>
+                )}
+                {role && (
+                  <span className="text-ink-soft/80">({role})</span>
+                )}
+              </span>
               {affiliation && (
                 <span className="block text-sm font-bold text-ink/70 tracking-wide mt-0.5">
                   {affiliation}
