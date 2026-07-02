@@ -389,24 +389,26 @@ function PersonCard({ p, variant, showProjectLabel, hideSocialLabels }: { p: Per
           )}
 {p.cv && (
   <p className="mt-3 text-m text-ink-soft">
-    For detailed information, please refer NITT Website{" "}
-    <a
-      href={"https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/"}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center text-accent hover:underline align-middle"
-    >
-
-    CV{" "}
-    <a
-      href={p.cv}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center text-accent hover:underline align-middle"
-    >
-      <FileText className="size-3.5 inline-block ml-1" />
-    </a>
-  </p>
+  For detailed information, please refer to the{" "}
+  <a
+    href="https://www.nitt.edu/home/academics/departments/cse/faculty/oswald/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-accent hover:underline"
+  >
+    NITT Website
+  </a>{" "}
+  or download the{" "}
+  <a
+    href={p.cv}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center text-accent hover:underline"
+  >
+    CV <FileText className="size-3.5 ml-1" />
+  </a>
+  .
+</p>
 )}
 
         </div>
